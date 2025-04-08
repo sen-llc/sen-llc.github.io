@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - 合同会社巛（sen llc）</title>
+<meta name="description" content="合同会社巛（sen llc）のサイトについて・運営会社情報。空き家再生やDIYを通じて、新しい住まい方を提案します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* グローバルスタイル - index.htmlと同じスタイルを適用 */
+:root {
+  --background: 43 14% 84%;
+  --foreground: 154 17% 19%;
+  --card: 0 0% 100%;
+  --card-foreground: 154 17% 19%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 154 17% 19%;
+  --primary: 154 17% 19%;
+  --primary-foreground: 43 14% 84%;
+  --secondary: 33 27% 48%;
+  --secondary-foreground: 43 14% 84%;
+  --muted: 43 14% 84%;
+  --muted-foreground: 154 17% 19%;
+  --accent: 33 27% 48%;
+  --accent-foreground: 43 14% 84%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 43 14% 84%;
+  --border: 154 17% 19%;
+  --input: 154 17% 19%;
+  --ring: 154 17% 19%;
+  --radius: 0.5rem;
+  --rental-primary: 154 17% 19%;
+  --rental-secondary: 43 14% 84%;
+  --rental-accent: 33 27% 48%;
+  --rental-text: 154 17% 19%;
+  --rental-background: 43 14% 84%;
+  --renovation-primary: 33 27% 48%;
+  --renovation-secondary: 43 14% 84%;
+  --renovation-accent: 154 17% 19%;
+  --renovation-text: 154 17% 19%;
+  --renovation-background: 43 14% 84%;
+  --theme-primary: var(--rental-primary);
+  --theme-secondary: var(--rental-secondary);
+  --theme-accent: var(--rental-accent);
+  --theme-text: var(--rental-text);
+  --theme-background: var(--rental-background);
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Zen Maru Gothic', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  font-feature-settings: "palt" 1;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+}
+
+/* セクション間隔を広げる */
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* ボタンスタイルの強化 */
+.btn-primary {
+  background-color: #2a382f;
+  color: #fff;
+  border: 2px solid #2a382f;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #2a382f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42, 56, 47, 0.15);
+}
+
+/* ヘッダーとフッター */
+.header-modern {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(215, 211, 198, 0.9);
+  border-bottom: 1px solid rgba(42, 56, 47, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.footer-modern {
+  background-color: #2a382f;
+  color: #d7d3c6;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+/* セクション区切り */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(42, 56, 47, 0.2), transparent);
+  margin: 5rem 0;
+}
+
+/* 住まいの循環図解 */
+.cycle-diagram {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 2rem 0;
+  white-space: nowrap;
+}
+
+.cycle-step {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
+  position: relative;
+  min-width: 120px;
+}
+
+.cycle-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  right: -30px;
+  width: 30px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='20' viewBox='0 0 30 20' fill='none' stroke='%232a382f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 10 H25 M18 3 L25 10 L18 17'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+.cycle-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #f8f5f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(42, 56, 47, 0.2);
+}
+
+.cycle-text {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #2a382f;
+  font-weight: 500;
+}
+
+/* スキル紹介セクション */
+.skills-section {
+  background-color: #f8f5f0;
+  padding: 3rem;
+  border-radius: 1rem;
+  margin: 3rem 0;
+}
+
+.skill-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.skill-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2a382f;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.skill-title svg {
+  margin-right: 0.75rem;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.skill-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #9b785c;
+  border-radius: 50%;
+}
+
+/* ビジョンセクション */
+.vision-section {
+  background-color: #2a382f;
+  color: #d7d3c6;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.vision-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.vision-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: #9b785c;
+}
+
+.vision-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 手描き風アイコン */
+.hand-drawn-icon {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* ギャラリーセクション */
+.gallery-section {
+  margin: 3rem 0;
+}
+
+.gallery-item {
+  background-color: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  background-color: #f8f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2a382f;
+  font-weight: 500;
+}
+
+.gallery-caption {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #2a382f;
+}
+</style>
+</head>
+<body class="rental-theme">
+<header class="fixed top-0 z-50 w-full transition-all duration-300 header-modern py-4">
+<div class="container mx-auto flex items-center justify-between px-4">
+  <a href="index.html" class="flex items-center">
+    <img
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%204-my6jh9WIW1WcjnPFwcyjBoscmIofbw.png"
+      alt="sen llc logo"
+      class="h-10 w-auto mr-3"
+    >
+    <span class="text-xl font-medium text-[#2a382f]">sen llc</span>
+  </a>
+
+  <!-- デスクトップナビゲーション -->
+  <nav class="hidden md:block">
+    <ul class="flex space-x-10">
+      <li>
+        <a href="#" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-medium py-2 inline-block">
+          育てる住まい
+        </a>
+      </li>
+      <li>
+        <a href="#" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-medium py-2 inline-block">
+          RENOVATION
+        </a>
+      </li>
+      <li>
+        <a href="#" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-medium py-2 inline-block">
+          PROJECTS
+        </a>
+      </li>
+      <li>
+        <a href="about.html" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-medium py-2 inline-block">
+          ABOUT
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-medium py-2 inline-block">
+          CONTACT
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- モバイルメニューボタン -->
+  <button class="md:hidden" id="menuButton">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+</div>
+</header>
+
+<main class="pt-24">
+<!-- メインビジュアル -->
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h1 class="text-3xl md:text-5xl font-bold text-[#2a382f] mb-6">サイトについて・運営会社</h1>
+      <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
+        「住む、つくる、手に入れる。」をコンセプトに、新しい住まい方を提案する合同会社巛（sen llc）についてご紹介します。
+      </p>
+    </div>
+
+    <!-- 会社情報 -->
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-sm">
+      <h2 class="text-2xl font-bold text-[#2a382f] mb-6 pb-2 border-b border-[#2a382f]/20">運営会社</h2>
+      
+      <div class="space-y-6">
+        <div class="grid gap-4 border-b border-[#2a382f]/20 py-4 md:grid-cols-3">
+          <div class="font-medium text-[#2a382f]">会社名</div>
+          <div class="text-[#2a382f]/80 md:col-span-2">合同会社巛（sen llc）</div>
+        </div>
+        <div class="grid gap-4 border-b border-[#2a382f]/20 py-4 md:grid-cols-3">
+          <div class="font-medium text-[#2a382f]">設立</div>
+          <div class="text-[#2a382f]/80 md:col-span-2">2018年4月</div>
+        </div>
+        <div class="grid gap-4 border-b border-[#2a382f]/20 py-4 md:grid-cols-3">
+          <div class="font-medium text-[#2a382f]">代表社員</div>
+          <div class="text-[#2a382f]/80 md:col-span-2">山田 太郎</div>
+        </div>
+        <div class="grid gap-4 border-b border-[#2a382f]/20 py-4 md:grid-cols-3">
+          <div class="font-medium text-[#2a382f]">所在地</div>
+          <div class="text-[#2a382f]/80 md:col-span-2">〒150-0002 東京都渋谷区渋谷1-1-1 渋谷ビル5F</div>
+        </div>
+        <div class="grid gap-4 border-b border-[#2a382f]/20 py-4 md:grid-cols-3">
+          <div class="font-medium text-[#2a382f]">事業内容</div>
+          <div class="text-[#2a382f]/80 md:col-span-2">
+            住まいを育てる賃貸事業<br>
+            リノベーション事業<br>
+            不動産コンサルティング事業
+          </div>
+        </div>
+        <div class="grid gap-4 border-b border-[#2a382f]/20 py-4 md:grid-cols-3">
+          <div class="font-medium text-[#2a382f]">従業員数</div>
+          <div class="text-[#2a382f]/80 md:col-span-2">12名（2023年4月現在）</div>
+        </div>
+        <div class="grid gap-4 border-b border-[#2a382f]/20 py-4 md:grid-cols-3">
+          <div class="font-medium text-[#2a382f]">連絡先</div>
+          <div class="text-[#2a382f]/80 md:col-span-2">
+            TEL: 03-1234-5678<br>
+            Email: info@senllc.jp<br>
+            営業時間: 10:00〜18:00（水曜定休）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider mx-auto max-w-4xl"></div>
+
+<!-- 空き家から始まる住まいの循環 -->
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-[#2a382f] mb-6">空き家から始まる住まいの循環</h2>
+      <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
+        私たちは空き家を再生し、新しい住まい方を提案することで、持続可能な住まいの循環を創り出します。
+      </p>
+    </div>
+
+    <div class="cycle-diagram">
+      <div class="cycle-step">
+        <div class="cycle-icon">
+          <svg class="hand-drawn-icon w-10 h-10 text-[#2a382f]" viewBox="0 0 24 24">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        <div class="cycle-text">1. 空き家</div>
+      </div>
+
+      <div class="cycle-step">
+        <div class="cycle-icon">
+          <svg class="hand-drawn-icon w-10 h-10 text-[#2a382f]" viewBox="0 0 24 24">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+        </div>
+        <div class="cycle-text">2. 手入れ</div>
+      </div>
+
+      <div class="cycle-step">
+        <div class="cycle-icon">
+          <svg class="hand-drawn-icon w-10 h-10 text-[#2a382f]" viewBox="0 0 24 24">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <div class="cycle-text">3. 賃貸</div>
+      </div>
+
+      <div class="cycle-step">
+        <div class="cycle-icon">
+          <svg class="hand-drawn-icon w-10 h-10 text-[#2a382f]" viewBox="0 0 24 24">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+        </div>
+        <div class="cycle-text">4. カスタマイズ<br>(DIY)</div>
+      </div>
+
+      <div class="cycle-step">
+        <div class="cycle-icon">
+          <svg class="hand-drawn-icon w-10 h-10 text-[#2a382f]" viewBox="0 0 24 24">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <polyline points="17 11 19 13 23 9"></polyline>
+          </svg>
+        </div>
+        <div class="cycle-text">5. 住み替え<br>or 購入</div>
+      </div>
+
+      <div class="cycle-step">
+        <div class="cycle-icon">
+          <svg class="hand-drawn-icon w-10 h-10 text-[#2a382f]" viewBox="0 0 24 24">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+            <line x1="4" y1="22" x2="4" y2="15"></line>
+          </svg>
+        </div>
+        <div class="cycle-text">6. 次の人へ<br>バトン</div>
+      </div>
+
+      <div class="cycle-step">
+        <div class="cycle-icon">
+          <svg class="hand-drawn-icon w-10 h-10 text-[#2a382f]" viewBox="0 0 24 24">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+        </div>
+        <div class="cycle-text">7. リノベーション<br>へ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 資格・スキル紹介 -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-[#2a382f] mb-6">資格・スキル・活動</h2>
+      <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
+        私たちは専門的な知識と技術を持ち、常に学び続けています。
+      </p>
+    </div>
+
+    <div class="skills-section">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 資格紹介 -->
+        <div class="skill-card">
+          <h3 class="skill-title">
+            <svg class="hand-drawn-icon w-6 h-6 text-[#2a382f]" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+            資格
+          </h3>
+          <ul class="skill-list">
+            <li>一級建築士</li>
+            <li>第二種電気工事士 取得予定</li>
+            <li>宅地建物取引士</li>
+            <li>インテリアコーディネーター</li>
+          </ul>
+        </div>
+
+        <!-- スキル紹介 -->
+        <div class="skill-card">
+          <h3 class="skill-title">
+            <svg class="hand-drawn-icon w-6 h-6 text-[#2a382f]" viewBox="0 0 24 24">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+            スキル
+          </h3>
+          <ul class="skill-list">
+            <li>パース作成</li>
+            <li>図面作成</li>
+            <li>スケッチ</li>
+            <li>3Dモデリング</li>
+            <li>DIY技術（壁塗り、家具製作など）</li>
+          </ul>
+        </div>
+
+        <!-- 活動紹介 -->
+        <div class="skill-card">
+          <h3 class="skill-title">
+            <svg class="hand-drawn-icon w-6 h-6 text-[#2a382f]" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            活動
+          </h3>
+          <ul class="skill-list">
+            <li>空き家再生やDIY会に参加し、実践的な技術を学んでいます。</li>
+            <li>DIYの相談にも対応可能です。</li>
+            <li>地域コミュニティと連携した住まいづくりを推進しています。</li>
+            <li>定期的なDIYワークショップを開催しています。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- スキル紹介ギャラリー -->
+    <div class="gallery-section">
+      <h3 class="text-2xl font-bold text-[#2a382f] mb-6 text-center">スキル紹介</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="gallery-item">
+          <div class="gallery-image">
+            パース画像
+          </div>
+          <div class="gallery-caption">
+            住宅リノベーションのパース
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">
+            図面画像
+          </div>
+          <div class="gallery-caption">
+            リノベーション平面図
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">
+            スケッチ画像
+          </div>
+          <div class="gallery-caption">
+            インテリアデザインスケッチ
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ビジョン -->
+<section class="vision-section">
+  <div class="container mx-auto px-4">
+    <h2 class="vision-title">ビジョン</h2>
+    <p class="vision-text">
+      家の循環に人々を巻き込み、住まいに興味がない人たちにも、豊かな住まいの魅力を知ってもらいたい。<br>
+      私たちは、空き家を再生し、DIYを通じて住まいへの愛着を育み、<br>
+      持続可能な住環境を次世代に繋げていくことを目指しています。
+    </p>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section id="contact" class="bg-white py-20 md:py-28">
+  <div class="container mx-auto px-4">
+    <div class="mb-16 text-center">
+      <h2 class="mb-3 text-3xl md:text-4xl font-bold text-[#2a382f]">CONTACT</h2>
+      <p class="text-sm text-[#2a382f]/70 tracking-wider">お問い合わせ</p>
+    </div>
+    <div class="mx-auto max-w-3xl">
+      <div class="bg-[#d7d3c6] p-10 md:p-12 rounded-xl shadow-lg">
+        <h3 class="mb-8 text-2xl font-bold text-[#2a382f] text-center">お問い合わせフォーム</h3>
+        <form class="space-y-6">
+          <div class="grid gap-8 md:grid-cols-2">
+            <div class="form-control">
+              <label for="name" class="block mb-2 text-sm font-medium text-[#2a382f]">
+                お名前 <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                class="w-full p-3 border border-[#2a382f]/20 focus:border-[#2a382f] focus:ring-1 focus:ring-[#2a382f] outline-none bg-white rounded-md"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="email" class="block mb-2 text-sm font-medium text-[#2a382f]">
+                メールアドレス <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                class="w-full p-3 border border-[#2a382f]/20 focus:border-[#2a382f] focus:ring-1 focus:ring-[#2a382f] outline-none bg-white rounded-md"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-control">
+            <label for="inquiryType" class="block mb-2 text-sm font-medium text-[#2a382f]">
+              お問い合わせ内容 <span class="text-red-500">*</span>
+            </label>
+            <select
+              id="inquiryType"
+              class="w-full p-3 border border-[#2a382f]/20 focus:border-[#2a382f] focus:ring-1 focus:ring-[#2a382f] outline-none bg-white rounded-md"
+              required
+            >
+              <option value="">お問い合わせ内容を選択してください</option>
+              <option value="rental">育てる住まいについて</option>
+              <option value="renovation">リノベーションについて</option>
+              <option value="other">その他のお問い合わせ</option>
+            </select>
+          </div>
+
+          <div class="form-control">
+            <label for="message" class="block mb-2 text-sm font-medium text-[#2a382f]">
+              メッセージ <span class="text-red-500">*</span>
+            </label>
+            <textarea
+              id="message"
+              rows="5"
+              class="w-full p-3 border border-[#2a382f]/20 focus:border-[#2a382f] focus:ring-1 focus:ring-[#2a382f] outline-none bg-white rounded-md"
+              required
+            ></textarea>
+          </div>
+
+          <!-- プライバシーポリシー同意チェックボックス -->
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input
+                id="privacy"
+                type="checkbox"
+                class="w-4 h-4 border border-[#2a382f]/20 rounded focus:ring-[#2a382f]"
+                required
+              />
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="privacy" class="text-[#2a382f]/80">
+                <a href="#" class="text-[#2a382f] underline hover:text-[#2a382f]/80" target="_blank">
+                  プライバシーポリシー
+                </a>
+                を読み、同意します <span class="text-red-500">*</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="text-center pt-4">
+            <button
+              type="submit"
+              class="btn-primary py-4 px-10"
+            >
+              送信する
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer-modern">
+<div class="container mx-auto px-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <div>
+      <a href="index.html" class="flex items-center mb-4">
+        <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%204-my6jh9WIW1WcjnPFwcyjBoscmIofbw.png"
+          alt="sen llc logo"
+          class="h-10 w-auto mr-3 brightness-0 invert"
+        />
+        <span class="text-xl font-bold">sen llc</span>
+      </a>
+      <p class="mt-4 text-base text-[#d7d3c6]/80 tracking-wider leading-relaxed">
+        住む、つくる、手に入れる。<br>
+        最初からデザイン性の高い空間で、<br>
+        あなたらしい暮らしを育んでいきましょう。
+      </p>
+    </div>
+
+    <div class="md:col-span-2">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-base font-bold mb-6 uppercase tracking-wider border-b border-[#d7d3c6]/20 pb-2">サービス</h3>
+          <ul class="space-y-4">
+            <li>
+              <a href="#" class="text-[#d7d3c6]/80 hover:text-[#d7d3c6] transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                育てる住まい
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-[#d7d3c6]/80 hover:text-[#d7d3c6] transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                リノベーション
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-[#d7d3c6]/80 hover:text-[#d7d3c6] transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                施工事例
+              </a>
+            </li>
+            <li>
+              <a href="about.html" class="text-[#d7d3c6]/80 hover:text-[#d7d3c6] transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                サイトについて・運営会社
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold mb-6 uppercase tracking-wider border-b border-[#d7d3c6]/20 pb-2">お問い合わせ</h3>
+          <p class="text-[#d7d3c6]/80 mb-4">
+            〒150-0002<br>
+            東京都渋谷区渋谷1-1-1 渋谷ビル5F
+          </p>
+          <p class="text-[#d7d3c6]/80 mb-4">
+            TEL: 03-1234-5678<br>
+            Email: info@senllc.jp
+          </p>
+          <h3 class="text-base font-bold mb-4 uppercase tracking-wider">フォローする</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="bg-[#d7d3c6]/10 hover:bg-[#d7d3c6]/20 p-3 rounded-full transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#d7d3c6]">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" class="bg-[#d7d3c6]/10 hover:bg-[#d7d3c6]/20 p-3 rounded-full transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#d7d3c6]">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-[#d7d3c6]/20 pt-8 text-center">
+    <p class="text-[#d7d3c6]/70 mb-4">© <span class="current-year">2023</span> 合同会社巛（sen llc）All Rights Reserved.</p>
+    <div class="flex justify-center space-x-8">
+      <a href="#" class="text-[#d7d3c6]/70 hover:text-[#d7d3c6] transition-colors">
+        プライバシーポリシー
+      </a>
+      <a href="#" class="text-[#d7d3c6]/70 hover:text-[#d7d3c6] transition-colors">
+        利用規約
+      </a>
+    </div>
+  </div>
+</div>
+</footer>
+
+<script>
+// モバイルメニューの開閉
+document.getElementById('menuButton').addEventListener('click', function() {
+  // 実際の実装ではここにモバイルメニューを表示するコードを追加
+  alert('モバイルメニューが開きます');
+});
+
+// 現在の年を自動的に更新
+document.addEventListener('DOMContentLoaded', function() {
+  const yearElements = document.querySelectorAll('.current-year');
+  const currentYear = new Date().getFullYear();
+  yearElements.forEach(element => {
+    element.textContent = currentYear;
+  });
+});
+</script>
+</body>
+</html>
