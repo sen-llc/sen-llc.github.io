@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>リノベーション - 合同会社巛（sen llc）</title>
+<meta name="description" content="自分だけの空間づくり。設計・インテリア提案も含めて、まるごとサポートします。図面・設計・インテリアまで、自分だけの住まいをつくるお手伝い。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* グローバルスタイル - index.htmlと同じスタイルを適用 */
+:root {
+  --background: 43 14% 94%;
+  --foreground: 154 17% 19%;
+  --card: 0 0% 100%;
+  --card-foreground: 154 17% 19%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 154 17% 19%;
+  --primary: 154 17% 19%;
+  --primary-foreground: 43 14% 94%;
+  --secondary: 33 27% 48%;
+  --secondary-foreground: 43 14% 94%;
+  --muted: 43 14% 94%;
+  --muted-foreground: 154 17% 19%;
+  --accent: 33 27% 48%;
+  --accent-foreground: 43 14% 94%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 43 14% 94%;
+  --border: 154 17% 19%;
+  --input: 154 17% 19%;
+  --ring: 154 17% 19%;
+  --radius: 0.5rem;
+  --rental-primary: 154 17% 19%;
+  --rental-secondary: 43 14% 94%;
+  --rental-accent: 33 27% 48%;
+  --rental-text: 154 17% 19%;
+  --rental-background: 43 14% 94%;
+  --renovation-primary: 33 27% 48%;
+  --renovation-secondary: 43 14% 94%;
+  --renovation-accent: 154 17% 19%;
+  --renovation-text: 154 17% 19%;
+  --renovation-background: 43 14% 94%;
+  --theme-primary: var(--rental-primary);
+  --theme-secondary: var(--rental-secondary);
+  --theme-accent: var(--rental-accent);
+  --theme-text: var(--rental-text);
+  --theme-background: var(--rental-background);
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8f5f0;
+  color: #2a382f;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  font-feature-settings: "palt" 1;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* セクション間隔を広げる */
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* ボタンスタイルの強化 */
+.btn-primary {
+  background-color: transparent;
+  color: #2a382f;
+  border: 1px solid #2a382f;
+  border-radius: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary:hover {
+  background-color: #2a382f;
+  color: #f8f5f0;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #9b785c;
+  border: 1px solid #9b785c;
+  border-radius: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 0.05em;
+}
+
+.btn-secondary:hover {
+  background-color: #9b785c;
+  color: #f8f5f0;
+  transform: translateY(-2px);
+}
+
+/* ヘッダーとフッター */
+.header-modern {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(248, 245, 
