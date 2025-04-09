@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "ブログ記事"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "レイアウト", name: "layout", widget: "hidden", default: "post"}
+      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "公開日", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "タグ", name: "tag", widget: "select", options: ["renovation", "rental", "news"]}
+      - {label: "アイキャッチ画像", name: "featured_image", widget: "image"}
+      - {label: "本文", name: "body", widget: "markdown"}
