@@ -1,0 +1,97 @@
+<footer class="footer-modern">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
+      <div>
+        <a href="{{ '/' | relative_url }}" class="flex items-center mb-6">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%204-my6jh9WIW1WcjnPFwcyjBoscmIofbw.png"
+            alt="sen llc logo"
+            class="h-10 w-auto mr-3 brightness-0 invert"
+          />
+          <span class="text-xl font-normal">sen llc</span>
+        </a>
+        <p class="mt-6 text-base text-[#f8f5f0]/80 tracking-wider leading-relaxed">
+          住む、つくる、手に入れる。<br>
+          最初からデザイン性の高い空間で、<br>
+          あなたらしい暮らしを育んでいきましょう。
+        </p>
+        
+        <!-- SNSアイコン -->
+        <div class="flex space-x-4 mt-8">
+          <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+          <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
+              <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+              <line x1="16" y1="8" x2="2" y2="22"></line>
+              <line x1="17.5" y1="15" x2="9" y2="15"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-base font-normal mb-8 uppercase tracking-wider border-b border-[#f8f5f0]/20 pb-2">サービス</h3>
+            <ul class="space-y-6">
+              <li>
+                <a href="{{ '/rental' | relative_url }}" class="text-[#f8f5f0]/80 hover:text-[#f8f5f0] transition-colors flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                  育てる住まい
+                </a>
+              </li>
+              <li>
+                <a href="{{ '/renovation' | relative_url }}" class="text-[#f8f5f0]/80 hover:text-[#f8f5f0] transition-colors flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                  リノベーション
+                </a>
+              </li>
+              <li>
+                <a href="{{ '/about' | relative_url }}" class="text-[#f8f5f0]/80 hover:text-[#f8f5f0] transition-colors flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                  サイトについて・運営会社
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-base font-normal mb-8 uppercase tracking-wider border-b border-[#f8f5f0]/20 pb-2">お問い合わせ</h3>
+            <p class="text-[#f8f5f0]/80 mb-6">
+              〒150-0002<br>
+              東京都渋谷区渋谷1-1-1 渋谷ビル5F
+            </p>
+            <p class="text-[#f8f5f0]/80 mb-6">
+              TEL: 03-1234-5678<br>
+              Email: info@senllc.jp
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-[#f8f5f0]/20 pt-8 text-center">
+      <p class="text-[#f8f5f0]/70 mb-4">© <span class="current-year">{{ site.time | date: '%Y' }}</span> 合同会社巛（sen llc）All Rights Reserved.</p>
+      <div class="flex justify-center space-x-8">
+        <a href="#" class="text-[#f8f5f0]/70 hover:text-[#f8f5f0] transition-colors">
+          プライバシーポリシー
+        </a>
+        <a href="#" class="text-[#f8f5f0]/70 hover:text-[#f8f5f0] transition-colors">
+          利用規約
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
