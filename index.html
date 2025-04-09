@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>合同会社巛（sen llc） - 住まいを育てる賃貸</title>
-<meta name="description" content="「住む、つくる、手に入れる。」デザイン性の高い空間でありながら、住みながらDIYできる自由があり、気に入れば購入までできる新しい賃貸のカタチ。">
+<title>合同会社巛（sen llc）- 空き家と暮らしを繋ぐ、設計と賃貸の会社</title>
+<meta name="description" content="合同会社巛（sen llc）は空き家と暮らしを繋ぐ、設計と賃貸の会社です。DIY可能な賃貸物件の提供とリノベーション設計を行っています。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -141,174 +141,6 @@ section {
   padding-bottom: 3rem;
 }
 
-/* モダンなボタン */
-.btn-modern {
-  position: relative;
-  transition: all 0.4s ease;
-  overflow: hidden;
-  padding: 0.5rem 0;
-  display: inline-flex;
-  align-items: center;
-  color: #2a382f;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-}
-
-.btn-modern::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s ease;
-}
-
-.btn-modern:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.btn-modern:hover {
-  letter-spacing: 0.08em;
-}
-
-/* キャッチコピー強調 */
-.catchcopy {
-  font-size: 2.5rem;
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: 0.05em;
-  margin-bottom: 3rem;
-  color: #2a382f;
-}
-
-@media (min-width: 768px) {
-  .catchcopy {
-    font-size: 3.5rem;
-  }
-}
-
-/* サービスカード強化 */
-.service-card {
-  background-color: white;
-  border-radius: 0;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  transition: all 0.4s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(42, 56, 47, 0.05);
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
-}
-
-.service-card__title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #2a382f;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.03em;
-}
-
-.service-card__body {
-  padding: 3rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.service-card__text {
-  color: rgba(42, 56, 47, 0.8);
-  margin-bottom: 2rem;
-  flex-grow: 1;
-  line-height: 1.8;
-}
-
-.service-card__footer {
-  margin-top: auto;
-}
-
-/* 対比セクション */
-.comparison-section {
-  background-color: #fff;
-  padding: 8rem 0;
-  margin: 8rem 0;
-}
-
-.comparison-card {
-  background-color: #f8f5f0;
-  border-radius: 0;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.4s ease;
-  position: relative;
-  border: 1px solid rgba(42, 56, 47, 0.05);
-}
-
-.comparison-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-}
-
-.comparison-card__header {
-  padding: 3rem;
-  background-color: white;
-  border-bottom: 1px solid rgba(42, 56, 47, 0.05);
-}
-
-.comparison-card__body {
-  padding: 3rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.comparison-card__title {
-  font-size: 1.75rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
-  letter-spacing: 0.03em;
-}
-
-.comparison-card__text {
-  margin-bottom: 2.5rem;
-  flex-grow: 1;
-  line-height: 1.8;
-}
-
-.comparison-card__footer {
-  margin-top: auto;
-}
-
-.rental-card .comparison-card__title {
-  color: #2a382f;
-}
-
-.renovation-card .comparison-card__title {
-  color: #9b785c;
-}
-
-/* 手描き風アイコン */
-.icon-line {
-  stroke: currentColor;
-  stroke-width: 1;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-}
-
 /* セクション区切り */
 .section-divider {
   height: 1px;
@@ -368,6 +200,182 @@ section {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+/* サービスカード */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  transition: all 0.4s ease;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+  z-index: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card__content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.service-card__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.service-card__text {
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+/* ジャーナルカード */
+.journal-card {
+  background-color: white;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(42, 56, 47, 0.05);
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.journal-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.journal-card__body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-card__tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.journal-card__tag--rental {
+  background-color: rgba(42, 56, 47, 0.1);
+  color: #2a382f;
+}
+
+.journal-card__tag--renovation {
+  background-color: rgba(155, 120, 92, 0.1);
+  color: #9b785c;
+}
+
+.journal-card__tag--news {
+  background-color: rgba(100, 116, 139, 0.1);
+  color: #64748b;
+}
+
+.journal-card__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2a382f;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.journal-card__date {
+  color: rgba(42, 56, 47, 0.6);
+  font-size: 0.75rem;
+  margin-top: auto;
+}
+
+/* ヒーローセクション */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 1;
+}
+
+.hero-section__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-section__content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero-section__title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-section__subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .hero-section__title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-section__subtitle {
+    font-size: 1.5rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -419,174 +427,132 @@ section {
 </div>
 </header>
 
-<main class="pt-24">
-<!-- メインビジュアル -->
-<section class="py-20 md:py-32">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-24 max-w-3xl mx-auto">
-      <h1 class="catchcopy mb-12">
-        <span class="block">住む、</span>
-        <span class="block mt-2">つくる、</span>
-        <span class="block mt-2">手に入れる。</span>
-      </h1>
-      <p class="text-lg md:text-xl text-[#2a382f]/80 max-w-2xl mx-auto leading-relaxed font-light">
-        デザイン性の高い空間でありながら、住みながらDIYできる自由があり、
-        気に入れば購入までできる新しい賃貸のカタチ。
-      </p>
-    </div>
-
-    <!-- サービス選択ボタン -->
-    <div class="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
-      <div class="service-card">
-        <div class="service-card__body">
-          <h2 class="service-card__title text-center">カスタマイズできる賃貸で、暮らしを試す</h2>
-          <p class="service-card__text text-center">
-            DIYで部屋を育てる。懐かしくて温かみのある空き家を、自分好みに変えていく"借りる"という住まい方。
-          </p>
-          <div class="service-card__footer text-center">
-            <a href="rental.html" class="btn-primary">
-              詳しく見る
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-card__body">
-          <h2 class="service-card__title text-center">想いをカタチにする、リノベーション</h2>
-          <p class="service-card__text text-center">
-            図面・設計・インテリアまで、自分だけの住まいをつくるお手伝い。DIY賃貸で物足りなくなった方へ。
-          </p>
-          <div class="service-card__footer text-center">
-            <a href="renovation.html" class="btn-primary">
-              詳しく見る
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+<main>
+<!-- ヒーローセクション -->
+<section class="hero-section">
+  <div class="hero-section__bg bg-gray-200">
+    <!-- 背景画像 -->
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="自然素材の住まい" class="w-full h-full object-cover">
+  </div>
+  <div class="hero-section__content">
+    <h1 class="hero-section__title">住まいに、育てるという選択を</h1>
+    <p class="hero-section__subtitle">空き家と暮らしを繋ぐ、設計と賃貸の会社です</p>
+    <a href="#services" class="btn-primary bg-transparent border-white text-white hover:bg-white hover:text-[#2a382f]">
+      サービスを見る
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    </a>
   </div>
 </section>
 
-<!-- 新しい対比セクション -->
-<section class="comparison-section">
+<!-- サービス導線 -->
+<section id="services" class="py-16 md:py-24">
   <div class="container mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-normal text-center text-[#2a382f] mb-20">Rental と Renovation</h2>
-    
-    <div class="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
-      <!-- Rental Card -->
-      <div class="comparison-card rental-card">
-        <div class="comparison-card__header">
-          <svg class="icon-line w-12 h-12 text-[#2a382f] mx-auto" viewBox="0 0 24 24">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-          </svg>
-        </div>
-        <div class="comparison-card__body">
-          <h3 class="comparison-card__title">カスタマイズできる賃貸で、暮らしを試す</h3>
-          <p class="comparison-card__text">
-            DIYで部屋を育てる。懐かしくて温かみのある空き家を、自分好みに変えていく"借りる"という住まい方。
-          </p>
-        </div>
-        <div class="comparison-card__footer px-12 pb-12">
-          <a href="rental.html" class="btn-primary">
-            Rentalの詳細を見る
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-        </div>
-      </div>
+    <div class="text-center mb-16">
+      <h2 class="text-2xl font-normal text-[#2a382f] mb-6">サービス</h2>
+      <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
+        私たちは「育てる住まい」と「リノベーション」の2つのサービスを提供しています。
+      </p>
+    </div>
 
-      <!-- Renovation Card -->
-      <div class="comparison-card renovation-card">
-        <div class="comparison-card__header">
-          <svg class="icon-line w-12 h-12 text-[#9b785c] mx-auto" viewBox="0 0 24 24">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-          </svg>
-        </div>
-        <div class="comparison-card__body">
-          <h3 class="comparison-card__title">想いをカタチにする、リノベーション</h3>
-          <p class="comparison-card__text">
-            図面・設計・インテリアまで、自分だけの住まいをつくるお手伝い。DIY賃貸で物足りなくなった方へ。
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- 育てる賃貸 -->
+      <a href="rental.html" class="service-card bg-gray-200">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="育てる住まい" class="absolute inset-0 w-full h-full object-cover">
+        <div class="service-card__content">
+          <h3 class="service-card__title">育てる住まい</h3>
+          <p class="service-card__text">
+            既製品じゃない、温もりあるDIY可の賃貸。デザイン性の高い空間でありながら、住みながらDIYできる自由があり、気に入れば購入までできる新しい賃貸のカタチ。
           </p>
-        </div>
-        <div class="comparison-card__footer px-12 pb-12">
-          <a href="renovation.html" class="btn-secondary">
-            Renovationの詳細を見る
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
+          <span class="btn-primary bg-transparent border-white text-white hover:bg-white hover:text-[#2a382f]">
+            詳しく見る
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-          </a>
+          </span>
         </div>
-      </div>
+      </a>
+
+      <!-- リノベーション -->
+      <a href="renovation.html" class="service-card bg-gray-200">
+        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="リノベーション" class="absolute inset-0 w-full h-full object-cover">
+        <div class="service-card__content">
+          <h3 class="service-card__title">リノベーション</h3>
+          <p class="service-card__text">
+            自分だけの空間づくり。設計・インテリア提案も含めて、まるごとサポートします。図面・設計・インテリアまで、自分だけの住まいをつくるお手伝い。
+          </p>
+          <span class="btn-primary bg-transparent border-white text-white hover:bg-white hover:text-[#2a382f]">
+            詳しく見る
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
 <div class="section-divider mx-auto max-w-4xl"></div>
 
-<!-- お知らせセクション -->
-<section class="py-20">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <h2 class="text-2xl md:text-3xl font-normal text-[#2a382f] mb-12 pb-2 border-b border-[#2a382f]/10">お知らせ</h2>
+<!-- 新着投稿 -->
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-2xl font-normal text-[#2a382f] mb-6">JOURNAL</h2>
+      <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
+        最新の活動やプロジェクト、お知らせをご紹介します。
+      </p>
+    </div>
 
-    <div class="space-y-8">
-      <div class="p-6 bg-white">
-        <div class="flex flex-wrap items-center">
-          <span class="text-sm text-[#2a382f]/60 mr-4">2023.12.15</span>
-          <span class="text-xs px-3 py-1 bg-[#2a382f]/5 text-[#2a382f]">イベント</span>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- 記事1 -->
+      <div class="journal-card">
+        <div class="journal-card__image bg-gray-200">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="新しい物件が入りました" class="w-full h-full object-cover">
         </div>
-        <a href="#" class="block mt-3 text-lg font-normal text-[#2a382f] hover:text-[#9b785c] transition-colors">
-          DIYワークショップ「壁塗り体験会」を開催します
-        </a>
-        <p class="mt-3 text-[#2a382f]/70 text-sm">
-          12月25日（土）に、当社スタジオにてDIYワークショップを開催します。今回は壁塗りの基本テクニックを学び、実際に練習ができる体験型のイベントです。
-        </p>
+        <div class="journal-card__body">
+          <span class="journal-card__tag journal-card__tag--rental">育てる住まい</span>
+          <h3 class="journal-card__title">新しい物件が入りました - 小金城址 壁ドンOKハウス</h3>
+          <p class="journal-card__date">2023.10.15</p>
+        </div>
       </div>
 
-      <div class="p-6 bg-white">
-        <div class="flex flex-wrap items-center">
-          <span class="text-sm text-[#2a382f]/60 mr-4">2023.11.20</span>
-          <span class="text-xs px-3 py-1 bg-[#2a382f]/5 text-[#2a382f]">お知らせ</span>
+      <!-- 記事2 -->
+      <div class="journal-card">
+        <div class="journal-card__image bg-gray-200">
+          <img src="https://images.unsplash.com/photo-1617104678098-de229db51175?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="リノベーション事例" class="w-full h-full object-cover">
         </div>
-        <a href="#" class="block mt-3 text-lg font-normal text-[#2a382f] hover:text-[#9b785c] transition-colors">
-          年末年始の営業について（12/28〜1/5休業）
-        </a>
-        <p class="mt-3 text-[#2a382f]/70 text-sm">
-          誠に勝手ながら、2023年12月28日（木）から2024年1月5日（金）まで年末年始休業とさせていただきます。
-        </p>
+        <div class="journal-card__body">
+          <span class="journal-card__tag journal-card__tag--renovation">リノベーション</span>
+          <h3 class="journal-card__title">築40年の一軒家をモダンな空間に - リノベーション事例</h3>
+          <p class="journal-card__date">2023.10.05</p>
+        </div>
       </div>
 
-      <div class="p-6 bg-white">
-        <div class="flex flex-wrap items-center">
-          <span class="text-sm text-[#2a382f]/60 mr-4">2023.10.05</span>
-          <span class="text-xs px-3 py-1 bg-[#2a382f]/5 text-[#2a382f]">物件情報</span>
+      <!-- 記事3 -->
+      <div class="journal-card">
+        <div class="journal-card__image bg-gray-200">
+          <img src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="DIYワークショップ" class="w-full h-full object-cover">
         </div>
-        <a href="#" class="block mt-3 text-lg font-normal text-[#2a382f] hover:text-[#9b785c] transition-colors">
-          新着物件「小金城址 | 壁ドンOKハウス」のご紹介
-        </a>
-        <p class="mt-3 text-[#2a382f]/70 text-sm">
-          千葉県松戸市の小金城址公園近くに、新しい「育てる住まい」物件が登場しました。防音性に優れた二重壁構造を採用し、DIY可能な間取りが特徴です。
-        </p>
+        <div class="journal-card__body">
+          <span class="journal-card__tag journal-card__tag--news">お知らせ</span>
+          <h3 class="journal-card__title">DIYワークショップを開催します - 初心者も大歓迎</h3>
+          <p class="journal-card__date">2023.09.28</p>
+        </div>
       </div>
     </div>
 
-    <div class="mt-16 text-center">
-      <a href="#" class="btn-modern text-[#2a382f] font-normal text-base">
-        お知らせ一覧
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
-          <polyline points="9 18 15 12 9 6"></polyline>
+    <div class="text-center mt-12">
+      <a href="#" class="btn-primary">
+        すべての記事を見る
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
         </svg>
       </a>
     </div>
@@ -691,12 +657,6 @@ section {
           </div>
         </form>
       </div>
-
-      <div class="mt-20 text-center">
-        <p class="mb-4 text-[#2a382f]/80">お電話でのお問い合わせも受け付けております</p>
-        <p class="text-3xl font-normal text-[#2a382f] mb-2">03-1234-5678</p>
-        <p class="text-sm text-[#2a382f]/70">受付時間：平日 10:00〜18:00</p>
-      </div>
     </div>
   </div>
 </section>
@@ -719,6 +679,24 @@ section {
           最初からデザイン性の高い空間で、<br>
           あなたらしい暮らしを育んでいきましょう。
         </p>
+        
+        <!-- SNSアイコン -->
+        <div class="flex space-x-4 mt-8">
+          <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+          <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
+              <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+              <line x1="16" y1="8" x2="2" y2="22"></line>
+              <line x1="17.5" y1="15" x2="9" y2="15"></line>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <div class="md:col-span-2">
@@ -763,21 +741,6 @@ section {
               TEL: 03-1234-5678<br>
               Email: info@senllc.jp
             </p>
-            <h3 class="text-base font-normal mb-6 uppercase tracking-wider">フォローする</h3>
-            <div class="flex space-x-4">
-              <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-              </a>
-              <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-              </a>
-            </div>
           </div>
         </div>
       </div>
