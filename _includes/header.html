@@ -1,0 +1,47 @@
+<header class="fixed top-0 z-50 w-full transition-all duration-300 header-modern py-4">
+  <div class="container mx-auto flex items-center justify-between px-6">
+    <a href="{{ '/' | relative_url }}" class="flex items-center">
+      <img
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%204-my6jh9WIW1WcjnPFwcyjBoscmIofbw.png"
+        alt="sen llc logo"
+        class="h-10 w-auto mr-3"
+      >
+      <span class="text-xl font-normal text-[#2a382f]">sen llc</span>
+    </a>
+
+    <!-- デスクトップナビゲーション -->
+    <nav class="hidden md:block">
+      <ul class="flex space-x-12">
+        <li>
+          <a href="{{ '/rental' | relative_url }}" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
+            育てる住まい
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/renovation' | relative_url }}" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
+            RENOVATION
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/about' | relative_url }}" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
+            ABOUT
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/contact' | relative_url }}" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
+            CONTACT
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- モバイルメニューボタン -->
+    <button class="md:hidden" id="menuButton">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</header>
