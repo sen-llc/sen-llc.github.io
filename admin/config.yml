@@ -1,0 +1,103 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  # 賃貸物件情報（Rentalページ）
+  - name: "rental"
+    label: "Rental Properties"
+    folder: "_rental"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "物件タイトル", name: "title", widget: "string" }
+      - { label: "紹介文（概要）", name: "body", widget: "markdown" }
+
+      - label: "条件・用途"
+        name: "options"
+        widget: "object"
+        fields:
+          - { label: "DIY可", name: "diy", widget: "boolean", default: false }
+          - { label: "シェア可", name: "share", widget: "boolean", default: false }
+          - { label: "ペット可", name: "pet", widget: "boolean", default: false }
+          - { label: "アトリエ可", name: "atelier", widget: "boolean", default: false }
+          - { label: "SOHO可", name: "soho", widget: "boolean", default: false }
+          - { label: "飲食可", name: "restaurant", widget: "boolean", default: false }
+
+      - label: "設備"
+        name: "facilities"
+        widget: "object"
+        fields:
+          - { label: "ガス", name: "gas", widget: "string" }
+          - { label: "上水道", name: "water", widget: "string" }
+          - { label: "下水道", name: "sewer", widget: "string" }
+          - { label: "駐輪場", name: "bicycle", widget: "boolean", default: false }
+          - { label: "駐車場", name: "car", widget: "boolean", default: false }
+          - { label: "バイク置き場", name: "bike", widget: "boolean", default: false }
+          - { label: "エレベーター", name: "elevator", widget: "boolean", default: false }
+          - { label: "エアコン", name: "aircon", widget: "boolean", default: false }
+          - { label: "コンロ", name: "stove", widget: "boolean", default: false }
+          - { label: "洗濯機置き場", name: "washer", widget: "boolean", default: false }
+          - { label: "風呂・シャワー", name: "bath", widget: "boolean", default: false }
+          - { label: "独立洗面台", name: "sink", widget: "boolean", default: false }
+
+      - label: "賃貸条件"
+        name: "terms"
+        widget: "object"
+        fields:
+          - { label: "賃料", name: "rent", widget: "string" }
+          - { label: "管理費", name: "management_fee", widget: "string" }
+          - { label: "敷金", name: "deposit", widget: "string" }
+          - { label: "礼金", name: "key_money", widget: "string" }
+          - { label: "契約形態", name: "contract_type", widget: "string" }
+          - { label: "契約期間", name: "contract_term", widget: "string" }
+          - { label: "仲介手数料", name: "agent_fee", widget: "string" }
+          - { label: "保証会社", name: "guarantor", widget: "string" }
+          - { label: "火災保険", name: "insurance", widget: "string" }
+          - { label: "その他費用", name: "other_costs", widget: "string" }
+
+      - label: "物件情報"
+        name: "details"
+        widget: "object"
+        fields:
+          - { label: "用途", name: "usage", widget: "string" }
+          - { label: "面積（㎡）", name: "area", widget: "string" }
+          - { label: "間取り", name: "floor_plan", widget: "string", required: false }
+          - { label: "方位", name: "direction", widget: "string", required: false }
+          - { label: "階数", name: "floor", widget: "string" }
+          - { label: "構造", name: "structure", widget: "string" }
+          - { label: "築年", name: "built_year", widget: "string" }
+
+      - { label: "所在地", name: "address", widget: "string" }
+      - { label: "最寄駅", name: "station", widget: "string" }
+      - { label: "備考", name: "note", widget: "text", required: false }
+      - { label: "取引様態", name: "agency_type", widget: "string", default: "媒介" }
+      - { label: "公開日", name: "published_at", widget: "datetime", format: "YYYY年MM月DD日" }
+      - { label: "最終更新日", name: "updated_at", widget: "datetime", format: "YYYY年MM月DD日" }
+      - { label: "想定初期費用", name: "initial_cost", widget: "string" }
+
+      - { label: "画像", name: "images", widget: "list", field: { label: "画像", name: "image", widget: "image" } }
+      - { label: "タグ", name: "tags", widget: "select", multiple: true, options: ["住居", "店舗", "SOHO", "DIY可", "事務所", "古民家", "アトリエ", "公開中", "準備中"] }
+
+  # 設計事例（Designページ）
+  - name: "design"
+    label: "Design Projects"
+    folder: "_design"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "プロジェクト名", name: "title", widget: "string" }
+      - { label: "概要（リード文）", name: "lead", widget: "text" }
+      - { label: "本文（詳細説明）", name: "body", widget: "markdown" }
+      - { label: "エリア", name: "location", widget: "string" }
+      - { label: "用途", name: "usage", widget: "select", options: ["戸建住宅", "共同住宅", "店舗", "アトリエ", "その他"] }
+      - { label: "延床面積（㎡）", name: "floor_area", widget: "string" }
+      - { label: "竣工年月", name: "completion", widget: "string" }
+      - { label: "施工会社", name: "contractor", widget: "string" }
+      - { label: "掲載URL", name: "external_link", widget: "string", required: false }
+      - { label: "使用素材・特徴", name: "materials", widget: "list", field: { label: "素材・特徴", name: "item", widget: "string" } }
+      - { label: "画像", name: "images", widget: "list", field: { label: "画像", name: "image", widget: "image" } }
+      - { label: "タグ", name: "tags", widget: "select", multiple: true, options: ["リノベーション", "自然素材", "共用収納", "回遊性", "自邸", "デッドストック活用", "畳・和紙", "完成"] }
