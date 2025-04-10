@@ -1,543 +1,468 @@
+---
+layout: default
+title: Place to Grow - 育てる住まい | 合同会社巛（sen llc）
+description: DIYで自分らしく暮らす・働く場所を、自分の手で育てていく。未完成から始める、新しい住まいの形。
+---
+
 <!DOCTYPE html>
 <html lang="ja" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>育てる住まい - 合同会社巛（sen llc）</title>
-<meta name="description" content="既製品じゃない、温もりあるDIY可の賃貸。デザイン性の高い空間でありながら、住みながらDIYできる自由があり、気に入れば購入までできる新しい賃貸のカタチ。">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <style>
-/* グローバルスタイル - index.htmlと同じスタイルを適用 */
+/* グローバルスタイル */
 :root {
---background: 43 14% 94%;
---foreground: 154 17% 19%;
---card: 0 0% 100%;
---card-foreground: 154 17% 19%;
---popover: 0 0% 100%;
---popover-foreground: 154 17% 19%;
---primary: 154 17% 19%;
---primary-foreground: 43 14% 94%;
---secondary: 33 27% 48%;
---secondary-foreground: 43 14% 94%;
---muted: 43 14% 94%;
---muted-foreground: 154 17% 19%;
---accent: 33 27% 48%;
---accent-foreground: 43 14% 94%;
---destructive: 0 84.2% 60.2%;
---destructive-foreground: 43 14% 94%;
---border: 154 17% 19%;
---input: 154 17% 19%;
---ring: 154 17% 19%;
---radius: 0.5rem;
---rental-primary: 154 17% 19%;
---rental-secondary: 43 14% 94%;
---rental-accent: 33 27% 48%;
---rental-text: 154 17% 19%;
---rental-background: 43 14% 94%;
---renovation-primary: 33 27% 48%;
---renovation-secondary: 43 14% 94%;
---renovation-accent: 154 17% 19%;
---renovation-text: 154 17% 19%;
---renovation-background: 43 14% 94%;
---theme-primary: var(--rental-primary);
---theme-secondary: var(--rental-secondary);
---theme-accent: var(--rental-accent);
---theme-text: var(--rental-text);
---theme-background: var(--rental-background);
+  --background: 43 14% 94%;
+  --foreground: 154 17% 19%;
+  --card: 0 0% 100%;
+  --card-foreground: 154 17% 19%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 154 17% 19%;
+  --primary: 154 17% 19%;
+  --primary-foreground: 43 14% 94%;
+  --secondary: 33 27% 48%;
+  --secondary-foreground: 43 14% 94%;
+  --muted: 43 14% 94%;
+  --muted-foreground: 154 17% 19%;
+  --accent: 33 27% 48%;
+  --accent-foreground: 43 14% 94%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 43 14% 94%;
+  --border: 154 17% 19%;
+  --input: 154 17% 19%;
+  --ring: 154 17% 19%;
+  --radius: 0.5rem;
+  --rental-primary: 154 17% 19%;
+  --rental-secondary: 43 14% 94%;
+  --rental-accent: 33 27% 48%;
+  --rental-text: 154 17% 19%;
+  --rental-background: 43 14% 94%;
+  --renovation-primary: 33 27% 48%;
+  --renovation-secondary: 43 14% 94%;
+  --renovation-accent: 154 17% 19%;
+  --renovation-text: 154 17% 19%;
+  --renovation-background: 43 14% 94%;
+  --theme-primary: var(--rental-primary);
+  --theme-secondary: var(--rental-secondary);
+  --theme-accent: var(--rental-accent);
+  --theme-text: var(--rental-text);
+  --theme-background: var(--rental-background);
 }
 
 * {
-border-color: hsl(var(--border));
+  border-color: hsl(var(--border));
 }
 
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-background-color: #f8f5f0;
-color: #2a382f;
-font-family: 'Zen Maru Gothic', sans-serif;
--webkit-overflow-scrolling: touch;
-font-feature-settings: "palt" 1;
-letter-spacing: 0.02em;
-line-height: 1.8;
-font-weight: 300;
+  background-color: #f8f5f0;
+  color: #2a382f;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  font-feature-settings: "palt" 1;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  font-weight: 300;
 }
 
 /* セクション間隔を広げる */
 section {
-padding-top: 6rem;
-padding-bottom: 6rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 @media (min-width: 768px) {
-section {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
+  section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 
 /* ボタンスタイルの強化 */
 .btn-primary {
-background-color: transparent;
-color: #2a382f;
-border: 1px solid #2a382f;
-border-radius: 0;
-padding: 0.75rem 1.5rem;
-font-weight: 400;
-display: inline-flex;
-align-items: center;
-transition: all 0.4s ease;
-position: relative;
-overflow: hidden;
-z-index: 1;
-letter-spacing: 0.05em;
+  background-color: transparent;
+  color: #2a382f;
+  border: 1px solid #2a382f;
+  border-radius: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 0.05em;
 }
 
 .btn-primary:hover {
-background-color: #2a382f;
-color: #f8f5f0;
-transform: translateY(-2px);
+  background-color: #2a382f;
+  color: #f8f5f0;
+  transform: translateY(-2px);
 }
 
 /* ヘッダーとフッター */
 .header-modern {
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-background-color: rgba(248, 245, 240, 0.9);
-border-bottom: 1px solid rgba(42, 56, 47, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(248, 245, 240, 0.9);
+  border-bottom: 1px solid rgba(42, 56, 47, 0.05);
 }
 
 .footer-modern {
-background-color: #2a382f;
-color: #f8f5f0;
-padding-top: 5rem;
-padding-bottom: 3rem;
+  background-color: #2a382f;
+  color: #f8f5f0;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
 }
 
 /* セクション区切り */
 .section-divider {
-height: 1px;
-background: rgba(42, 56, 47, 0.1);
-margin: 8rem 0;
-}
-
-/* フォーム改善 */
-.form-control {
-margin-bottom: 2rem;
-}
-
-.form-label {
-display: block;
-margin-bottom: 0.75rem;
-font-weight: 400;
-color: #2a382f;
-letter-spacing: 0.03em;
-}
-
-.form-input {
-width: 100%;
-padding: 0.75rem 0;
-border: none;
-border-bottom: 1px solid rgba(42, 56, 47, 0.2);
-transition: all 0.3s ease;
-background-color: transparent;
-border-radius: 0;
-}
-
-.form-input:focus {
-border-color: #2a382f;
-outline: none;
+  height: 1px;
+  background: rgba(42, 56, 47, 0.1);
+  margin: 8rem 0;
 }
 
 /* ナビゲーション */
 .nav-link {
-position: relative;
-transition: all 0.4s ease;
-letter-spacing: 0.05em;
+  position: relative;
+  transition: all 0.4s ease;
+  letter-spacing: 0.05em;
 }
 
 .nav-link::after {
-content: "";
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 1px;
-background-color: currentColor;
-transform: scaleX(0);
-transform-origin: right;
-transition: transform 0.4s ease;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
 }
 
 .nav-link:hover::after {
-transform: scaleX(1);
-transform-origin: left;
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-/* 物件カード */
+/* プロパティカード */
 .property-card {
-background-color: white;
-border-radius: 0;
-overflow: hidden;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-transition: all 0.4s ease;
-height: 100%;
-display: flex;
-flex-direction: column;
-border: 1px solid rgba(42, 56, 47, 0.05);
+  background-color: white;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .property-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-.property-card__image {
-width: 100%;
-height: 240px;
-object-fit: cover;
+.property-image {
+  position: relative;
+  height: 0;
+  padding-bottom: 66.67%; /* 3:2 aspect ratio */
+  overflow: hidden;
 }
 
-.property-card__body {
-padding: 2rem;
-flex-grow: 1;
-display: flex;
-flex-direction: column;
+.property-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.property-card__title {
-font-size: 1.5rem;
-font-weight: 500;
-color: #2a382f;
-margin-bottom: 1rem;
-letter-spacing: 0.03em;
+.property-card:hover .property-image img {
+  transform: scale(1.05);
 }
 
-.property-card__text {
-color: rgba(42, 56, 47, 0.8);
-margin-bottom: 1.5rem;
-flex-grow: 1;
+.property-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.property-card__footer {
-margin-top: auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-top: 1px solid rgba(42, 56, 47, 0.1);
-padding-top: 1.5rem;
+.property-tag {
+  display: inline-block;
+  background-color: rgba(155, 120, 92, 0.1);
+  color: #9b785c;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.property-card__price {
-font-size: 1.25rem;
-font-weight: 500;
-color: #2a382f;
+.property-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
 }
 
-/* Before/After */
-.before-after {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 2rem;
+.property-description {
+  color: rgba(42, 56, 47, 0.8);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
-.before-after__item {
-position: relative;
+/* Swiper カスタマイズ */
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
-.before-after__image {
-width: 100%;
-height: 300px;
-object-fit: cover;
+.swiper-pagination-bullet {
+  background: #2a382f;
+  opacity: 0.5;
 }
 
-.before-after__label {
-position: absolute;
-top: 1rem;
-left: 1rem;
-background-color: rgba(42, 56, 47, 0.8);
-color: white;
-padding: 0.5rem 1rem;
-font-size: 0.875rem;
-letter-spacing: 0.05em;
+.swiper-pagination-bullet-active {
+  background: #2a382f;
+  opacity: 1;
 }
 
-/* Coming Soon */
-.coming-soon {
-background-color: white;
-padding: 4rem;
-text-align: center;
-margin: 4rem 0;
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2a382f;
 }
 
-.coming-soon__title {
-font-size: 1.5rem;
-font-weight: 500;
-margin-bottom: 1.5rem;
-letter-spacing: 0.03em;
+/* コンセプトセクション */
+.concept-item {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  height: 100%;
+  transition: all 0.3s ease;
 }
 
-.coming-soon__text {
-max-width: 600px;
-margin: 0 auto;
-color: rgba(42, 56, 47, 0.8);
+.concept-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
 }
 
-/* DIY活動ギャラリー */
-.diy-gallery {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-.diy-gallery {
-  grid-template-columns: repeat(4, 1fr);
-}
-}
-
-.diy-gallery__item {
-position: relative;
-overflow: hidden;
-border-radius: 0;
-height: 0;
-padding-bottom: 100%;
-}
-
-.diy-gallery__image {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: transform 0.4s ease;
-}
-
-.diy-gallery__item:hover .diy-gallery__image {
-transform: scale(1.05);
-}
-
-/* 構想ボックス */
-.vision-box {
-background-color: white;
-border-left: 4px solid #2a382f;
-padding: 2rem;
-margin: 2rem 0;
-}
-
-.vision-box__title {
-font-size: 1.25rem;
-font-weight: 500;
-margin-bottom: 1.5rem;
-color: #2a382f;
-}
-
-.vision-box__list {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-.vision-box__item {
-position: relative;
-padding-left: 2rem;
-margin-bottom: 1rem;
-}
-
-.vision-box__item::before {
-content: "";
-position: absolute;
-left: 0;
-top: 0.5rem;
-width: 0.5rem;
-height: 0.5rem;
-background-color: #9b785c;
-border-radius: 50%;
-}
-
-/* CTA */
-.cta-box {
-background-color: #2a382f;
-color: white;
-padding: 3rem;
-text-align: center;
-margin-top: 4rem;
-}
-
-.cta-box__title {
-font-size: 1.5rem;
-font-weight: 500;
-margin-bottom: 1rem;
-}
-
-.cta-box__text {
-max-width: 600px;
-margin: 0 auto 2rem;
-opacity: 0.9;
-}
-
-.cta-box__button {
-background-color: transparent;
-color: white;
-border: 1px solid white;
-border-radius: 0;
-padding: 0.75rem 1.5rem;
-font-weight: 400;
-display: inline-flex;
-align-items: center;
-transition: all 0.4s ease;
-}
-
-.cta-box__button:hover {
-background-color: white;
-color: #2a382f;
-transform: translateY(-2px);
-}
-
-/* 育てる賃貸とは？セクション */
-.about-rental {
-display: flex;
-flex-direction: column;
-}
-
-@media (min-width: 768px) {
-.about-rental {
-  flex-direction: row;
+.concept-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(42, 56, 47, 0.05);
+  border-radius: 50%;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.about-rental__content {
-  width: 50%;
-  padding-right: 4rem;
+.concept-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
-.about-rental__image {
-  width: 50%;
-}
-}
-
-.about-rental__title {
-font-size: 2rem;
-font-weight: 500;
-margin-bottom: 2rem;
-line-height: 1.3;
+.concept-description {
+  color: rgba(42, 56, 47, 0.8);
 }
 
-.about-rental__text {
-margin-bottom: 2rem;
+/* プログレスセクション */
+.progress-section {
+  background-color: rgba(215, 211, 198, 0.3);
 }
 
-.about-rental__image {
-border-radius: 0;
-overflow: hidden;
-margin-top: 2rem;
+.progress-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
 }
 
-@media (min-width: 768px) {
-.about-rental__image {
-  margin-top: 0;
-}
+.progress-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(42, 56, 47, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
 }
 
-.about-rental__img {
-width: 100%;
-height: 100%;
-object-fit: cover;
+.progress-content {
+  flex-grow: 1;
+}
+
+.progress-title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.progress-description {
+  color: rgba(42, 56, 47, 0.8);
+  font-size: 0.9375rem;
+}
+
+/* CTA セクション */
+.cta-section {
+  background-color: white;
+  text-align: center;
 }
 </style>
 </head>
 <body>
 <header class="fixed top-0 z-50 w-full transition-all duration-300 header-modern py-4">
 <div class="container mx-auto flex items-center justify-between px-6">
-  <a href="index.html" class="flex items-center">
-    <img
-      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%204-my6jh9WIW1WcjnPFwcyjBoscmIofbw.png"
-      alt="sen llc logo"
-      class="h-10 w-auto mr-3"
-    >
-    <span class="text-xl font-normal text-[#2a382f]">sen llc</span>
-  </a>
+<a href="index.html" class="flex items-center">
+<img
+  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%204-my6jh9WIW1WcjnPFwcyjBoscmIofbw.png"
+  alt="sen llc logo"
+  class="h-10 w-auto mr-3"
+>
+<span class="text-xl font-normal text-[#2a382f]">sen llc</span>
+</a>
 
-  <!-- デスクトップナビゲーション -->
-  <nav class="hidden md:block">
-    <ul class="flex space-x-12">
-      <li>
-        <a href="rental.html" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
-          育てる住まい
-        </a>
-      </li>
-      <li>
-        <a href="renovation.html" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
-          RENOVATION
-        </a>
-      </li>
-      <li>
-        <a href="about.html" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
-          ABOUT
-        </a>
-      </li>
-      <li>
-        <a href="#contact" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
-          CONTACT
-        </a>
-      </li>
-    </ul>
-  </nav>
+<!-- デスクトップナビゲーション -->
+<nav class="hidden md:block">
+<ul class="flex space-x-12">
+  <li>
+    <a href="rental.html" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
+      育てる住まい
+    </a>
+  </li>
+  <li>
+    <a href="renovation.html" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
+      RENOVATION
+    </a>
+  </li>
+  <li>
+    <a href="about.html" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
+      ABOUT
+    </a>
+  </li>
+  <li>
+    <a href="contact.html" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-normal py-2 inline-block nav-link">
+      CONTACT
+    </a>
+  </li>
+</ul>
+</nav>
 
-  <!-- モバイルメニューボタン -->
-  <button class="md:hidden" id="menuButton">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </button>
+<!-- モバイルメニューボタン -->
+<button class="md:hidden" id="menuButton">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
+  <line x1="3" y1="12" x2="21" y2="12"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+</button>
 </div>
 </header>
 
 <main class="pt-24">
-<!-- メインビジュアル -->
-<section class="py-20 md:py-32">
-<div class="container mx-auto px-6">
+<!-- ヒーローセクション -->
+<section class="py-20 md:py-32 relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+  <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="育てる住まいのイメージ" class="w-full h-full object-cover opacity-20">
+</div>
+<div class="container mx-auto px-6 relative z-10">
   <div class="text-center mb-20 max-w-3xl mx-auto">
-    <h1 class="text-3xl md:text-5xl font-normal text-[#2a382f] mb-8">育てる住まい</h1>
+    <h1 class="text-3xl md:text-5xl font-normal text-[#2a382f] mb-8">Place to Grow</h1>
     <p class="text-xl text-[#2a382f] max-w-2xl mx-auto font-normal mb-8">
-      既製品じゃない、温もりあるDIY可の賃貸
+      育てる空間、はじめませんか？
     </p>
     <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
-      デザイン性の高い空間でありながら、住みながらDIYできる自由があり、
-      気に入れば購入までできる新しい賃貸のカタチ。
+      DIYで、自分らしく暮らす／働く場所を、自分の手で育てていく。未完成から始める、新しい住まいの形。
     </p>
   </div>
 </div>
 </section>
 
-<!-- 育てる賃貸とは？ -->
-<section class="py-16 md:py-24 bg-white">
+<!-- プログレスアップデート -->
+<section class="progress-section py-16 md:py-24">
 <div class="container mx-auto px-6">
-  <div class="about-rental">
-    <div class="about-rental__content">
-      <h2 class="about-rental__title">育てる賃貸とは？<br>借りて終わらない、育てて続く住まい</h2>
-      <p class="about-rental__text">
-        「育てる賃貸」は、単に住むだけの賃貸ではなく、住み手自身が手を加え、愛着を持って長く住み続けられる住まいのカタチです。
-      </p>
-      <p class="about-rental__text">
-        DIYで壁を塗ったり、棚を作ったり、庭に植物を植えたり。住み手の手によって少しずつ変化していく住まいは、時間とともに愛着が増し、
-        その場所への思い入れも深まっていきます。
-      </p>
-      <p class="about-rental__text">
-        また、DIYを通じて地域の人々と交流したり、技術を学び合ったりすることで、住まいだけでなく、地域とのつながりも育んでいきます。
-        借りるだけで終わらない、育てて続く住まいの新しいカタチをご提案します。
-      </p>
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-normal text-[#2a382f] mb-12 text-center">現在の進捗状況</h2>
+    
+    <p class="text-center text-[#2a382f]/80 mb-12">
+      DIY可能な空間を提供するために、現在準備を進めています。<br>
+      場所が整うまでの時間も、私たちにとっては大切な"育てる"時間です。
+    </p>
+    
+    <div class="space-y-6 mb-12">
+      <div class="progress-item">
+        <div class="progress-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+        <div class="progress-content">
+          <h3 class="progress-title">DIYワークショップへの参加</h3>
+          <p class="progress-description">
+            DIYの技術を高めるために、各種ワークショップに参加しています。壁塗り、床張り、家具製作など、実践的なスキルを習得中です。
+          </p>
+        </div>
+      </div>
+      
+      <div class="progress-item">
+        <div class="progress-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        <div class="progress-content">
+          <h3 class="progress-title">空き家の調査・視察</h3>
+          <p class="progress-description">
+            地域の空き家を調査し、DIY可能な物件としての可能性を探っています。所有者との対話を通じて、活用方法を模索中です。
+          </p>
+        </div>
+      </div>
+      
+      <div class="progress-item">
+        <div class="progress-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div class="progress-content">
+          <h3 class="progress-title">地域の職人・コミュニティとの連携</h3>
+          <p class="progress-description">
+            地元の大工や職人、DIYコミュニティと連携し、サポート体制を構築しています。入居者が安心してDIYに取り組める環境づくりを目指しています。
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="about-rental__image">
-      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="育てる住まいのイメージ" class="about-rental__img">
+    
+    <div class="text-center">
+      <p class="mb-6 text-[#2a382f]/80">日々の活動の様子は Instagram でも更新中です。</p>
+      <a href="https://www.instagram.com/your_account" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        ▶ Instagramを見てみる
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+        </svg>
+      </a>
     </div>
   </div>
 </div>
@@ -545,361 +470,263 @@ object-fit: cover;
 
 <div class="section-divider mx-auto max-w-4xl"></div>
 
-<!-- 今の活動 -->
+<!-- プロパティリスト（Coming Soon） -->
 <section class="py-16 md:py-24">
 <div class="container mx-auto px-6">
-  <div class="text-center mb-16">
-    <h2 class="text-2xl font-normal text-[#2a382f] mb-6">今の活動</h2>
-    <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
-      DIY会に参加しながら、素材の扱い方や工具の選び方を学んでいます。
-      住まいを自分の手で育てていくための知識と技術を身につけるための活動をご紹介します。
-    </p>
-  </div>
-
-  <div class="diy-gallery mb-12">
-    <div class="diy-gallery__item">
-      <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="DIY会の様子1" class="diy-gallery__image">
-    </div>
-    <div class="diy-gallery__item">
-      <img src="https://images.unsplash.com/photo-1621274147744-cfb5753934fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="DIY会の様子2" class="diy-gallery__image">
-    </div>
-    <div class="diy-gallery__item">
-      <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="DIY会の様子3" class="diy-gallery__image">
-    </div>
-    <div class="diy-gallery__item">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="DIY会の様子4" class="diy-gallery__image">
-    </div>
-  </div>
-
-  <div class="bg-[#2a382f]/5 p-8 max-w-3xl mx-auto">
-    <p class="text-[#2a382f] italic">
-      「素材の扱い方や、工具の選び方を学んでいます。最初は難しく感じることもありますが、仲間と一緒に作業することで、
-      徐々に技術が身についていくのを実感しています。自分の手で住まいを変えていく喜びを、多くの人に知ってもらいたいです。」
-    </p>
-    <p class="text-right mt-4 text-[#2a382f]/80">
-      - DIY会参加者
-    </p>
-  </div>
-</section>
-
-<!-- 今後の構想 -->
-<section class="py-16 md:py-24 bg-white">
-<div class="container mx-auto px-6">
-  <div class="text-center mb-16">
-    <h2 class="text-2xl font-normal text-[#2a382f] mb-6">今後の構想</h2>
-    <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
-      空き家を地域の住まいに育てていく構想を進めています。
-    </p>
-  </div>
-
-  <div class="vision-box max-w-3xl mx-auto">
-    <h3 class="vision-box__title">空き家を地域の住まいに育てていく構想</h3>
-    <ul class="vision-box__list">
-      <li class="vision-box__item">
-        地域の空き家を調査し、リノベーションの可能性を探る
-      </li>
-      <li class="vision-box__item">
-        所有者と協力し、DIY可能な賃貸物件として再生
-      </li>
-      <li class="vision-box__item">
-        入居者向けのDIYワークショップを定期的に開催
-      </li>
-      <li class="vision-box__item">
-        地域の職人や専門家と連携し、技術サポート体制を構築
-      </li>
-      <li class="vision-box__item">
-        入居者同士の交流イベントを通じて、コミュニティを形成
-      </li>
-      <li class="vision-box__item">
-        長期的には、入居者が物件を購入できる仕組みづくり
-      </li>
-      <li class="vision-box__item">
-        空き家問題の解決と地域活性化の両立を目指す
-      </li>
-    </ul>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta-box max-w-3xl mx-auto">
-    <h3 class="cta-box__title">育てる仲間募集中</h3>
-    <p class="cta-box__text">
-      住まいを育てる楽しさを共有しませんか？DIY初心者も大歓迎です。
-      一緒に手を動かし、住まいと地域を育てていく仲間を募集しています。
-    </p>
-    <a href="#contact" class="cta-box__button">
-      お問い合わせする
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
-        <line x1="5" y1="12" x2="19" y2="12"></line>
-        <polyline points="12 5 19 12 12 19"></polyline>
-      </svg>
-    </a>
-  </div>
-</section>
-
-<div class="section-divider mx-auto max-w-4xl"></div>
-
-<!-- 物件一覧 -->
-<section class="py-16 md:py-24">
-<div class="container mx-auto px-6">
-  <div class="text-center mb-16">
-    <h2 class="text-2xl font-normal text-[#2a382f] mb-6">物件一覧</h2>
-    <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
-      現在ご紹介可能な物件です。お気軽にお問い合わせください。
-    </p>
-  </div>
-
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <h2 class="text-2xl md:text-3xl font-normal text-[#2a382f] mb-12 text-center">物件情報</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+    <!-- プロパティカード1 -->
     <div class="property-card">
-      <div class="property-card__image">
-        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="小金城址 壁ドンOKハウス" class="w-full h-full object-cover">
-      </div>
-      <div class="property-card__body">
-        <h3 class="property-card__title">小金城址 | 壁ドンOKハウス</h3>
-        <p class="property-card__text">
-          千葉県松戸市の小金城址公園近くに位置する、防音性に優れた二重壁構造を採用した物件。DIY可能な間取りが特徴です。
-        </p>
-        <div class="property-card__footer">
-          <div class="property-card__price">¥85,000/月</div>
-          <a href="#" class="btn-primary text-sm">
-            詳細を見る
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+      <div class="property-image">
+        <div class="swiper property-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="物件イメージ">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
+      </div>
+      <div class="property-content">
+        <span class="property-tag">Coming Soon</span>
+        <h3 class="property-title">渋谷区の古民家</h3>
+        <p class="property-description">
+          築50年の古民家を、DIY可能な住居として再生予定。木の温もりを活かしながら、自分らしい空間づくりが可能です。
+        </p>
+      </div>
+    </div>
+    
+    <!-- プロパティカード2 -->
+    <div class="property-card">
+      <div class="property-image">
+        <div class="swiper property-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="物件イメージ">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="property-content">
+        <span class="property-tag">Coming Soon</span>
+        <h3 class="property-title">下北沢のアパートメント</h3>
+        <p class="property-description">
+          下北沢駅徒歩7分の好立地。壁紙や床材の変更が可能なDIY賃貸。小規模な店舗利用も相談可能です。
+        </p>
       </div>
     </div>
   </div>
+  
+  <p class="text-center text-[#2a382f]/70 mt-12">
+    現在、DIY可能な空間を準備中です。近日公開予定。
+  </p>
+</div>
+</section>
 
-  <!-- Coming Soon -->
-  <div class="coming-soon">
-    <h3 class="coming-soon__title">Coming Soon</h3>
-    <p class="coming-soon__text">
-      現在、新しい物件の準備を進めています。最新情報はお知らせやSNSでご案内いたします。
+<div class="section-divider mx-auto max-w-4xl"></div>
+
+<!-- コンセプトセクション -->
+<section class="py-16 md:py-24 bg-white">
+<div class="container mx-auto px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-normal text-[#2a382f] mb-6 text-center">What is Place to Grow?</h2>
+    <p class="text-center text-[#2a382f]/80 mb-12 max-w-3xl mx-auto">
+      Place to Growは、単なる住まいではなく、あなた自身が育て、成長させていく場所です。<br>
+      住むため、働くため、創造するための空間を、あなた自身の手で形づくっていきます。
     </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <div class="concept-item">
+        <div class="concept-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        <h3 class="concept-title">住まいでもお店でも、使いながら育てていける</h3>
+        <p class="concept-description">
+          住居としてはもちろん、小規模なショップやアトリエとしても利用可能。あなたの用途に合わせて、空間を育てていくことができます。
+        </p>
+      </div>
+      
+      <div class="concept-item">
+        <div class="concept-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+        <h3 class="concept-title">完成品じゃなく、余白を楽しむ住まい</h3>
+        <p class="concept-description">
+          最初から完璧な空間ではなく、あなた自身が手を加えていける「余白」のある住まい。DIYの過程そのものを楽しむことができます。
+        </p>
+      </div>
+      
+      <div class="concept-item">
+        <div class="concept-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z"></path>
+          </svg>
+        </div>
+        <h3 class="concept-title">自分のペースで、素材や空間を調整できる</h3>
+        <p class="concept-description">
+          急いで完成させる必要はありません。時間をかけて、少しずつ、あなたらしい空間に変えていくことができます。必要に応じてプロのサポートも受けられます。
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 </section>
 
-<!-- Contact Form -->
-<section id="contact" class="bg-white py-24 md:py-32">
+<!-- デザインページへのリンク -->
+<section class="cta-section py-16 md:py-24">
 <div class="container mx-auto px-6">
-  <div class="mb-20 text-center">
-    <h2 class="mb-4 text-3xl md:text-4xl font-normal text-[#2a382f]">CONTACT</h2>
-    <p class="text-sm text-[#2a382f]/70 tracking-wider">お問い合わせ</p>
-  </div>
-  <div class="mx-auto max-w-3xl">
-    <div class="bg-[#f8f5f0] p-12 md:p-16">
-      <h3 class="mb-12 text-2xl font-normal text-[#2a382f] text-center">お問い合わせフォーム</h3>
-      <form class="space-y-8">
-        <div class="grid gap-12 md:grid-cols-2">
-          <div class="form-control">
-            <label for="name" class="form-label">
-              お名前 <span class="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              class="form-input"
-              required
-            />
-          </div>
-          <div class="form-control">
-            <label for="email" class="form-label">
-              メールアドレス <span class="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              class="form-input"
-              required
-            />
-          </div>
-        </div>
-
-        <div class="form-control">
-          <label for="inquiryType" class="form-label">
-            お問い合わせ内容 <span class="text-red-500">*</span>
-          </label>
-          <select
-            id="inquiryType"
-            class="form-input"
-            required
-          >
-            <option value="">お問い合わせ内容を選択してください</option>
-            <option value="rental">育てる住まいについて</option>
-            <option value="renovation">リノベーションについて</option>
-            <option value="other">その他のお問い合わせ</option>
-          </select>
-        </div>
-
-        <div class="form-control">
-          <label for="message" class="form-label">
-            メッセージ <span class="text-red-500">*</span>
-          </label>
-          <textarea
-            id="message"
-            rows="5"
-            class="form-input"
-            required
-          ></textarea>
-        </div>
-
-        <!-- プライバシーポリシー同意チェックボックス -->
-        <div class="flex items-start">
-          <div class="flex items-center h-5">
-            <input
-              id="privacy"
-              type="checkbox"
-              class="w-4 h-4 border border-[#2a382f]/20 rounded focus:ring-[#2a382f]"
-              required
-            />
-          </div>
-          <div class="ml-3 text-sm">
-            <label for="privacy" class="text-[#2a382f]/80">
-              <a href="#" class="text-[#2a382f] underline hover:text-[#2a382f]/80" target="_blank">
-                プライバシーポリシー
-              </a>
-              を読み、同意します <span class="text-red-500">*</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="text-center pt-8">
-          <button
-            type="submit"
-            class="btn-primary py-4 px-10"
-          >
-            送信する
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2 inline-block">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </button>
-        </div>
-      </form>
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-normal text-[#2a382f] mb-8">もっと深く空間をつくってみたい？</h2>
+    <a href="design.html" class="btn-primary">
+      ▶ 設計・デザインページを見る
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="  stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
     </div>
   </div>
-</div>
 </section>
 </main>
 
 <footer class="footer-modern">
 <div class="container mx-auto px-6">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
-    <div>
-      <a href="index.html" class="flex items-center mb-6">
-        <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%204-my6jh9WIW1WcjnPFwcyjBoscmIofbw.png"
-          alt="sen llc logo"
-          class="h-10 w-auto mr-3 brightness-0 invert"
-        />
-        <span class="text-xl font-normal">sen llc</span>
-      </a>
-      <p class="mt-6 text-base text-[#f8f5f0]/80 tracking-wider leading-relaxed">
-        住む、つくる、手に入れる。<br>
-        最初からデザイン性の高い空間で、<br>
-        あなたらしい暮らしを育んでいきましょう。
-      </p>
-      
-      <!-- SNSフォロー導線 -->
-      <div class="mt-8">
-        <p class="text-[#f8f5f0] mb-4 font-medium">育てる仲間になりませんか？</p>
-        <div class="flex space-x-4">
-          <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-            </svg>
-          </a>
-          <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
-              <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-              <line x1="16" y1="8" x2="2" y2="22"></line>
-              <line x1="17.5" y1="15" x2="9" y2="15"></line>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="md:col-span-2">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-          <h3 class="text-base font-normal mb-8 uppercase tracking-wider border-b border-[#f8f5f0]/20 pb-2">サービス</h3>
-          <ul class="space-y-6">
-            <li>
-              <a href="rental.html" class="text-[#f8f5f0]/80 hover:text-[#f8f5f0] transition-colors flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-                育てる住まい
-              </a>
-            </li>
-            <li>
-              <a href="renovation.html" class="text-[#f8f5f0]/80 hover:text-[#f8f5f0] transition-colors flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-                リノベーション
-              </a>
-            </li>
-            <li>
-              <a href="about.html" class="text-[#f8f5f0]/80 hover:text-[#f8f5f0] transition-colors flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-                サイトについて・運営会社
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-base font-normal mb-8 uppercase tracking-wider border-b border-[#f8f5f0]/20 pb-2">お問い合わせ</h3>
-          <p class="text-[#f8f5f0]/80 mb-6">
-            〒150-0002<br>
-            東京都渋谷区渋谷1-1-1 渋谷ビル5F
-          </p>
-          <p class="text-[#f8f5f0]/80 mb-6">
-            TEL: 03-1234-5678<br>
-            Email: info@senllc.jp
-          </p>
-        </div>
-      </div>
-    </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
+<div>
+  <a href="index.html" class="flex items-center mb-6">
+    <img
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%204-my6jh9WIW1WcjnPFwcyjBoscmIofbw.png"
+      alt="sen llc logo"
+      class="h-10 w-auto mr-3 brightness-0 invert"
+    />
+    <span class="text-xl font-normal">sen llc</span>
+  </a>
+  <p class="mt-6 text-base text-[#f8f5f0]/80 tracking-wider leading-relaxed">
+    住む、つくる、手に入れる。<br>
+    最初からデザイン性の高い空間で、<br>
+    あなたらしい暮らしを育んでいきましょう。
+  </p>
+  
+  <!-- SNSアイコン -->
+  <div class="flex space-x-4 mt-8">
+    <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+      </svg>
+    </a>
+    <a href="#" class="bg-[#f8f5f0]/10 hover:bg-[#f8f5f0]/20 p-3 rounded-full transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#f8f5f0]">
+        <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+        <line x1="16" y1="8" x2="2" y2="22"></line>
+        <line x1="17.5" y1="15" x2="9" y2="15"></line>
+      </svg>
+    </a>
   </div>
+</div>
 
-  <div class="border-t border-[#f8f5f0]/20 pt-8 text-center">
-    <p class="text-[#f8f5f0]/70 mb-4">© <span class="current-year">2023</span> 合同会社巛（sen llc）All Rights Reserved.</p>
-    <div class="flex justify-center space-x-8">
-      <a href="#" class="text-[#f8f5f0]/70 hover:text-[#f8f5f0] transition-colors">
-        プライバシーポリシー
-      </a>
-      <a href="#" class="text-[#f8f5f0]/70 hover:text-[#f8f5f0] transition-colors">
-        利用規約
-      </a>
+<div class="md:col-span-2">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div>
+      <h3 class="text-base font-normal mb-8 uppercase tracking-wider border-b border-[#f8f5f0]/20 pb-2">サービス</h3>
+      <ul class="space-y-6">
+        <li>
+          <a href="rental.html" class="text-[#f8f5f0]/80 hover:text-[#f8f5f0] transition-colors flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            育てる住まい
+          </a>
+        </li>
+        <li>
+          <a href="renovation.html" class="text-[#f8f5f0]/80 hover:text-[#f8f5f0] transition-colors flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            リノベーション
+          </a>
+        </li>
+        <li>
+          <a href="about.html" class="text-[#f8f5f0]/80 hover:text-[#f8f5f0] transition-colors flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            サイトについて・運営会社
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-base font-normal mb-8 uppercase tracking-wider border-b border-[#f8f5f0]/20 pb-2">お問い合わせ</h3>
+      <p class="text-[#f8f5f0]/80 mb-6">
+        〒150-0002<br>
+        東京都渋谷区渋谷1-1-1 渋谷ビル5F
+      </p>
+      <p class="text-[#f8f5f0]/80 mb-6">
+        TEL: 03-1234-5678<br>
+        Email: info@senllc.jp
+      </p>
     </div>
   </div>
 </div>
+</div>
+
+<div class="border-t border-[#f8f5f0]/20 pt-8 text-center">
+<p class="text-[#f8f5f0]/70 mb-4">© <span class="current-year">2023</span> 合同会社巛（sen llc）All Rights Reserved.</p>
+<div class="flex justify-center space-x-8">
+  <a href="#" class="text-[#f8f5f0]/70 hover:text-[#f8f5f0] transition-colors">
+    プライバシーポリシー
+  </a>
+  <a href="#" class="text-[#f8f5f0]/70 hover:text-[#f8f5f0] transition-colors">
+    利用規約
+  </a>
+</div>
+</div>
+</div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script>
 // モバイルメニューの開閉
 document.getElementById('menuButton').addEventListener('click', function() {
-  // 実際の実装ではここにモバイルメニューを表示するコードを追加
-  alert('モバイルメニューが開きます');
+// 実際の実装ではここにモバイルメニューを表示するコードを追加
+alert('モバイルメニューが開きます');
 });
 
 // 現在の年を自動的に更新
 document.addEventListener('DOMContentLoaded', function() {
-  const yearElements = document.querySelectorAll('.current-year');
-  const currentYear = new Date().getFullYear();
-  yearElements.forEach(element => {
-    element.textContent = currentYear;
+const yearElements = document.querySelectorAll('.current-year');
+const currentYear = new Date().getFullYear();
+yearElements.forEach(element => {
+element.textContent = currentYear;
+});
+
+// Swiperの初期化
+const propertySwipers = document.querySelectorAll('.property-swiper');
+propertySwipers.forEach(swiperElement => {
+  new Swiper(swiperElement, {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   });
+});
 });
 </script>
 </body>
