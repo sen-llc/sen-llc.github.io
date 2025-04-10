@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo:sen-llc/sen-llc.github.io
   branch: main
 
 media_folder: "assets/uploads"
