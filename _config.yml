@@ -7,7 +7,6 @@ url: "https://sen-llc.netlify.app" # サイトの本番URL
 
 # Markdown / Jekyll関連
 markdown: kramdown
-theme: minima
 
 # コレクション（例: CMSと連携する場合）
 collections:
