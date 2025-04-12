@@ -3,78 +3,24 @@ layout: default
 title: お問い合わせ
 ---
 
-{% include header.html %}
+<section class="max-w-4xl mx-auto px-6 py-16 font-zen text-primary">
+  <h1 class="text-3xl font-bold mb-6">お問い合わせフォーム</h1>
+  <p class="mb-6 text-sm text-gray-700">
+    空き家活用、DIY・リノベーション、賃貸、インテリアのご相談など、お気軽にご連絡ください。
+  </p>
 
-<section class="max-w-3xl mx-auto px-6 py-16 font-zen">
-  <h1 class="text-3xl font-bold mb-8">お問い合わせ</h1>
-
-  <form name="contact" method="POST" data-netlify="true" action="/thanks.html" class="space-y-6">
-    <div>
-      <label class="block mb-2 font-semibold" for="type">お問い合わせ項目</label>
-      <select name="type" id="type" class="w-full border border-gray-300 rounded px-4 py-2">
-        <option>賃貸物件について</option>
-        <option>DIY・リノベーションやインテリアコーディネート等の設計について</option>
-        <option>空き家活用について</option>
-        <option>その他</option>
-      </select>
-    </div>
-
-    <div>
-      <label class="block mb-2 font-semibold">区分</label>
-      <div class="flex gap-4">
-        <label class="flex items-center space-x-2">
-          <input type="radio" name="category" value="法人" required>
-          <span>法人</span>
-        </label>
-        <label class="flex items-center space-x-2">
-          <input type="radio" name="category" value="個人" required>
-          <span>個人</span>
-        </label>
-      </div>
-    </div>
-
-    <div>
-      <label class="block mb-2 font-semibold" for="name">お名前</label>
-      <input type="text" name="name" id="name" required class="w-full border border-gray-300 rounded px-4 py-2">
-    </div>
-
-    <div>
-      <label class="block mb-2 font-semibold" for="email">メールアドレス</label>
-      <input type="email" name="email" id="email" required class="w-full border border-gray-300 rounded px-4 py-2">
-    </div>
-
-    <div>
-      <label class="block mb-2 font-semibold" for="message">お問い合わせ内容</label>
-      <textarea name="message" id="message" rows="6" required class="w-full border border-gray-300 rounded px-4 py-2"></textarea>
-    </div>
-
-    <div>
-      <label class="flex items-start space-x-2">
-        <input type="checkbox" name="privacy" required onchange="this.setCustomValidity(this.checked ? '' : 'プライバシーポリシーに同意してください。')">
-        <span class="text-sm">
-          <button type="button" onclick="document.getElementById('privacyModal').classList.remove('hidden')" class="underline hover:text-deepgreen">プライバシーポリシー</button>に同意する
-        </span>
-      </label>
-    </div>
-
-    <div>
-      <button type="submit" class="bg-deepgreen text-white px-6 py-2 rounded hover:bg-green-900">送信する</button>
-    </div>
-  </form>
-</section>
-
-<!-- プライバシーポリシーモーダル -->
-<div id="privacyModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 hidden">
-  <div class="bg-white max-w-2xl mx-auto my-24 p-6 rounded shadow-md relative">
-    <button class="absolute top-2 right-3 text-gray-600 hover:text-black" onclick="document.getElementById('privacyModal').classList.add('hidden')">&times;</button>
-    <h2 class="text-xl font-bold mb-4">プライバシーポリシー</h2>
-    <div class="text-sm text-gray-700 space-y-4 max-h-[60vh] overflow-y-auto">
-      <p>当サイトは、お客様の個人情報の重要性を認識し、適切に利用し、保護することをお約束いたします。本方針は、個人情報の取り扱いに関する基本的な考え方を明示するものです。</p>
-      <p>お客様から提供いただく情報は、お問い合わせ対応、サービス改善、法令対応などに使用され、同意なく第三者に提供されることはありません。</p>
-      <p>Googleアナリティクスなどの解析ツールを利用していますが、個人を特定する情報は収集されません。</p>
-      <p>詳細は<a href="/privacy.html" class="underline text-deepgreen">こちら</a>のページでもご確認いただけます。</p>
-    </div>
+  <div class="bg-white rounded-xl shadow-lg p-4">
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdwCfrBh90Atd4xmxSLTMBBUJhfZogF8AO8zFosJCULZXCqZQ/viewform?embedded=true" 
+      width="100%" 
+      height="1600" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0" 
+      class="w-full rounded">
+      読み込んでいます…
+    </iframe>
   </div>
-</div>
+</section>
 
 {% include footer.html %}
