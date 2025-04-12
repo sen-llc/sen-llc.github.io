@@ -3,10 +3,11 @@ layout: default
 title: トップページ
 ---
 
+{% include header.html %}
 
 <!-- Heroセクション: Before→Afterのフェード＋コンセプトテキスト -->
 <section class="relative h-screen overflow-hidden text-white font-zen">
-  <div class="absolute inset-0 z-0 animation-fade bg-cover bg-center" style="--image-before: url('/assets/before.JPEG'); --image-after: url('/assets/after.JPG');"></div>
+  <div class="absolute inset-0 z-0 animation-fade bg-cover bg-center" style="--image-before: url('/assets/images/before.jpg'); --image-after: url('/assets/images/after.jpg');"></div>
 
   <div class="relative z-10 flex items-center justify-center h-full bg-black/30 px-6 text-center">
     <div>
@@ -38,36 +39,44 @@ title: トップページ
   }
 }
 .animation-fade {
-  animation: fadeLoop 8s infinite;
+  animation: fadeLoop 12s ease-in-out infinite;
   background-size: cover;
   background-position: center;
 }
 </style>
 
-<!-- 診断セクション -->
-<section class="bg-gradient-to-b from-beige to-white px-6 py-16 font-zen text-primary">
-  <div class="max-w-3xl mx-auto text-center">
-    <div class="flex flex-col gap-4 mb-10">
-      <a href="/rental.html" class="block bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">育てる空間（賃貸）</a>
-      <a href="/design.html" class="block bg-white border border-[#2a382f] text-center py-3 rounded hover:bg-[#f0eee8] transition">つくる空間（設計）</a>
-    </div>
-
-    <div class="text-sm text-center text-[#555]">
-      どちらが合っているか、簡単な質問でチェックしてみませんか？
-    </div>
-    <div class="mt-4 text-center">
-      <button id="start-quiz" class="underline text-sm text-[#2a382f] hover:text-[#4a5a4f]">YES / NO診断してみる</button>
-    </div>
-
-    <div id="quiz-container" class="hidden mt-6 bg-white border border-[#2a382f] rounded p-4">
-      <p id="quiz-question" class="mb-4 font-semibold"></p>
-      <div class="flex gap-4">
-        <button id="quiz-option-1" class="flex-1 bg-[#2a382f] text-white py-2 rounded"></button>
-        <button id="quiz-option-2" class="flex-1 border border-[#2a382f] text-[#2a382f] py-2 rounded bg-[#f9f8f4]"></button>
+<!-- コンセプト説明＋診断導線 -->
+<section class="relative bg-beige py-20 px-6 font-zen text-primary">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="bg-white shadow-md rounded-lg p-8 md:p-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">
+        自分に合った住まいの形を、<br class="md:hidden">簡単な質問から探してみませんか？
+      </h2>
+      <p class="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
+        暮らしを「育てる」賃貸、<br class="md:hidden"> 暮らしを「つくる」設計サポート。<br>
+        私たちは、あなたの“これから”を形にする2つの選択肢を用意しました。
+      </p>
+      <div class="flex flex-col md:flex-row justify-center gap-4 mb-6 max-w-xl mx-auto">
+        <a href="/rental.html" class="flex-1 bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">
+          暮らしを育てる（Rental）
+        </a>
+        <a href="/design.html" class="flex-1 border border-[#2a382f] bg-white text-[#2a382f] text-center py-3 rounded hover:bg-[#f0eee8] transition">
+          暮らしをつくる（Design）
+        </a>
       </div>
-      <div id="quiz-result" class="mt-6 hidden">
-        <p class="font-bold mb-3">あなたにおすすめなのは…</p>
-        <a id="result-link" href="#" class="block bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">こちら</a>
+      <p class="text-sm text-gray-600 mb-2">どちらか迷ったら、簡単な診断でチェックできます</p>
+      <button id="start-quiz" class="underline text-sm text-[#2a382f] hover:text-[#4a5a4f]">YES / NO診断してみる</button>
+
+      <div id="quiz-container" class="hidden mt-6 bg-white border border-[#2a382f] rounded p-4">
+        <p id="quiz-question" class="mb-4 font-semibold"></p>
+        <div class="flex gap-4">
+          <button id="quiz-option-1" class="flex-1 bg-[#2a382f] text-white py-2 rounded"></button>
+          <button id="quiz-option-2" class="flex-1 border border-[#2a382f] text-[#2a382f] py-2 rounded bg-[#f9f8f4]"></button>
+        </div>
+        <div id="quiz-result" class="mt-6 hidden">
+          <p class="font-bold mb-3">あなたにおすすめなのは…</p>
+          <a id="result-link" href="#" class="block bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">こちら</a>
+        </div>
       </div>
     </div>
   </div>
@@ -110,10 +119,10 @@ function showResult() {
   const [q1, q2, q3] = answers;
   if (q1 === "持ち家" || q2 === "家を購入したい") {
     resultLink.href = "/design.html";
-    resultLink.textContent = "つくる空間（設計）へ";
+    resultLink.textContent = "暮らしをつくる（Design）へ";
   } else {
     resultLink.href = "/rental.html";
-    resultLink.textContent = "育てる空間（賃貸）へ";
+    resultLink.textContent = "暮らしを育てる（Rental）へ";
   }
   result.classList.remove("hidden");
 }
@@ -155,3 +164,4 @@ startQuiz.addEventListener("click", () => {
 });
 </script>
 
+{% include footer.html %}
