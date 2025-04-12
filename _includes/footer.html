@@ -1,45 +1,51 @@
-<!-- _includes/footer.html -->
-<footer class="bg-[#2a382f] text-[#f9f8f4] text-sm font-zen px-6 py-12">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-    <!-- 左カラム -->
+<footer class="bg-deepgreen text-beige px-6 py-10 text-sm font-zen">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+    
+    <!-- 左：ロゴと紹介文 -->
     <div>
-      <img src="/assets/logo-2.svg" alt="sen llc ロゴ" class="h-6 mb-4">
-      <p class="leading-relaxed text-[#e6e4de]">
+      <a href="#top" class="inline-block mb-4">
+        <img src="/assets/images/logo.svg" alt="sen llc" class="h-6">
+      </a>
+      <p class="leading-relaxed">
         キナリのように余白のある住まいに、<br>
         あなたらしさを少しずつ染めていく。<br>
         暮らしに関わる、あたらしい選択肢を。
       </p>
     </div>
 
-    <!-- 中央カラム -->
-    <div class="text-[#e6e4de]">
-      <h3 class="text-base font-semibold mb-4">サービス</h3>
-      <ul class="space-y-2">
-        <li><a href="/rental.html" class="hover:underline">育てる住まい</a></li>
-        <li><a href="/design.html" class="hover:underline">リノベーション</a></li>
-        <li><a href="/journal.html" class="hover:underline">ジャーナル</a></li>
-        <li><a href="/about.html" class="hover:underline">サイトについて・運営会社</a></li>
+    <!-- 中央：サービスリンク -->
+    <div>
+      <h3 class="text-base font-semibold border-b border-beige pb-2 mb-4">サービス</h3>
+      <ul class="space-y-3">
+        <li><a href="/rental.html" class="hover:underline before:content-['›'] before:mr-2">育てる住まい</a></li>
+        <li><a href="/design.html" class="hover:underline before:content-['›'] before:mr-2">リノベーション</a></li>
+        <li><a href="/journal.html" class="hover:underline before:content-['›'] before:mr-2">ジャーナル</a></li>
+        <li><a href="/about.html" class="hover:underline before:content-['›'] before:mr-2">サイトについて・運営会社</a></li>
       </ul>
     </div>
 
-    <!-- 右カラム：SNS -->
-    <div class="text-[#e6e4de]">
-      <h3 class="text-base font-semibold mb-4">SNS</h3>
-      <div class="flex gap-4 items-center mb-3">
-        <a href="https://www.instagram.com/sen_home9.1/" target="_blank" class="hover:scale-110 transition-transform">
-          <img src="/assets/images/Instagram.svg" alt="Instagram" class="h-6 w-6">
+    <!-- 右：SNSと問い合わせ -->
+    <div>
+      <h3 class="text-base font-semibold border-b border-beige pb-2 mb-4">お問い合わせ</h3>
+      <p class="mb-2">お気軽にご相談ください。</p>
+      <div class="flex space-x-4 items-center mb-4">
+        <a href="https://www.instagram.com/sen_home9.1/" target="_blank">
+          <img src="/assets/images/Instagram.svg" alt="Instagram" class="h-6 w-6 hover:scale-110 transition">
         </a>
-        <a href="https://line.me/R/ti/p/@644gowhz?ts=03022247&oat_content=url" target="_blank" class="hover:scale-110 transition-transform">
-          <img src="/assets/images/LINE.svg" alt="LINE" class="h-6 w-6">
+        <a href="https://line.me/R/ti/p/@644gowhz?ts=03022247&oat_content=url" target="_blank">
+          <img src="/assets/images/LINE.svg" alt="LINE" class="h-6 w-6 hover:scale-110 transition">
         </a>
       </div>
-      <p class="text-xs text-[#e0ddd7] mb-2">お気軽にご相談ください。</p>
-      <a href="/contact.html" class="inline-block mt-2 bg-[#f9f8f4] text-[#2a382f] text-xs font-medium px-4 py-2 rounded hover:bg-[#e8e6e0] transition">
-        お問い合わせフォームへ
+      <a href="/contact.html" class="inline-block mt-2 px-4 py-1 border border-beige rounded hover:bg-beige hover:text-deepgreen transition">
+        お問い合わせフォーム
       </a>
     </div>
+
   </div>
-  <div class="mt-12 border-t border-[#e6e4de]/20 pt-4 text-center text-xs text-[#e6e4de]">
-    © 2025 sen llc All Rights Reserved.
+
+  <!-- コピーライト・プライバシーポリシー -->
+  <div class="text-center text-xs mt-10 text-beige/70 space-y-1">
+    <p>© 2025 合同会社 sen llc All Rights Reserved.</p>
+    <a href="/privacy.html" class="underline hover:text-beige">プライバシーポリシー</a>
   </div>
 </footer>
