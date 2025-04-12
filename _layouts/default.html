@@ -5,22 +5,8 @@
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ✅ CDNを先に書く -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- ✅ そのあとにカスタム設定 -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#2a382f',
-            beige: '#f9f8f4'
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind CDN 安定バージョン -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-beige text-primary">
