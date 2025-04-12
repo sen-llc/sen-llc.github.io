@@ -3,38 +3,65 @@ layout: default
 title: サイトについて・運営会社
 ---
 
+{% include header.html %}
 
-<section class="bg-gradient-to-b from-beige to-kinari py-16 px-6 font-zen">
-  <div class="max-w-3xl mx-auto text-center">
+<section class="bg-gradient-to-b from-beige to-kinari py-16 px-6 font-zen text-primary">
+  <div class="max-w-4xl mx-auto text-center">
+
     <h1 class="text-3xl font-bold mb-6">わたしたちについて</h1>
-    <p class="text-base leading-relaxed text-primary mb-10">
+    <p class="text-base leading-relaxed mb-6">
       キナリのように余白のある住まいに、<br>
       あなたらしさを少しずつ染めていく。<br>
       暮らしに関わる、あたらしい選択肢を。
     </p>
-    <img src="/assets/dyeing-hands.png" alt="布を染める手元の写真" class="mx-auto rounded-xl shadow-md w-full max-w-xl mb-10">
-    <div class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-md shadow-md text-left text-primary">
-      <h2 class="text-xl font-bold mb-4">ミッション</h2>
-      <p class="mb-6">
-        暮らしのなかに「選べる余白」を増やす。<br>
-        住まいを通じて、自分らしさを育てられる社会へ。
-      </p>
 
-      <h2 class="text-xl font-bold mb-4">ビジョン</h2>
-      <p class="mb-6">
-        暮らしのデザインが、誰にとってもひらかれている未来。<br>
-        家に関心がなかった人にも、豊かさを届けられる世界へ。
-      </p>
+    <img src="/assets/images/dyeing-hands.jpg" alt="布を染める手元の写真" class="mx-auto rounded-xl shadow-md w-full max-w-md mb-6 border border-gray-200">
 
+    <div class="text-sm text-gray-700 leading-relaxed max-w-2xl mx-auto mb-12">
+      <h2 class="text-lg font-semibold mb-2">キナリとは？</h2>
+      <p>
+        キナリ（生成り）とは、漂白や染色をしていない、素材本来のやわらかな色合い。<br>
+        真っ白ではなく、どこかあたたかく、素のままで優しい色。<br>
+        私たちが目指すのは、そんなキナリのような住まいと暮らし。<br>
+        あなたの色で、少しずつ染めていける場所を届けたいと考えています。
+      </p>
+    </div>
+
+    <div class="grid gap-10 md:grid-cols-2 text-left">
+      <div class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-md shadow-md">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-deepgreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <h2 class="text-xl font-bold">ミッション</h2>
+        </div>
+        <p>
+          暮らしのなかに「選べる余白」を増やすこと。<br>
+          家に興味がなかった人にも、自分らしい暮らしを育てるきっかけを届けます。
+        </p>
+      </div>
+
+      <div class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-md shadow-md">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-deepgreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+          <h2 class="text-xl font-bold">ビジョン</h2>
+        </div>
+        <p>
+          暮らしのデザインが、誰にとってもひらかれている未来。<br>
+          空き家、素材、思い出を引き継ぎながら、新しい暮らしの循環を育てていきます。
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-md shadow-md text-left mt-12">
       <h2 class="text-xl font-bold mb-4">運営会社</h2>
       <ul class="text-sm space-y-2">
         <li><strong>会社名：</strong>合同会社 sen llc</li>
         <li><strong>代表：</strong>川上 武昭</li>
         <li><strong>設立：</strong>2025年</li>
         <li><strong>事業内容：</strong>空き家再生、不動産賃貸業、リノベーション設計、インテリアコーディネート</li>
-        <li><strong>問い合わせ：</strong><a href="mailto:senhome1.10@gmail.com" class="underline text-deepgreen">senhome1.10@gmail.com</a></li>
+        <li><strong>問い合わせ：</strong><a href="/contact.html" class="underline text-deepgreen">お問い合わせフォームはこちら</a></li>
       </ul>
     </div>
   </div>
 </section>
 
+{% include footer.html %}
