@@ -3,50 +3,56 @@ layout: default
 title: サイトについて・運営会社
 ---
 
-<section class="max-w-5xl mx-auto px-6 py-16">
-  <div class="text-center mb-16">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4">キナリから育てる、あなたの住まい</h1>
-    <p class="text-lg text-[#6e6656] leading-relaxed">
-      白でも黒でもない、“キナリ”のような住まい。<br>
-      それは、まだ何色にも染まっていないからこそ、<br>
-      あなたの暮らしの色を重ねていける空間です。
-    </p>
-  </div>
+{% include header.html %}
 
-  <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-    <div>
-      <img src="/assets/images/NJGY1970.JPG" alt="代表イメージ" class="rounded-xl shadow-md" />
-    </div>
-    <div>
-      <h2 class="text-2xl font-semibold mb-4">ミッション</h2>
-      <p class="text-[#5a5244] leading-relaxed">
-        関わることで、場はもっとおもしろくなる。<br>
-        空間を「使い捨てる」から「育ててつなぐ」ものへ。<br>
-        暮らしに関わる人を増やすことで、選択肢のある社会をつくります。
-      </p>
-      <h2 class="text-2xl font-semibold mt-10 mb-4">ビジョン</h2>
-      <p class="text-[#5a5244] leading-relaxed">
-        住まいに関心がなかった人が「ここ、ちょっと好きかも」と思える社会へ。<br>
-        手を加えることで暮らしが整い、<br>
-        いずれ誰かに手渡していけるような“関わる住まい”を増やしていきます。
-      </p>
-    </div>
-  </div>
+<section class="max-w-4xl mx-auto px-6 py-12 font-zen">
+  <h1 class="text-3xl font-bold mb-6">キナリから育てる、あなたの住まい</h1>
+  <p class="text-lg leading-relaxed mb-10 text-[#6e6656]">
+    白でも黒でもない、“キナリ”のような住まい。<br>
+    それは、まだ何色にも染まっていないからこそ、<br>
+    あなたの暮らしの色を重ねていける空間です。
+  </p>
 
-  <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-    <div>
-      <h2 class="text-2xl font-semibold mb-4">会社概要</h2>
-      <p class="text-[#5a5244] leading-relaxed">
-        合同会社 sen llc<br>
-        所在地：千葉県（詳細はお問い合わせください）<br>
-        設立：2025年<br>
-        事業内容：空き家再生、不動産賃貸業、リノベーションプランニング、インテリアコーディネート<br>
-        代表：川上 武昭<br>
-        お問い合わせ：<a href="mailto:senhome1.10@gmail.com" class="underline text-[#2a382f] hover:text-[#3a4a3f]">senhome1.10@gmail.com</a> または <a href="/contact.html" class="underline text-[#2a382f] hover:text-[#3a4a3f]">お問い合わせフォーム</a> よりご連絡ください。
-      </p>
+  <div class="space-y-16">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3">ミッション</h2>
+        <p class="leading-relaxed text-[#5a5244]">
+          関わることで、場はもっとおもしろくなる。<br>
+          空間を「使い捨てる」から「育ててつなぐ」ものへ。<br>
+          暮らしに関わる人を増やすことで、選択肢のある社会をつくります。
+        </p>
+      </div>
+      <img src="/assets/images/NJGY1970.JPG" alt="ミッションイメージ" class="rounded-full shadow-md w-full max-w-sm mx-auto">
     </div>
-    <div>
-      <img src="/assets/images/IMG_E5153.JPG" alt="照明" class="rounded-xl shadow-md" />
+
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <img src="/assets/images/IMG_E5153.JPG" alt="ビジョンイメージ" class="rounded-full shadow-md w-full max-w-sm mx-auto">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3">ビジョン</h2>
+        <p class="leading-relaxed text-[#5a5244]">
+          住まいに関心がなかった人が「ここ、ちょっと好きかも」と思える社会へ。<br>
+          手を加えることで暮らしが整い、<br>
+          いずれ誰かに手渡していけるような“関わる住まい”を増やしていきます。
+        </p>
+      </div>
+    </div>
+
+    <div class="border-t pt-10">
+      <h2 class="text-2xl font-semibold mb-4">運営会社</h2>
+      <div class="text-[#5a5244] leading-relaxed">
+        <p class="mb-2">合同会社 sen llc</p>
+        <p class="mb-2">所在地：千葉県（詳細はお問い合わせください）</p>
+        <p class="mb-2">設立：2025年</p>
+        <p class="mb-2">事業内容：空き家再生、不動産賃貸業、リノベーションプランニング、インテリアコーディネート</p>
+        <p class="mb-2">代表：川上 武昭</p>
+        <p>
+          お問い合わせ：<a href="mailto:senhome1.10@gmail.com" class="underline text-[#2a382f] hover:text-[#3a4a3f]">senhome1.10@gmail.com</a> または
+          <a href="/contact.html" class="underline text-[#2a382f] hover:text-[#3a4a3f]">お問い合わせフォーム</a> よりご連絡ください。
+        </p>
+      </div>
     </div>
   </div>
 </section>
+
+{% include footer.html %}
