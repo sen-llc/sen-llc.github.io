@@ -1,32 +1,38 @@
 ---
 layout: default
 title: トップページ
-theme: about
 ---
 
-<section class="max-w-xl mx-auto py-12 px-6">
-  <h1 class="text-2xl font-bold mb-6">どちらの空間を育てますか？</h1>
-  <div class="flex flex-col gap-4 mb-10">
-    <a href="/rental.html" class="block bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">育てる空間（賃貸）</a>
-    <a href="/design.html" class="block bg-white border border-[#2a382f] text-center py-3 rounded hover:bg-[#f0eee8] transition">つくる空間（設計）</a>
-  </div>
 
-  <div class="text-sm text-center text-[#555]">
-    どちらが合っているか、簡単な質問でチェックしてみませんか？
-  </div>
-  <div class="mt-4 text-center">
-    <button id="start-quiz" class="underline text-sm text-[#2a382f] hover:text-[#4a5a4f]">YES / NO診断してみる</button>
-  </div>
+<section class="bg-gradient-to-b from-beige to-white min-h-screen px-6 pt-20 pb-16 font-zen text-primary">
+  <div class="max-w-3xl mx-auto text-center">
+    <h1 class="text-3xl font-bold mb-6">キナリのような余白のある住まいに、<br>あなたの色を少しずつ染めていく</h1>
+    <p class="text-base text-gray-700 mb-10">
+      暮らしを育てる空間、つくる空間。<br>迷ったらまずは、簡単な質問であなたに合ったページを探してみてください。
+    </p>
 
-  <div id="quiz-container" class="hidden mt-6 bg-white border border-[#2a382f] rounded p-4">
-    <p id="quiz-question" class="mb-4 font-semibold"></p>
-    <div class="flex gap-4">
-      <button id="quiz-option-1" class="flex-1 bg-[#2a382f] text-white py-2 rounded"></button>
-      <button id="quiz-option-2" class="flex-1 border border-[#2a382f] text-[#2a382f] py-2 rounded bg-[#f9f8f4]"></button>
+    <div class="flex flex-col gap-4 mb-10">
+      <a href="/rental.html" class="block bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">育てる空間（賃貸）</a>
+      <a href="/design.html" class="block bg-white border border-[#2a382f] text-center py-3 rounded hover:bg-[#f0eee8] transition">つくる空間（設計）</a>
     </div>
-    <div id="quiz-result" class="mt-6 hidden">
-      <p class="font-bold mb-3">あなたにおすすめなのは…</p>
-      <a id="result-link" href="#" class="block bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">こちら</a>
+
+    <div class="text-sm text-center text-[#555]">
+      どちらが合っているか、簡単な質問でチェックしてみませんか？
+    </div>
+    <div class="mt-4 text-center">
+      <button id="start-quiz" class="underline text-sm text-[#2a382f] hover:text-[#4a5a4f]">YES / NO診断してみる</button>
+    </div>
+
+    <div id="quiz-container" class="hidden mt-6 bg-white border border-[#2a382f] rounded p-4">
+      <p id="quiz-question" class="mb-4 font-semibold"></p>
+      <div class="flex gap-4">
+        <button id="quiz-option-1" class="flex-1 bg-[#2a382f] text-white py-2 rounded"></button>
+        <button id="quiz-option-2" class="flex-1 border border-[#2a382f] text-[#2a382f] py-2 rounded bg-[#f9f8f4]"></button>
+      </div>
+      <div id="quiz-result" class="mt-6 hidden">
+        <p class="font-bold mb-3">あなたにおすすめなのは…</p>
+        <a id="result-link" href="#" class="block bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">こちら</a>
+      </div>
     </div>
   </div>
 </section>
@@ -112,3 +118,4 @@ startQuiz.addEventListener("click", () => {
   showQuestion(currentStep);
 });
 </script>
+
