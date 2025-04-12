@@ -1,0 +1,31 @@
+title: Place to Grow
+logo: /assets/images/logo.svg
+
+# 基本設定
+baseurl: "" # サブディレクトリに置く場合は変更
+url: "https://sen-llc.netlify.app" # サイトの本番URL
+
+# Markdown / Jekyll関連
+markdown: kramdown
+theme: minima
+
+# コレクション（例: CMSと連携する場合）
+collections:
+  rental:
+    output: true
+  design:
+    output: true
+  journal:
+    output: true
+
+# プラグイン（必要に応じて）
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 出力除外ファイル
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
