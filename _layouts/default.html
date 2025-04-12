@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-[#f9f8f4] text-[#2a382f]">
+
+    {% include header.html %}
+
+    <main class="min-h-screen px-4 py-8">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+</html>
