@@ -27,12 +27,15 @@
       }
     }
   </script>
+
+  <!-- ✅ カラーテーマCSS（グラデーション）読み込み -->
+  <link rel="stylesheet" href="/assets/css/theme.css">
 </head>
 
-<!-- ✅ フォントを適用 -->
-<body class="bg-beige text-primary font-zen">
+<!-- ✅ ページテーマクラスを動的に付与 -->
+<body class="font-zen {{ page.theme }}-theme">
   {% include header.html %}
-  
+
   <main class="min-h-screen">
     {{ content }}
   </main>
