@@ -49,10 +49,10 @@ title: お問い合わせ
     </div>
 
     <div>
-      <label class="flex items-center space-x-2">
+      <label class="flex items-start space-x-2">
         <input type="checkbox" name="privacy" required onchange="this.setCustomValidity(this.checked ? '' : 'プライバシーポリシーに同意してください。')">
-        <span>
-          <button type="button" onclick="document.getElementById('privacyModal').classList.remove('hidden')" class="underline text-sm hover:text-deepgreen">プライバシーポリシー</button>に同意する
+        <span class="text-sm">
+          <button type="button" onclick="document.getElementById('privacyModal').classList.remove('hidden')" class="underline hover:text-deepgreen">プライバシーポリシー</button>に同意する
         </span>
       </label>
     </div>
