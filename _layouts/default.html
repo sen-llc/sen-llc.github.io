@@ -5,10 +5,13 @@
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- ✅ Zen Maru Gothic フォント読み込み -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
   <!-- ✅ Tailwind CDN with JIT support -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
 
-  <!-- ✅ カスタムテーマ色をJSで定義（必要なら） -->
+  <!-- ✅ カスタムテーマ色＋フォント -->
   <script>
     tailwind.config = {
       theme: {
@@ -16,6 +19,9 @@
           colors: {
             primary: '#2a382f',
             beige: '#f9f8f4',
+          },
+          fontFamily: {
+            zen: ['"Zen Maru Gothic"', 'sans-serif']
           }
         }
       }
@@ -23,7 +29,8 @@
   </script>
 </head>
 
-<body class="bg-beige text-primary">
+<!-- ✅ フォントを適用 -->
+<body class="bg-beige text-primary font-zen">
   {% include header.html %}
   
   <main class="min-h-screen">
