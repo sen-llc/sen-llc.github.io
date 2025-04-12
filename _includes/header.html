@@ -1,12 +1,13 @@
 <header class="bg-[#f9f8f4] text-[#2a382f] border-b border-[#ccc]">
-  <div class="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-    <!-- 左：ロゴとテキスト -->
-    <a href="/" class="flex items-center space-x-2">
-      <img src="{{ site.logo }}" alt="logo" class="h-6 w-6" />
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+
+    <!-- ロゴ：トップページリンク -->
+    <a href="/index.html" class="flex items-center space-x-2">
+      <img src="/assets/logo.svg" alt="logo" class="h-6 w-auto">
       <span class="text-base font-semibold">sen llc</span>
     </a>
 
-    <!-- PCナビ -->
+    <!-- PCメニュー -->
     <nav class="hidden md:flex space-x-6 text-sm">
       <a href="/rental.html" class="hover:underline">rental</a>
       <a href="/design.html" class="hover:underline">design</a>
@@ -14,25 +15,31 @@
       <a href="/about.html" class="hover:underline">about</a>
     </nav>
 
-    <!-- モバイルメニューアイコン -->
+    <!-- ハンバーガー：スマホ用 -->
     <button id="menu-toggle" class="md:hidden text-2xl" aria-label="menu">
-      ☰
+      <span id="menu-icon">☰</span>
+      <span id="close-icon" class="hidden">×</span>
     </button>
   </div>
 
-  <!-- モバイルメニュー本体 -->
-  <nav id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 text-sm">
-    <a href="/rental.html" class="block hover:underline">rental</a>
-    <a href="/design.html" class="block hover:underline">design</a>
-    <a href="/journal.html" class="block hover:underline">journal</a>
-    <a href="/about.html" class="block hover:underline">about</a>
+  <!-- スマホメニュー：右寄せで縦並び -->
+  <nav id="mobile-menu" class="md:hidden hidden px-6 pb-4 text-right text-sm flex flex-col space-y-2">
+    <a href="/rental.html" class="hover:underline">rental</a>
+    <a href="/design.html" class="hover:underline">design</a>
+    <a href="/journal.html" class="hover:underline">journal</a>
+    <a href="/about.html" class="hover:underline">about</a>
   </nav>
 
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    const iconOpen = document.getElementById("menu-icon");
+    const iconClose = document.getElementById("close-icon");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      iconOpen.classList.toggle("hidden");
+      iconClose.classList.toggle("hidden");
     });
   </script>
 </header>
