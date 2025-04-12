@@ -50,9 +50,9 @@ title: お問い合わせ
 
     <div>
       <label class="flex items-center space-x-2">
-        <input type="checkbox" name="privacy" required>
+        <input type="checkbox" name="privacy" required onchange="this.setCustomValidity(this.checked ? '' : 'プライバシーポリシーに同意してください。')">
         <span>
-          <a href="/privacy.html" target="_blank" class="underline text-sm hover:text-deepgreen">プライバシーポリシー</a>に同意する
+          <button type="button" onclick="document.getElementById('privacyModal').classList.remove('hidden')" class="underline text-sm hover:text-deepgreen">プライバシーポリシー</button>に同意する
         </span>
       </label>
     </div>
@@ -62,5 +62,19 @@ title: お問い合わせ
     </div>
   </form>
 </section>
+
+<!-- プライバシーポリシーモーダル -->
+<div id="privacyModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 hidden">
+  <div class="bg-white max-w-2xl mx-auto my-24 p-6 rounded shadow-md relative">
+    <button class="absolute top-2 right-3 text-gray-600 hover:text-black" onclick="document.getElementById('privacyModal').classList.add('hidden')">&times;</button>
+    <h2 class="text-xl font-bold mb-4">プライバシーポリシー</h2>
+    <div class="text-sm text-gray-700 space-y-4 max-h-[60vh] overflow-y-auto">
+      <p>当サイトは、お客様の個人情報の重要性を認識し、適切に利用し、保護することをお約束いたします。本方針は、個人情報の取り扱いに関する基本的な考え方を明示するものです。</p>
+      <p>お客様から提供いただく情報は、お問い合わせ対応、サービス改善、法令対応などに使用され、同意なく第三者に提供されることはありません。</p>
+      <p>Googleアナリティクスなどの解析ツールを利用していますが、個人を特定する情報は収集されません。</p>
+      <p>詳細は<a href="/privacy.html" class="underline text-deepgreen">こちら</a>のページでもご確認いただけます。</p>
+    </div>
+  </div>
+</div>
 
 {% include footer.html %}
