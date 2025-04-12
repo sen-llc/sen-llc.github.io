@@ -4,13 +4,49 @@ title: トップページ
 ---
 
 
-<section class="bg-gradient-to-b from-beige to-white min-h-screen px-6 pt-20 pb-16 font-zen text-primary">
-  <div class="max-w-3xl mx-auto text-center">
-    <h1 class="text-3xl font-bold mb-6">キナリのような余白のある住まいに、<br>あなたの色を少しずつ染めていく</h1>
-    <p class="text-base text-gray-700 mb-10">
-      暮らしを育てる空間、つくる空間。<br>迷ったらまずは、簡単な質問であなたに合ったページを探してみてください。
-    </p>
+<!-- Heroセクション: Before→Afterのフェード＋コンセプトテキスト -->
+<section class="relative h-screen overflow-hidden text-white font-zen">
+  <div class="absolute inset-0 z-0 animation-fade bg-cover bg-center" style="--image-before: url('/assets/before.JPEG'); --image-after: url('/assets/after.JPG');"></div>
 
+  <div class="relative z-10 flex items-center justify-center h-full bg-black/30 px-6 text-center">
+    <div>
+      <h1 class="text-3xl md:text-5xl font-bold leading-relaxed">
+        キナリのような余白のある住まいに、<br />
+        あなたの色を少しずつ染めていく
+      </h1>
+      <p class="mt-6 text-sm md:text-base text-white/90">
+        Before → Afterのように、暮らしも少しずつ整っていく。<br />
+        私たちは、そんな変化の「はじまり」をつくります。
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes fadeLoop {
+  0%, 45% {
+    background-image: var(--image-before);
+    opacity: 1;
+  }
+  50%, 95% {
+    background-image: var(--image-after);
+    opacity: 1;
+  }
+  100% {
+    background-image: var(--image-before);
+    opacity: 1;
+  }
+}
+.animation-fade {
+  animation: fadeLoop 8s infinite;
+  background-size: cover;
+  background-position: center;
+}
+</style>
+
+<!-- 診断セクション -->
+<section class="bg-gradient-to-b from-beige to-white px-6 py-16 font-zen text-primary">
+  <div class="max-w-3xl mx-auto text-center">
     <div class="flex flex-col gap-4 mb-10">
       <a href="/rental.html" class="block bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">育てる空間（賃貸）</a>
       <a href="/design.html" class="block bg-white border border-[#2a382f] text-center py-3 rounded hover:bg-[#f0eee8] transition">つくる空間（設計）</a>
