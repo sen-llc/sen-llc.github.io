@@ -3,64 +3,57 @@ layout: default
 title: お問い合わせ
 ---
 
-{% include header.html %}
+<section class="max-w-2xl mx-auto px-6 py-12 font-zen">
+  <h1 class="text-3xl font-bold mb-6">お問い合わせ</h1>
+  <p class="mb-8 text-[#5a5244]">
+    ご相談・ご質問などお気軽にお問い合わせください。<br>
+    内容を確認のうえ、折り返しご連絡いたします。
+  </p>
 
-<section class="bg-gradient-to-b from-kinari to-beige py-16 px-6">
-  <div class="bg-white bg-opacity-80 max-w-2xl mx-auto p-8 rounded shadow-md font-zen">
-    <h1 class="text-2xl font-bold text-primary mb-6">お問い合わせ</h1>
-    <p class="mb-6 text-[#5a5244]">
-      下記フォームにご記入のうえ、お気軽にご連絡ください。
-    </p>
+  <form name="contact" method="POST" data-netlify="true" action="/thanks.html" class="space-y-6">
+    <!-- 名前 -->
+    <div>
+      <label class="block mb-1 font-medium text-[#5a5244]" for="name">お名前</label>
+      <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-deepgreen">
+    </div>
 
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
-      <input type="hidden" name="form-name" value="contact">
-      <p class="hidden">
-        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-      </p>
+    <!-- メールアドレス -->
+    <div>
+      <label class="block mb-1 font-medium text-[#5a5244]" for="email">メールアドレス</label>
+      <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-deepgreen">
+    </div>
 
-      <label class="block">
-        お名前
-        <input type="text" name="name" required class="mt-1 w-full border rounded px-3 py-2">
-      </label>
+    <!-- お問い合わせ項目 -->
+    <div>
+      <label class="block mb-1 font-medium text-[#5a5244]" for="category">お問い合わせ項目</label>
+      <select id="category" name="category" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-deepgreen">
+        <option value="">選択してください</option>
+        <option value="賃貸について">賃貸について</option>
+        <option value="リノベーションについて">リノベーションについて</option>
+        <option value="空き家活用について">空き家活用について</option>
+        <option value="その他">その他</option>
+      </select>
+    </div>
 
-      <label class="block">
-        メールアドレス
-        <input type="email" name="email" required class="mt-1 w-full border rounded px-3 py-2">
-      </label>
+    <!-- メッセージ -->
+    <div>
+      <label class="block mb-1 font-medium text-[#5a5244]" for="message">お問い合わせ内容</label>
+      <textarea id="message" name="message" rows="5" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-deepgreen"></textarea>
+    </div>
 
-      <label class="block">
-        電話番号（任意）
-        <input type="tel" name="tel" class="mt-1 w-full border rounded px-3 py-2">
-      </label>
-
-      <label class="block">
-        お問い合わせ項目
-        <select name="type" required class="mt-1 w-full border rounded px-3 py-2">
-          <option value="">選択してください</option>
-          <option>空き家活用について</option>
-          <option>リノベーションの相談</option>
-          <option>賃貸について</option>
-          <option>その他</option>
-        </select>
-      </label>
-
-      <label class="block">
-        メッセージ
-        <textarea name="message" rows="5" required class="mt-1 w-full border rounded px-3 py-2"></textarea>
-      </label>
-
-      <label class="flex items-center space-x-2">
+    <!-- プライバシーポリシー -->
+    <div>
+      <label class="flex items-center space-x-2 text-sm text-[#5a5244]">
         <input type="checkbox" name="privacy" required>
-        <span><a href="/privacy.html" class="underline text-sm">プライバシーポリシー</a>に同意する</span>
+        <span><a href="/privacy.html" class="underline hover:text-deepgreen">プライバシーポリシー</a>に同意する</span>
       </label>
+    </div>
 
-      <div>
-        <button type="submit" class="bg-deepgreen text-white px-6 py-2 rounded hover:bg-green-900">
-          送信する
-        </button>
-      </div>
-    <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
-  </div>
+    <!-- 送信ボタン -->
+    <div>
+      <button type="submit" class="bg-deepgreen text-white px-6 py-2 rounded hover:bg-green-900">
+        送信する
+      </button>
+    </div>
+  </form>
 </section>
-
-{% include footer.html %}
