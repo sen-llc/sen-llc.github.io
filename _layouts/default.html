@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✅ CDNを先に書く -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ そのあとにカスタム設定 -->
   <script>
     tailwind.config = {
       theme: {
@@ -18,6 +22,7 @@
     }
   </script>
 </head>
+
 <body class="bg-beige text-primary">
   {% include header.html %}
   <main class="min-h-screen">
