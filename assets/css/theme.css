@@ -1,0 +1,43 @@
+/* assets/css/theme.css */
+
+/* カラーテーマ：育てる住まい（Rental） */
+.rental-theme {
+  --bg: #f9f8f4;
+  --text: #2a382f;
+  --accent: #9b785c;
+}
+
+/* カラーテーマ：リノベーション（Design） */
+.design-theme {
+  --bg: #ece8e0;
+  --text: #2a382f;
+  --accent: #6b4e3d;
+}
+
+/* カラーテーマ：ジャーナル（Journal） */
+.journal-theme {
+  --bg: #f5f2ec;
+  --text: #444;
+  --accent: #7b6a58;
+}
+
+/* カラーテーマ：運営情報（About） */
+.about-theme {
+  --bg: #f3f1e9;
+  --text: #4a4a4a;
+  --accent: #7c6650;
+}
+
+/* 共通適用（グラデーション背景） */
+body {
+  background: linear-gradient(to bottom, var(--bg) 0%, var(--accent) 100%);
+  color: var(--text);
+}
+
+a {
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--accent);
+}
