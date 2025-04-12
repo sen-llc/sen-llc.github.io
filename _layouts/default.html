@@ -4,10 +4,25 @@
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- ✅ Tailwind CSS v3.4 JIT対応CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- ✅ Tailwind CDN with JIT support -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+
+  <!-- ✅ カスタムテーマ色をJSで定義（必要なら） -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2a382f',
+            beige: '#f9f8f4',
+          }
+        }
+      }
+    }
+  </script>
 </head>
+
 <body class="bg-beige text-primary">
   {% include header.html %}
   
