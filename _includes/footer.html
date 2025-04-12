@@ -1,27 +1,19 @@
 <footer class="bg-[#2a382f] text-[#f9f8f4] text-sm">
-  <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-    <!-- 左カラム：ロゴと紹介文 -->
-    <div>
-      <div class="flex items-center gap-2 mb-4">
-        <img src="/assets/logo-2.svg" alt="logo" class="h-6 w-auto" />
-        <span class="font-semibold text-base">sen llc</span>
-      </div>
-      <p class="leading-relaxed text-sm">
-        住む、つくる、手に入れる。<br>
-        最初からデザイン性の高い空間で、<br>
-        あなたらしい暮らしを育んでいきましょう。
-      </p>
-      <div class="flex gap-4 mt-4">
-        <a href="https://www.instagram.com/sen_home9.1/?hl=ja" target="_blank" aria-label="Instagram">
-          <img src="/assets/Instagram.svg" alt="Instagram" class="w-6 h-6" />
-        </a>
-        <a href="https://line.me/R/ti/p/@644gowhz?ts=03022247&oat_content=url" target="_blank" aria-label="LINE">
-          <img src="/assets/LINE.svg" alt="LINE" class="w-6 h-6" />
-        </a>
+  <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- 左：ロゴと紹介文 -->
+    <div class="flex flex-col justify-between">
+      <div>
+        <img src="/assets/logo-2.svg" alt="logo" class="h-8 w-auto mb-4">
+        <p class="leading-relaxed text-sm">
+          住む、つくる、手に入れる。<br>
+          最初からデザイン性の高い空間で、<br>
+          あなたらしい暮らしを育んでいきましょう。
+        </p>
       </div>
     </div>
 
-    <!-- 右カラム：サービスリンク（日本語表記） -->
+    <!-- 中央：サービスリンク -->
     <div>
       <h2 class="font-semibold mb-4">サービス</h2>
       <ul class="space-y-2 text-[#dcdcdc]">
@@ -31,11 +23,26 @@
         <li><a href="/about.html" class="hover:underline">サイトについて・運営会社</a></li>
       </ul>
     </div>
+
+    <!-- 右：SNSアイコン -->
+    <div>
+      <h2 class="font-semibold mb-4">SNS</h2>
+      <div class="flex md:flex-col gap-4">
+        <a href="https://www.instagram.com/sen_home9.1/?hl=ja" target="_blank" class="transition hover:scale-110">
+          <img src="/assets/Instagram.svg" alt="Instagram" class="h-8 w-8">
+        </a>
+        <a href="https://line.me/R/ti/p/@644gowhz?ts=03022247&oat_content=url" target="_blank" class="transition hover:scale-110">
+          <img src="/assets/LINE.svg" alt="LINE" class="h-8 w-8">
+        </a>
+      </div>
+    </div>
+
   </div>
 
   <!-- 下部：コピーライトとプライバシーポリシー -->
   <div class="border-t border-[#ccc] mt-10 pt-4 text-center text-xs text-[#ccc] px-4 pb-6">
     <p class="mb-2">© 2025 合同会社《 sen llc 》All Rights Reserved.</p>
-    <a href="/privacy.html" class="hover:underline">プライバシーポリシー</a>
+    <p class="text-[#aaa]">お気軽にご相談ください。</p>
+    <a href="/privacy.html" class="hover:underline block mt-2">プライバシーポリシー</a>
   </div>
 </footer>
