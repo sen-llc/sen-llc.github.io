@@ -1,0 +1,63 @@
+---
+layout: default
+title: 設計・リノベーション
+---
+
+
+<section class="bg-gradient-to-b from-beige to-white py-20 px-6 font-zen text-primary">
+  <div class="max-w-3xl mx-auto text-center mb-16">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">つくる空間の実践事例</h1>
+    <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+      暮らしを見つめ直し、自分たちらしい空間をかたちにするためのプロセス。<br>
+      ここでは、設計やインテリア提案を通じた事例をご紹介しています。
+    </p>
+  </div>
+</section>
+
+<section class="bg-white py-16 px-6 text-center font-zen text-primary">
+  <h2 class="text-2xl font-semibold mb-4">一緒に、暮らしを考えるパートナーとして</h2>
+  <p class="max-w-3xl mx-auto text-base text-gray-700 leading-relaxed">
+    設計やインテリアは、見た目だけではなく「どんな時間を過ごしたいか」を考えることから始まります。<br>
+    私たちは、自然素材や既存の魅力を活かした提案を大切にしながら、使い手に寄り添った空間づくりをサポートしています。
+  </p>
+</section>
+
+<section class="bg-beige py-12 px-6 text-primary font-zen">
+  <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6 text-center">
+    <div>
+      <img src="/assets/icon_sketch.svg" alt="スケッチ" class="w-12 h-12 mx-auto mb-2">
+      <h3 class="font-semibold">手描きスケッチ</h3>
+      <p class="text-sm text-gray-700 mt-1">イメージを形にするための柔らかい表現</p>
+    </div>
+    <div>
+      <img src="/assets/icon_plan.svg" alt="図面" class="w-12 h-12 mx-auto mb-2">
+      <h3 class="font-semibold">図面作成</h3>
+      <p class="text-sm text-gray-700 mt-1">寸法や構造を具体化した平面・展開図</p>
+    </div>
+    <div>
+      <img src="/assets/icon_material.svg" alt="素材選び" class="w-12 h-12 mx-auto mb-2">
+      <h3 class="font-semibold">素材・家具提案</h3>
+      <p class="text-sm text-gray-700 mt-1">自然素材・ヴィンテージ・照明などもご提案</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-2xl font-bold mb-8 text-center text-primary">事例紹介</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {% assign design_posts = site.journal | where: "type", "design" | sort: "date" | reverse %}
+      {% for post in design_posts %}
+        {% include journal-card.html post=post %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-12 px-6 text-center">
+  <h3 class="text-xl font-semibold mb-2 text-primary">空間づくりを一緒に考えてみませんか？</h3>
+  <a href="/contact.html" class="inline-block mt-2 px-6 py-3 bg-[#2a382f] text-white rounded hover:bg-[#3a4a3f] transition">
+    お問い合わせはこちら
+  </a>
+</section>
+
