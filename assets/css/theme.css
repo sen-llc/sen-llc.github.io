@@ -14,7 +14,7 @@ body {
 .contact-theme {
   background: 
     linear-gradient(to bottom, var(--bg) 0%, var(--accent) 100%),
-    url('/assets/images/linen-texture.png');
+    url('/assets/linen-texture.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
