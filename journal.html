@@ -1,37 +1,23 @@
 ---
 layout: default
-title: JOURNAL
-description: 合同会社巛（sen llc）のジャーナル。リノベーションや育てる住まいに関する最新の情報や事例をご紹介します。
+title: ジャーナル
 ---
 
-<section id="journal-list" class="py-16 md:py-24">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h1 class="text-3xl md:text-5xl font-normal text-[#2a382f] mb-8">JOURNAL</h1>
-      <p class="text-lg text-[#2a382f]/80 max-w-2xl mx-auto">
-        私たちの活動や、リノベーション事例、育てる住まいに関する情報をお届けします。
-      </p>
-    </div>
 
-    <!-- タグフィルター -->
-    <div class="tag-filter">
-      <button class="tag-filter__button active" data-tag="all">すべて</button>
-      <button class="tag-filter__button" data-tag="renovation">#renovation</button>
-      <button class="tag-filter__button" data-tag="rental">#rental</button>
-      <button class="tag-filter__button" data-tag="news">#news</button>
-    </div>
+<section class="bg-gradient-to-b from-beige to-white py-20 px-6 font-zen text-primary">
+  <div class="max-w-3xl mx-auto text-center mb-16">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">わたしたちの日々の記録</h1>
+    <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+      暮らしをつくること、育てること、その途中にある発見や出会いを綴っています。<br>
+      事例紹介・DIY・設計のこと・活動のメモなどを、ジャーナルとしてまとめています。
+    </p>
+  </div>
 
-    <!-- 投稿一覧 -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="journal-grid">
-      {% for post in site.posts %}
-        {% include post-card.html 
-          title=post.title 
-          image=post.featured_image 
-          tag=post.tag 
-          date=post.date 
-          url=post.url 
-        %}
-      {% endfor %}
-    </div>
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+    {% assign posts = site.journal | sort: "date" | reverse %}
+    {% for post in posts %}
+      {% include journal-card.html post=post %}
+    {% endfor %}
   </div>
 </section>
+
