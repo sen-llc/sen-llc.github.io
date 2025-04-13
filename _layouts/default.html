@@ -1,55 +1,24 @@
----
-layout: default
-title: 育てる空間（賃貸）
-theme: rental-theme
----
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% include header.html %}
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
 
-<section class="text-primary py-20 px-6 font-zen">
-  <div class="max-w-3xl mx-auto text-center mb-16">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">育てる空間の可能性</h1>
-    <p class="text-base md:text-lg text-gray-800 leading-relaxed">
-      ふつうの賃貸では満足できない。<br>
-      そんな想いを持った人たちのために、自分らしく育てていける住まいを届けたいと考えています。
-    </p>
-  </div>
-</section>
+  <!-- テーマカラー定義 -->
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap">
+</head>
+<body class="{{ page.theme }}">
+  {% include header.html %}
 
-<section class="bg-white py-16 px-6 text-center font-zen text-primary">
-  <h2 class="text-2xl font-semibold mb-4 text-gray-900">“貸す”から “育てる” へ</h2>
-  <p class="max-w-3xl mx-auto text-base text-gray-800 leading-relaxed">
-    壁を塗ったり、棚を付けたり。<br>
-    住む人自身が、暮らしと空間に手を加えていけるような、<br>
-    “育てる”視点の賃貸を少しずつ増やしていきたいと思っています。
-  </p>
-</section>
+  <main class="min-h-screen">
+    {{ content }}
+  </main>
 
-<section class="bg-beige py-12 px-6 text-primary font-zen">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">現在募集中の物件</h2>
-    {% assign rental_posts = site.journal | where: "type", "rental" %}
-    {% if rental_posts.size > 0 %}
-      <div class="grid md:grid-cols-2 gap-6">
-        {% for post in rental_posts %}
-          {% include journal-card.html post=post %}
-        {% endfor %}
-      </div>
-    {% else %}
-      <div class="text-center py-16 text-primary font-zen">
-        <img src="/assets/images/coming-soon-alt.svg" alt="Coming Soon" class="w-36 mx-auto mb-6 opacity-80">
-        <p class="text-xl font-semibold mb-2">ただいま準備中です</p>
-        <p class="text-gray-700">空き家を住まいに変えるプロジェクト、まもなく公開予定。<br>どうぞお楽しみにお待ちください。</p>
-      </div>
-    {% endif %}
-  </div>
-</section>
-
-<section class="bg-white py-12 px-6 text-center">
-  <h3 class="text-xl font-semibold mb-2 text-primary">気になる方は、ぜひお気軽にご相談ください。</h3>
-  <a href="/contact.html" class="inline-block mt-2 px-6 py-3 bg-[#2a382f] text-white rounded hover:bg-[#3a4a3f] transition">
-    お問い合わせはこちら
-  </a>
-</section>
-
-{% include footer.html %}
+  {% include footer.html %}
+</body>
+</html>
