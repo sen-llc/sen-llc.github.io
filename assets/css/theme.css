@@ -1,42 +1,47 @@
-/* カラーテーマ：育てる住まい（Rental） */
+/* ▼ ページテーマ別カラーパレット（半透明） */
 .rental-theme {
-  --bg: rgba(249, 248, 244, 0.9);       /* キナリ (やや透過) */
+  --bg: rgba(249, 248, 244, 0.9);       /* キナリ */
   --text: #2a382f;
-  --accent: rgba(155, 120, 92, 0.8);     /* ブラウン (やや透過) */
+  --accent: rgba(155, 120, 92, 0.8);    /* ブラウン系 */
 }
 
-/* カラーテーマ：リノベーション（Design） */
 .design-theme {
   --bg: rgba(238, 230, 220, 0.9);
   --text: #2a382f;
   --accent: rgba(107, 78, 61, 0.8);
 }
 
-/* カラーテーマ：ジャーナル（Journal） */
-.journal-theme {
-  --bg: rgba(255, 242, 236, 0.9);
-  --text: #444;
-  --accent: rgba(118, 106, 88, 0.7);
-}
-
-/* カラーテーマ：運営情報（About） */
 .about-theme {
   --bg: rgba(255, 241, 233, 0.9);
   --text: #4a4a4a;
   --accent: rgba(118, 102, 80, 0.7);
 }
 
-/* 共通背景設定（布テクスチャ + グラデーション） */
+.journal-theme {
+  --bg: rgba(255, 244, 236, 0.9);
+  --text: #444;
+  --accent: rgba(150, 135, 110, 0.7);
+}
+
+.contact-theme {
+  --bg: rgba(255, 248, 242, 0.9);
+  --text: #2a382f;
+  --accent: rgba(110, 90, 80, 0.7);
+}
+
+/* ▼ 共通背景とフォント設定 */
 body {
+  font-family: 'Zen Maru Gothic', sans-serif;
   background:
     linear-gradient(to bottom, var(--bg) 0%, var(--accent) 100%),
     url('/assets/linen-texture.png');
+  background-size: 600px auto;
   background-repeat: repeat;
-  background-size: cover;
+  background-blend-mode: multiply;
   color: var(--text);
 }
 
-/* リンク・ホバー時のカラー */
+/* ▼ リンクカラー（調和） */
 a {
   color: var(--text);
 }
