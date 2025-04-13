@@ -1,15 +1,37 @@
-backend:
-  name: github
-  repo: sen-llc/sen-llc.github.io
-  branch: main
-
-media_folder: "assets/images"
-public_folder: "/assets/images"
-
 collections:
-  - name: "posts"
-    label: "記事"
-    folder: "journal"
+  - name: "rental"
+    label: "育てる住まい（賃貸）"
+    folder: "journal/rental"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "本文", name: "body", widget: "markdown" }
+      - { label: "画像", name: "image", widget: "image" }
+      - { label: "所在地", name: "location", widget: "string" }
+      - { label: "面積", name: "area", widget: "string" }
+      - { label: "用途", name: "usage", widget: "string" }
+      - { label: "竣工", name: "completion", widget: "string" }
+      - { label: "施工", name: "contractor", widget: "string" }
+
+  - name: "design"
+    label: "リノベーション事例"
+    folder: "journal/design"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "本文", name: "body", widget: "markdown" }
+      - { label: "画像", name: "image", widget: "image" }
+      - { label: "所在地", name: "location", widget: "string" }
+      - { label: "面積", name: "area", widget: "string" }
+      - { label: "用途", name: "usage", widget: "string" }
+      - { label: "竣工", name: "completion", widget: "string" }
+      - { label: "施工", name: "contractor", widget: "string" }
+
+  - name: "news"
+    label: "お知らせ"
+    folder: "journal/news"
     create: true
     slug: "{{slug}}"
     fields:
