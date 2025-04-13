@@ -1,80 +1,54 @@
 ---
 layout: default
-title: 暮らしを育てる（Rental）
+title: 育てる空間（賃貸）
 ---
 
+{% include header.html %}
 
-<!-- ヒーローセクション -->
-<section class="bg-beige py-20 px-6 text-center font-zen text-primary">
-  <div class="max-w-3xl mx-auto">
-    <h1 class="text-3xl md:text-4xl font-bold mb-6">余白から育てる、あなたの暮らし</h1>
+<section class="bg-gradient-to-b from-beige to-white py-20 px-6 font-zen text-primary">
+  <div class="max-w-3xl mx-auto text-center mb-16">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">育てる空間の可能性</h1>
     <p class="text-base md:text-lg text-gray-700 leading-relaxed">
-      キナリのような、素のままの空間に。<br>
-      少しずつ手を加えながら、暮らしを自分で育てていく。
-      私たちは、そんな“Rental（賃貸）”の新しいかたちを提案しています。
+      ふつうの賃貸では満足できない。<br>
+      そんな想いを持った人たちのために、自分らしく育てていける住まいを届けたいと考えています。
     </p>
   </div>
 </section>
 
-<!-- コンセプト説明セクション -->
-<section class="bg-white py-16 px-6 font-zen text-primary">
-  <div class="max-w-4xl mx-auto bg-beige rounded-lg p-8 shadow">
-    <h2 class="text-xl md:text-2xl font-bold mb-4">暮らしを「育てる」ってどういうこと？</h2>
-    <p class="text-gray-700 leading-relaxed">
-      一般的な賃貸は「住まわせてもらう」場所かもしれません。<br>
-      でも私たちは「住まいを育てる場所」に変えていきたいと思っています。<br>
-      空き家や古い物件を、住む人の手で少しずつ直しながら、自分らしい空間に染めていく。<br>
-      ペットと共に暮らす工夫をしたり、DIYで棚を増やしたり、自然素材に囲まれてみたり。<br>
-      そんな変化を楽しみながら、住まいを“育てる”ことができるような環境づくりを進めています。
-    </p>
-  </div>
+<section class="bg-white py-16 px-6 text-center font-zen text-primary">
+  <h2 class="text-2xl font-semibold mb-4">“貸す”から “育てる” へ</h2>
+  <p class="max-w-3xl mx-auto text-base text-gray-700 leading-relaxed">
+    壁を塗ったり、棚を付けたり。<br>
+    住む人自身が、暮らしと空間に手を加えていけるような、<br>
+    “育てる”視点の賃貸を少しずつ増やしていきたいと思っています。
+  </p>
 </section>
 
-<!-- カルーセル（DIY・活動の様子） -->
-<section class="bg-beige py-16 px-6 font-zen text-primary">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-xl md:text-2xl font-bold mb-6">DIYや空き家再生活動の様子</h2>
-    <div class="overflow-x-auto whitespace-nowrap snap-x snap-mandatory flex gap-4 pb-4">
-      <img src="/assets/diy1.png" alt="DIY風景1" class="w-72 h-48 rounded-lg snap-start object-cover">
-      <img src="/assets/diy2.png" alt="DIY風景2" class="w-72 h-48 rounded-lg snap-start object-cover">
-      <img src="/assets/diy3.jpg" alt="DIY風景3" class="w-72 h-48 rounded-lg snap-start object-cover">
-      <img src="/assets/diy4.jpg" alt="DIY風景4" class="w-72 h-48 rounded-lg snap-start object-cover">
-    </div>
-    <p class="text-sm text-gray-600 mt-4">DIY会や視察、空き家の調査・相談の様子など</p>
-  </div>
-</section>
-
-<!-- プロジェクト・事例紹介 -->
-<section class="bg-white py-16 px-6 font-zen text-primary">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-xl md:text-2xl font-bold mb-6">現在進行中のプロジェクト</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-beige p-4 rounded shadow text-center">
-        <p class="font-semibold">物件一覧（Coming Soon）</p>
-        <p class="text-sm text-gray-600 mt-2">現在掲載準備中です</p>
+<section class="bg-beige py-12 px-6 text-primary font-zen">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-2xl font-bold mb-8 text-center">現在募集中の物件</h2>
+    {% assign rental_posts = site.journal | where: "type", "rental" %}
+    {% if rental_posts.size > 0 %}
+      <div class="grid md:grid-cols-2 gap-6">
+        {% for post in rental_posts %}
+          {% include journal-card.html post=post %}
+        {% endfor %}
       </div>
-      <div class="bg-beige p-4 rounded shadow text-center">
-        <p class="font-semibold">入居者の声（Coming Soon）</p>
-        <p class="text-sm text-gray-600 mt-2">順次紹介予定です</p>
+    {% else %}
+      <div class="text-center py-16 text-gray-600 font-zen">
+        <img src="/assets/coming_soon.svg" alt="Coming Soon" class="w-32 mx-auto mb-6">
+        <p class="text-xl mb-2">現在、公開中の物件はありません。</p>
+        <p>DIYや空き家活用に向けて準備を進めています。どうぞお楽しみに！</p>
       </div>
-      <div class="bg-beige p-4 rounded shadow text-center">
-        <p class="font-semibold">DIY会のレポート（Coming Soon）</p>
-        <p class="text-sm text-gray-600 mt-2">準備中です</p>
-      </div>
-    </div>
+    {% endif %}
   </div>
 </section>
 
-<!-- アクションセクション -->
-<section class="bg-beige py-16 px-6 font-zen text-primary">
-  <div class="max-w-xl mx-auto text-center">
-    <h2 class="text-xl font-bold mb-4">「育てる暮らし」に興味がある方へ</h2>
-    <p class="text-base text-gray-700 mb-6">気になることがあれば、いつでも気軽にご相談ください。</p>
-    <div class="flex flex-col md:flex-row justify-center gap-4">
-      <a href="https://line.me/R/ti/p/@644gowhz?ts=03022247&oat_content=url" target="_blank" class="bg-[#2a382f] text-white py-2 px-4 rounded hover:bg-[#3a4a3f]">LINEで相談する</a>
-      <a href="https://www.instagram.com/sen_home9.1/?hl=ja" target="_blank" class="bg-white border border-[#2a382f] text-[#2a382f] py-2 px-4 rounded hover:bg-[#f0eee8]">Instagramを見る</a>
-      <a href="/contact.html" class="bg-white border border-[#2a382f] text-[#2a382f] py-2 px-4 rounded hover:bg-[#f0eee8]">お問い合わせ</a>
-    </div>
-  </div>
+<section class="bg-white py-12 px-6 text-center">
+  <h3 class="text-xl font-semibold mb-2 text-primary">気になる方は、ぜひお気軽にご相談ください。</h3>
+  <a href="/contact.html" class="inline-block mt-2 px-6 py-3 bg-[#2a382f] text-white rounded hover:bg-[#3a4a3f] transition">
+    お問い合わせはこちら
+  </a>
 </section>
 
+{% include footer.html %}
