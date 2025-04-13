@@ -1,0 +1,12 @@
+<div class="bg-white rounded shadow overflow-hidden">
+  <img src="{{ include.post.image }}" alt="{{ include.post.title }}" class="w-full h-48 object-cover">
+  <div class="p-4 flex flex-col gap-2">
+    <h3 class="font-semibold text-lg text-primary">{{ include.post.title }}</h3>
+    <p class="text-sm text-gray-700">{{ include.post.description }}</p>
+    {% if include.post.link %}
+      <a href="{{ include.post.link }}" target="_blank" class="inline-block text-sm text-[#2a382f] underline">詳しく見る</a>
+    {% else %}
+      <a href="{{ include.post.url }}" class="inline-block text-sm text-[#2a382f] underline">続きを読む</a>
+    {% endif %}
+  </div>
+</div>
