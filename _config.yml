@@ -1,0 +1,43 @@
+title: sen llc
+description: "空き家から、住まいと暮らしを育てる"
+baseurl: "" # サイトのサブパス（必要なら）
+url: "https://sen-llc.github.io" # サイトの本番URL
+markdown: kramdown
+theme: minima
+
+# Netlify CMS（Decap）と連携するディレクトリ構成
+collections:
+  journal:
+    output: true
+    permalink: /journal/:title/
+    sort_by: date
+
+defaults:
+  - scope:
+      path: ""
+      type: "journal"
+    values:
+      layout: journal
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Build設定
+exclude:
+  - node_modules
+  - vendor
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# メディアのパス設定（CMSと一致させる）
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: "/assets/images"
+
+# Sass/CSS設定
+sass:
+  style: compressed
