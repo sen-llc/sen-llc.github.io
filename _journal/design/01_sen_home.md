@@ -3,7 +3,7 @@ title: 巛の家｜川沿いのリノベーション
 date: 2024-09-01
 type: design
 description: 自然素材と回遊性を活かした自邸リノベーション。素材や風の通り方にこだわった設計です。
-image: /assets/d/sen_main.jpg
+image: /assets/sen_main.jpg
 ---
 
 築18年の川沿いに位置する集合住宅の改修計画です。  
