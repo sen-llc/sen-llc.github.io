@@ -26,17 +26,18 @@ link: https://www.tecture.jp/projects/5608
 人工物に囲まれた既存の住空間から、
 自然素材の温もりと機能性を兼ね備えた居心地の良い住まいへと生まれ変わりました。
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
+<div class="grid md:grid-cols-3 gap-4 my-8">
   <img src="/assets/sen_before.jpg" alt="Before" class="rounded shadow">
   <img src="/assets/sen_after.jpg" alt="After" class="rounded shadow">
   <img src="/assets/sen_ldk.jpg" alt="LDKの様子" class="rounded shadow">
   <img src="/assets/sen_material.jpg" alt="素材のディテール" class="rounded shadow">
   <img src="/assets/sen_kitchen.jpg" alt="キッチン" class="rounded shadow">
-  <img src="/assets/sen_corridor.jpg" alt="廊下の様子" class="rounded shadow">
+  <img src="/assets/sen_corridor.jpg" alt="廊下" class="rounded shadow">
   <img src="/assets/sen_catwalk.jpg" alt="キャットウォーク" class="rounded shadow">
-  <img src="/assets/sen_storage.jpg" alt="共用収納" class="rounded shadow">
+  <img src="/assets/sen_storage.jpg" alt="収納スペース" class="rounded shadow">
   <img src="/assets/sen_balcony.jpg" alt="バルコニー" class="rounded shadow">
 </div>
+
 
 ---
 
