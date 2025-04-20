@@ -17,28 +17,118 @@ body {
   line-height: 1.6;
 }
 
+/* --- ベース要素 --- */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
 a {
   color: var(--color-highlight);
   text-decoration: underline;
 }
-
-.icon {
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  fill: currentColor;
-}
-
 a:hover {
   text-decoration: underline;
 }
 
-section.theme-invert {
+/* --- 汎用ユーティリティ --- */
+.text-center {
+  text-align: center;
+}
+.text-white {
+  color: white;
+}
+.bg-white {
   background-color: var(--color-white);
-  color: var(--color-accent);
+}
+.bg-highlight {
+  background-color: var(--color-highlight);
+}
+.bg-accent {
+  background-color: var(--color-accent);
+}
+.bg-base {
+  background-color: var(--color-base);
+}
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
-/* Utility classes for mobile menu animation */
+/* --- セクション共通装飾 --- */
+section {
+  padding: 3rem 1rem;
+}
+section + section {
+  margin-top: 2rem;
+}
+
+/* --- カード風ブロック --- */
+.step-card {
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  background-color: var(--color-white);
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* --- ボタン --- */
+.button,
+.diagnosis-option {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+.button:hover,
+.diagnosis-option:hover {
+  background-color: var(--color-highlight);
+  opacity: 1;
+}
+.diagnosis-option.selected {
+  background-color: var(--color-highlight);
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgba(155, 120, 92, 0.3);
+}
+
+/* --- アイコン共通 --- */
+.icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* --- メニュー用トランジション --- */
 .transition-transform {
   transition: transform 0.3s ease;
 }
