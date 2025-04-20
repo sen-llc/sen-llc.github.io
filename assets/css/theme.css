@@ -16,3 +16,14 @@ body {
   padding: 0;
   line-height: 1.6;
 }
+a {
+  color: var(--color-highlight);
+  text-decoration: underline;
+}
+
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  fill: currentColor;
+}
