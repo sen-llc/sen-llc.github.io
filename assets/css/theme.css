@@ -4,6 +4,7 @@
   --color-highlight: #9b785c;
   --color-white: #ffffff;
   --color-black: #000000;
+
   --font-family: 'Zen Maru Gothic', sans-serif;
 }
 
@@ -43,10 +44,12 @@ a:hover {
   white-space: nowrap;
   opacity: 0.9;
 }
+
 .diagnosis-option:hover {
   background-color: var(--color-highlight);
   opacity: 1;
 }
+
 .diagnosis-option.selected {
   background-color: var(--color-highlight);
   transform: scale(1.05);
