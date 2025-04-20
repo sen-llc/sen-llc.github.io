@@ -20,33 +20,34 @@ image: /assets/sen_main.jpg
 
 <div class="grid md:grid-cols-3 gap-4 my-8">
   <a href="/assets/d/sen_before.png" class="glightbox" data-gallery="gallery" data-title="Before">
-    <img src="/assets/d/sen_before.png" alt="Before" class="rounded shadow">
+    <img src="/assets/d/sen_before.png" alt="Before" class="rounded shadow" />
   </a>
   <a href="/assets/d/sen_after.png" class="glightbox" data-gallery="gallery" data-title="After">
-    <img src="/assets/d/sen_after.png" alt="After" class="rounded shadow">
+    <img src="/assets/d/sen_after.png" alt="After" class="rounded shadow" />
   </a>
   <a href="/assets/d/sen_ldk.JPG" class="glightbox" data-gallery="gallery" data-title="Living Room">
-    <img src="/assets/d/sen_ldk.JPG" alt="Living Room" class="rounded shadow">
+    <img src="/assets/d/sen_ldk.JPG" alt="Living Room" class="rounded shadow" />
   </a>
   <a href="/assets/d/sen_kitchen.JPG" class="glightbox" data-gallery="gallery" data-title="Kitchen">
-    <img src="/assets/d/sen_kitchen.JPG" alt="Kitchen" class="rounded shadow">
+    <img src="/assets/d/sen_kitchen.JPG" alt="Kitchen" class="rounded shadow" />
   </a>
   <a href="/assets/d/sen_catwalk.JPG" class="glightbox" data-gallery="gallery" data-title="Cat Shelf">
-    <img src="/assets/d/sen_catwalk.JPG" alt="Cat Shelf" class="rounded shadow">
+    <img src="/assets/d/sen_catwalk.JPG" alt="Cat Shelf" class="rounded shadow" />
   </a>
   <a href="/assets/d/sen_corridor.JPG" class="glightbox" data-gallery="gallery" data-title="Hall">
-    <img src="/assets/d/sen_corridor.JPG" alt="Hall" class="rounded shadow">
+    <img src="/assets/d/sen_corridor.JPG" alt="Hall" class="rounded shadow" />
   </a>
   <a href="/assets/d/sen_corridor2.JPG" class="glightbox" data-gallery="gallery" data-title="Entrance">
-    <img src="/assets/d/sen_corridor2.JPG" alt="Entrance" class="rounded shadow">
+    <img src="/assets/d/sen_corridor2.JPG" alt="Entrance" class="rounded shadow" />
   </a>
   <a href="/assets/d/sen_bedroom.JPG" class="glightbox" data-gallery="gallery" data-title="Master Bedroom">
-    <img src="/assets/d/sen_bedroom.JPG" alt="Master Bedroom" class="rounded shadow">
+    <img src="/assets/d/sen_bedroom.JPG" alt="Master Bedroom" class="rounded shadow" />
   </a>
   <a href="/assets/d/sen_bathroom.JPG" class="glightbox" data-gallery="gallery" data-title="Bathroom">
-    <img src="/assets/d/sen_bathroom.JPG" alt="Bathroom" class="rounded shadow">
+    <img src="/assets/d/sen_bathroom.JPG" alt="Bathroom" class="rounded shadow" />
   </a>
 </div>
+
 
 
 ---
