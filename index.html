@@ -1,166 +1,66 @@
 ---
 layout: default
-title: トップページ
+title: sen llc
 theme: theme
 ---
 
+<section class="first-view py-12 text-center">
+  <h1 class="text-4xl font-bold mb-6">暮らしを耕す。</h1>
+  <p class="max-w-2xl mx-auto leading-relaxed">
+    畑を耕すように、住まいや空間に手をかけて、時間をかけて、豊かにしていく。<br>
+    誰かが住み、手を加え、また次の誰かが受け継いでいく。<br>
+    そんなふうに、手間と想いが重なり合っていくこと。<br>
+    その積み重ねこそが、その場所だけの価値になる。
+  </p>
+</section>
 
-<!-- Heroセクション: Before→Afterのフェード＋コンセプトテキスト -->
-<section class="relative h-screen overflow-hidden text-white font-zen">
-  <div class="absolute inset-0 z-0 animation-fade bg-cover bg-center" style="--image-before: url('/assets/before.JPEG'); --image-after: url('/assets/after.JPG');"></div>
-
-  <div class="relative z-10 flex items-center justify-center h-full bg-black/30 px-6 text-center">
-    <div>
-      <h1 class="text-3xl md:text-5xl font-bold leading-relaxed">
-        キナリのような余白のある住まいに、<br />
-        あなたの色を少しずつ染めていく
-      </h1>
-      <p class="mt-6 text-sm md:text-base text-white/90">
-        Before → Afterのように、暮らしも少しずつ整っていく。<br />
-        私たちは、そんな変化の「はじまり」をつくります。
-      </p>
-    </div>
+<section class="services py-16 bg-[var(--color-base)]">
+  <div class="service-block max-w-3xl mx-auto mb-16">
+    <h2 class="text-2xl font-semibold mb-4">with your own hands</h2>
+    <p class="leading-relaxed">
+      賃貸でも、住まいを耕していける選択肢を。<br>
+      自分好みにカスタマイズできるDIY可能な空間や、経年変化を楽しめる自然素材の内装。<br>
+      子どもや動物と一緒に、原状回復を気にせずのびのび暮らせる。<br>
+      そんな、ちょっとわがままで自然体な暮らしを楽しみたいあなたへ。<br>
+      私たちは、「育てていく住まい」を提供します。
+    </p>
+  </div>
+  <div class="service-block max-w-3xl mx-auto mb-16">
+    <h2 class="text-2xl font-semibold mb-4">with us beside you</h2>
+    <p class="leading-relaxed">
+      理想の暮らしを思い描いてはいるけれど、<br>
+      何から始めていいのかわからない。<br>
+      うまく言葉にできない。<br>
+      まずは一部屋から手を入れてみたい。<br><br>
+      そんな方のそばで、少しずつ“耕す暮らし”を一緒に育てていきます。<br><br>
+      知識や経験がなくても大丈夫。<br>
+      私たちが寄り添いながら、あなたの理想に一歩ずつ近づけるお手伝いをします。
+    </p>
   </div>
 </section>
 
-<style>
-@keyframes fadeLoop {
-  0%, 45% {
-    background-image: var(--image-before);
-    opacity: 1;
-  }
-  50%, 95% {
-    background-image: var(--image-after);
-    opacity: 1;
-  }
-  100% {
-    background-image: var(--image-before);
-    opacity: 1;
-  }
-}
-.animation-fade {
-  animation: fadeLoop 12s ease-in-out infinite;
-  background-size: cover;
-  background-position: center;
-}
-</style>
-
-<!-- コンセプト説明＋診断導線 -->
-<section class="relative bg-beige py-20 px-6 font-zen text-primary">
-  <div class="max-w-4xl mx-auto text-center">
-    <div class="bg-white shadow-md rounded-lg p-8 md:p-12">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6">
-        自分に合った住まいの形を、<br class="md:hidden">簡単な質問から探してみませんか？
-      </h2>
-      <p class="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-        暮らしを「育てる」賃貸、<br class="md:hidden"> 暮らしを「つくる」設計サポート。<br>
-        私たちは、あなたの“これから”を形にする2つの選択肢を用意しました。
-      </p>
-      <div class="flex flex-col md:flex-row justify-center gap-4 mb-6 max-w-xl mx-auto">
-        <a href="/rental.html" class="flex-1 bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">
-          暮らしを育てる（Rental）
-        </a>
-        <a href="/design.html" class="flex-1 border border-[#2a382f] bg-white text-[#2a382f] text-center py-3 rounded hover:bg-[#f0eee8] transition">
-          暮らしをつくる（Design）
-        </a>
-      </div>
-      <p class="text-sm text-gray-600 mb-2">どちらか迷ったら、簡単な診断でチェックできます</p>
-      <button id="start-quiz" class="underline text-sm text-[#2a382f] hover:text-[#4a5a4f]">YES / NO診断してみる</button>
-
-      <div id="quiz-container" class="hidden mt-6 bg-white border border-[#2a382f] rounded p-4">
-        <p id="quiz-question" class="mb-4 font-semibold"></p>
-        <div class="flex gap-4">
-          <button id="quiz-option-1" class="flex-1 bg-[#2a382f] text-white py-2 rounded"></button>
-          <button id="quiz-option-2" class="flex-1 border border-[#2a382f] text-[#2a382f] py-2 rounded bg-[#f9f8f4]"></button>
-        </div>
-        <div id="quiz-result" class="mt-6 hidden">
-          <p class="font-bold mb-3">あなたにおすすめなのは…</p>
-          <a id="result-link" href="#" class="block bg-[#2a382f] text-white text-center py-3 rounded hover:bg-[#3a4a3f] transition">こちら</a>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="find-way py-12 bg-white text-center">
+  <h2 class="text-xl font-semibold mb-4">Find your way</h2>
+  <p class="max-w-xl mx-auto leading-relaxed">
+    どんなふうに住まいを“育てて”いきたいか。<br><br>
+    あなたらしい暮らし方の入り口を、一緒に探してみませんか？
+  </p>
 </section>
 
-<script>
-const startQuiz = document.getElementById("start-quiz");
-const quizContainer = document.getElementById("quiz-container");
-const questionText = document.getElementById("quiz-question");
-const option1 = document.getElementById("quiz-option-1");
-const option2 = document.getElementById("quiz-option-2");
-const result = document.getElementById("quiz-result");
-const resultLink = document.getElementById("result-link");
+<section class="whats-new py-12 bg-[var(--color-highlight)] text-white text-center">
+  <h2 class="text-xl font-semibold mb-4">What's new</h2>
+  <p class="max-w-xl mx-auto leading-relaxed">
+    募集中の住まい、設計事例など、私たちの活動記録を綴っています。<br>
+    Instagramからも活動の様子をお届けしています。<br><br>
+    <a href="https://www.instagram.com/sen_home9.1/" class="underline">Instagramはこちら</a>
+  </p>
+</section>
 
-let currentStep = 0;
-let answers = [];
-
-const questions = [
-  {
-    text: "1. 現在、お住まいはどちらですか？",
-    options: ["貸し家", "持ち家"]
-  },
-  {
-    text: "2. これからの住まい探しでは、賃貸と購入のどちらをお考えですか？",
-    options: ["家を借りたい", "家を購入したい"]
-  },
-  {
-    text: "3. 住まいのデザインは…自分で楽しみながらやりたいですか？それともプロと一緒に作りたいですか？",
-    options: ["DIYなど、自分で自由に手を加えたい", "プロと一緒に進めたい"]
-  }
-];
-
-function showQuestion(step) {
-  questionText.textContent = questions[step].text;
-  option1.textContent = questions[step].options[0];
-  option2.textContent = questions[step].options[1];
-}
-
-function showResult() {
-  const [q1, q2, q3] = answers;
-  if (q1 === "持ち家" || q2 === "家を購入したい") {
-    resultLink.href = "/design.html";
-    resultLink.textContent = "暮らしをつくる（Design）へ";
-  } else {
-    resultLink.href = "/rental.html";
-    resultLink.textContent = "暮らしを育てる（Rental）へ";
-  }
-  result.classList.remove("hidden");
-}
-
-option1.addEventListener("click", () => {
-  answers.push(option1.textContent);
-  currentStep++;
-  if (currentStep < questions.length) {
-    showQuestion(currentStep);
-  } else {
-    questionText.textContent = "診断結果はこちら";
-    option1.classList.add("hidden");
-    option2.classList.add("hidden");
-    showResult();
-  }
-});
-
-option2.addEventListener("click", () => {
-  answers.push(option2.textContent);
-  currentStep++;
-  if (currentStep < questions.length) {
-    showQuestion(currentStep);
-  } else {
-    questionText.textContent = "診断結果はこちら";
-    option1.classList.add("hidden");
-    option2.classList.add("hidden");
-    showResult();
-  }
-});
-
-startQuiz.addEventListener("click", () => {
-  quizContainer.classList.remove("hidden");
-  currentStep = 0;
-  answers = [];
-  option1.classList.remove("hidden");
-  option2.classList.remove("hidden");
-  result.classList.add("hidden");
-  showQuestion(currentStep);
-});
-</script>
-
+<section class="contact-cta py-12 bg-[var(--color-base)] text-center">
+  <p class="max-w-xl mx-auto leading-relaxed mb-6">
+    こんなこと相談していいのかな…？と、悩んで足が止まる前に。<br><br>
+    どんな小さなことでも、どうぞお気軽にご相談ください。<br>
+    LINEやInstagramのDMからでもお問い合わせいただけます。
+  </p>
+  <a href="/contact.html" class="inline-block mt-4 px-6 py-3 bg-[var(--color-accent)] text-white rounded-full">お問い合わせ</a>
+</section>
