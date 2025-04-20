@@ -82,3 +82,10 @@ section.theme-invert {
 .translate-x-0 {
   transform: translateX(0%);
 }
+
+/* テキストサイズ調整の互換性対策 */
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
