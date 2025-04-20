@@ -1,22 +1,52 @@
-<header class="bg-[#f9f8f4] text-[#2a382f] px-6 py-4 font-zen">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    <a href="/" class="flex items-center space-x-2">
-      <img src="/assets/logo.svg" alt="sen llc ロゴ" class="h-6">
-      <span class="text-base font-medium">sen llc</span>
-    </a>
-    <nav class="hidden md:flex space-x-6 text-sm">
-      <a href="/rental.html" class="hover:underline">rental</a>
-      <a href="/design.html" class="hover:underline">design</a>
-      <a href="/journal.html" class="hover:underline">journal</a>
-      <a href="/about.html" class="hover:underline">about</a>
+<header class="w-full px-4 py-4 flex justify-between items-center z-50 relative">
+  <!-- Logo -->
+  <a href="/" class="flex items-center space-x-2 z-50 relative">
+    <img src="/assets/logo.svg" alt="sen logo" class="h-6 md:h-8">
+    <span class="font-semibold text-base md:text-lg">sen llc</span>
+  </a>
+
+  <!-- Hamburger button (田畑の畝アイコン) -->
+  <button id="menu-toggle" class="md:hidden z-50 relative focus:outline-none">
+    <img src="/assets/icons/hamburger-une.svg" alt="menu icon" class="h-6 w-6">
+  </button>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobile-menu"
+       class="fixed inset-0 bg-index-theme text-white flex flex-col items-center justify-center space-y-6 text-lg font-medium transition-all duration-300 ease-in-out transform translate-x-full md:hidden z-40">
+    <button id="menu-close" class="absolute top-5 right-5 text-white text-2xl">
+      &times;
+    </button>
+
+    <nav class="flex flex-col space-y-4 items-center">
+      <a href="/" class="hover:underline">トップ</a>
+      <a href="/rental.html" class="hover:underline">育てる住まい</a>
+      <a href="/design.html" class="hover:underline">つくる住まい</a>
+      <a href="/journal.html" class="hover:underline">ジャーナル</a>
+      <a href="/about.html" class="hover:underline">私たちについて</a>
+      <a href="/contact.html" class="hover:underline">お問い合わせ</a>
     </nav>
-    <!-- ハンバーガー用（モバイル表示時） -->
-    <div class="md:hidden">
-      <button id="mobile-menu-button" class="focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+
+    <div class="mt-8 text-sm space-y-2 text-center">
+      <a href="https://www.instagram.com/sen_home9.1/" target="_blank" rel="noopener" class="block hover:underline">
+        Instagram
+      </a>
+      <a href="https://line.me/R/ti/p/@644gowhz?ts=03022247&oat_content=url" target="_blank" rel="noopener" class="block hover:underline">
+        LINE
+      </a>
     </div>
   </div>
 </header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const close = document.getElementById('menu-close');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.remove('translate-x-full');
+  });
+
+  close.addEventListener('click', () => {
+    menu.classList.add('translate-x-full');
+  });
+</script>
