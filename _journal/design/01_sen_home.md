@@ -29,13 +29,13 @@ link: https://www.tecture.jp/projects/5608
 <div class="grid md:grid-cols-3 gap-4 my-8">
   <img src="/assets/d/sen_before.png" alt="Before" class="rounded shadow">
   <img src="/assets/d/sen_after.png" alt="After" class="rounded shadow">
-  <img src="/assets/d/sen_ldk.jpg" alt="Living Room" class="rounded shadow">
-  <img src="/assets/d/sen_kitchen.jpg" alt="Kitchen" class="rounded shadow">
-  <img src="/assets/d/sen_catwalk.jpg" alt="Cat Shelf" class="rounded shadow">
-  <img src="/assets/d/sen_corridor.jpg" alt="Hall" class="rounded shadow">
-  <img src="/assets/d/sen_corridor2.jpg" alt="Entrance" class="rounded shadow">
-  <img src="/assets/d/sen_bedroom.jpg" alt="Master Bedroom" class="rounded shadow">
-  <img src="/assets/d/sen_bathroom.jpg" alt="Bathroom" class="rounded shadow">
+  <img src="/assets/d/sen_ldk.JPG" alt="Living Room" class="rounded shadow">
+  <img src="/assets/d/sen_kitchen.JPG" alt="Kitchen" class="rounded shadow">
+  <img src="/assets/d/sen_catwalk.JPG" alt="Cat Shelf" class="rounded shadow">
+  <img src="/assets/d/sen_corridor.JPG" alt="Hall" class="rounded shadow">
+  <img src="/assets/d/sen_corridor2.JPG" alt="Entrance" class="rounded shadow">
+  <img src="/assets/d/sen_bedroom.JPG" alt="Master Bedroom" class="rounded shadow">
+  <img src="/assets/d/sen_bathroom.JPG" alt="Bathroom" class="rounded shadow">
 </div>
 
 
