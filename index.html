@@ -57,13 +57,26 @@ theme: index-theme
 </section>
 
 <section class="whats-new py-20 bg-[var(--color-highlight)] text-white text-center px-4" data-aos="fade-up">
-  <h2 class="text-xl font-semibold mb-4">What's new</h2>
-  <p class="max-w-xl mx-auto leading-relaxed">
-    募集中の住まい、設計事例など、<br class="hidden md:inline">私たちの活動記録を綴っています。<br>
+  <h2 class="text-xl font-semibold mb-4">what's new</h2>
+  <p class="max-w-xl mx-auto leading-relaxed mb-8">
+    募集中の住まい、設計事例など、<br class="hidden md:inline">私たちの活動記録を綴っています。
+  </p>
+
+  <!-- ✨ 最新ジャーナル記事カード（3件） -->
+  <div class="max-w-5xl mx-auto grid gap-6 md:grid-cols-3 mb-10">
+    {% assign sorted_posts = site.journal | sort: 'date' | reverse %}
+    {% for post in sorted_posts limit: 3 %}
+      {% include journal-card.html post=post %}
+    {% endfor %}
+  </div>
+
+  <!-- Instagram紹介文とリンク -->
+  <p class="max-w-xl mx-auto leading-relaxed mb-4">
     Instagramからも活動の様子をお届けしています。
   </p>
-  <a href="https://www.instagram.com/sen_home9.1/" class="underline mt-4 inline-block">Instagramはこちら</a>
+  <a href="https://www.instagram.com/sen_home9.1/" class="underline mt-2 inline-block">Instagramはこちら</a>
 </section>
+
 
 <section class="contact-cta py-20 bg-[var(--color-base)] text-center px-4" data-aos="fade-up">
   <p class="max-w-xl mx-auto leading-relaxed mb-6">
