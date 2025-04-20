@@ -2,8 +2,11 @@
 layout: default
 ---
 
-<article class="max-w-4xl mx-auto py-16 px-4">
-  <h1 class="text-3xl font-bold mb-6">{{ page.title }}</h1>
+<article class="prose mx-auto py-16 px-4">
+  <h1 class="text-3xl font-bold mb-2">{{ page.title }}</h1>
+  {% if page.type %}
+    <p class="text-sm text-gray-500 mb-6">{{ page.type }}</p>
+  {% endif %}
 
   {% if page.image %}
     <img src="{{ page.image }}" alt="{{ page.title }}" class="mb-6 rounded" />
