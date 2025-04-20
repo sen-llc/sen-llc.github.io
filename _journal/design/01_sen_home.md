@@ -13,52 +13,50 @@ image: /assets/sen_main.jpg
 また、収納を中心に配置し、廊下や収納を布で柔らかく仕切りオープンな設計としています。  
 さらに緩やかなキャットウォークで囲うことで、光や風が住戸全体を巡る回遊性の高い住空間となりました。
 
-内装材には、日本の伝統を感じさせる土由来の塗料や畳、和紙などの自然素材を用いることで、  
-温かみと落ち着きを感じる空間となりました。  
+内装材には、日本の伝統を感じさせる土由来の塗料や畳、和紙などの自然素材を用いることで、温かみと落ち着きを感じる空間となりました。  
 また、環境に配慮したリサイクル素材、デッドストック品なども積極的に採用しています。
 
-人工物に囲まれた既存の住空間から、自然素材の温もりと機能性を兼ね備えた  
-居心地の良い住まいへと生まれ変わりました。
-
----
+人工物に囲まれた既存の住空間から、自然素材の温もりと機能性を兼ね備えた居心地の良い住まいへと生まれ変わりました。
 
 <div class="grid md:grid-cols-3 gap-4 my-8">
-  <a href="/assets/d/sen_before.png" data-lightbox="gallery" data-title="Before">
-    <img src="/assets/d/sen_before.png" alt="Before" class="rounded shadow" />
-  </a>
-  <a href="/assets/d/sen_after.png" data-lightbox="gallery" data-title="After">
-    <img src="/assets/d/sen_after.png" alt="After" class="rounded shadow" />
-  </a>
-  <a href="/assets/d/sen_ldk.JPG" data-lightbox="gallery" data-title="Living Room">
-    <img src="/assets/d/sen_ldk.JPG" alt="Living Room" class="rounded shadow" />
-  </a>
-  <a href="/assets/d/sen_kitchen.JPG" data-lightbox="gallery" data-title="Kitchen">
-    <img src="/assets/d/sen_kitchen.JPG" alt="Kitchen" class="rounded shadow" />
-  </a>
-  <a href="/assets/d/sen_catwalk.JPG" data-lightbox="gallery" data-title="Cat Shelf">
-    <img src="/assets/d/sen_catwalk.JPG" alt="Cat Shelf" class="rounded shadow" />
-  </a>
-  <a href="/assets/d/sen_corridor.JPG" data-lightbox="gallery" data-title="Hall">
-    <img src="/assets/d/sen_corridor.JPG" alt="Hall" class="rounded shadow" />
-  </a>
-  <a href="/assets/d/sen_corridor2.JPG" data-lightbox="gallery" data-title="Entrance">
-    <img src="/assets/d/sen_corridor2.JPG" alt="Entrance" class="rounded shadow" />
-  </a>
-  <a href="/assets/d/sen_bedroom.JPG" data-lightbox="gallery" data-title="Master Bedroom">
-    <img src="/assets/d/sen_bedroom.JPG" alt="Master Bedroom" class="rounded shadow" />
-  </a>
-  <a href="/assets/d/sen_bathroom.JPG" data-lightbox="gallery" data-title="Bathroom">
-    <img src="/assets/d/sen_bathroom.JPG" alt="Bathroom" class="rounded shadow" />
-  </a>
+
+<a href="/assets/d/sen_before.png" data-lightbox="gallery" data-title="Before">
+  <img src="/assets/d/sen_before.png" alt="Before" class="rounded shadow" />
+</a>
+<a href="/assets/d/sen_after.png" data-lightbox="gallery" data-title="After">
+  <img src="/assets/d/sen_after.png" alt="After" class="rounded shadow" />
+</a>
+<a href="/assets/d/sen_ldk.JPG" data-lightbox="gallery" data-title="LDKの様子">
+  <img src="/assets/d/sen_ldk.JPG" alt="LDKの様子" class="rounded shadow" />
+</a>
+<a href="/assets/d/sen_kitchen.JPG" data-lightbox="gallery" data-title="Kitchen">
+  <img src="/assets/d/sen_kitchen.JPG" alt="Kitchen" class="rounded shadow" />
+</a>
+<a href="/assets/d/sen_catwalk.JPG" data-lightbox="gallery" data-title="Cat Shelf / キャットウォーク">
+  <img src="/assets/d/sen_catwalk.JPG" alt="Catwalk" class="rounded shadow" />
+</a>
+<a href="/assets/d/sen_corridor.JPG" data-lightbox="gallery" data-title="Hallway">
+  <img src="/assets/d/sen_corridor.JPG" alt="Hallway" class="rounded shadow" />
+</a>
+<a href="/assets/d/sen_corridor2.JPG" data-lightbox="gallery" data-title="Entrance">
+  <img src="/assets/d/sen_corridor2.JPG" alt="Entrance" class="rounded shadow" />
+</a>
+<a href="/assets/d/sen_bedroom.JPG" data-lightbox="gallery" data-title="Master Bedroom">
+  <img src="/assets/d/sen_bedroom.JPG" alt="Bedroom" class="rounded shadow" />
+</a>
+<a href="/assets/d/sen_bathroom.JPG" data-lightbox="gallery" data-title="Bathroom">
+  <img src="/assets/d/sen_bathroom.JPG" alt="Bathroom" class="rounded shadow" />
+</a>
+
 </div>
 
 ---
 
-<div class="mt-8 text-sm leading-loose">
-  <p><strong>エリア：</strong>千葉県</p>
-  <p><strong>用途：</strong>共同住宅</p>
-  <p><strong>延床面積：</strong>70.28㎡</p>
-  <p><strong>竣工：</strong>2024年9月</p>
-  <p><strong>施工：</strong>BE LLC</p>
-  <p><strong>掲載：</strong><a href="https://www.tecture.jp/projects/5608" target="_blank" class="underline text-[var(--color-highlight)]">TECTURE掲載ページ</a></p>
+<div class="grid md:grid-cols-2 gap-4 mt-12 text-sm leading-loose">
+  <div><span class="font-semibold">エリア：</span>千葉県</div>
+  <div><span class="font-semibold">用途：</span>共同住宅</div>
+  <div><span class="font-semibold">延床面積：</span>70.28㎡</div>
+  <div><span class="font-semibold">竣工：</span>2024年9月</div>
+  <div><span class="font-semibold">施工：</span>BE LLC</div>
+  <div><span class="font-semibold">掲載：</span><a href="https://www.tecture.jp/projects/5608" target="_blank" class="underline text-[var(--color-highlight)]">TECTURE掲載ページ</a></div>
 </div>
