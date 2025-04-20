@@ -1,0 +1,9 @@
+/* Rental Theme Overrides */
+body {
+  background-color: var(--color-accent);
+  color: var(--color-base);
+}
+
+a {
+  color: var(--color-highlight);
+}
