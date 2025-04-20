@@ -1,13 +1,74 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }}</title>
 
-<article class="prose mx-auto py-16 px-4">
-  <h1 class="text-3xl font-bold mb-6">{{ page.title }}</h1>
+  <!-- ✅ Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  {% if page.image %}
-    <img src="{{ page.image }}" alt="{{ page.title }}" class="mb-6 rounded" />
+  <!-- 共通テーマCSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
+  {% if page.theme == "rental-theme" %}
+    <link rel="stylesheet" href="{{ '/assets/css/rental-theme.css' | relative_url }}">
+  {% elsif page.theme == "design-theme" %}
+    <link rel="stylesheet" href="{{ '/assets/css/design-theme.css' | relative_url }}">
   {% endif %}
 
-  {{ content }}
-</article>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/logo.svg' | relative_url }}">
+
+  <!-- Googleフォント -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" />
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+  <style>
+    dl dt {
+      font-weight: 600;
+      color: var(--color-accent);
+      min-width: 4em;
+    }
+    dl dd {
+      margin-left: 0.5em;
+    }
+  </style>
+</head>
+
+<body class="{{ page.theme }}">
+  {% include header.html %}
+  <main class="px-4 md:px-8 lg:px-20 py-12 max-w-5xl mx-auto">
+    <article class="prose prose-neutral max-w-none">
+      <p class="text-sm text-gray-500 mb-2">設計記事｜design</p>
+      <h1 class="text-3xl font-bold mb-6">{{ page.title }}</h1>
+      {% if page.image %}
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="mb-6 rounded shadow" />
+      {% endif %}
+      {{ content }}
+    </article>
+  </main>
+  {% include footer.html %}
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Lightbox2 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'albumLabel': "%1 / %2",
+      'fadeDuration': 200,
+      'imageFadeDuration': 200,
+      'positionFromTop': 80
+    });
+  </script>
+</body>
+</html>
