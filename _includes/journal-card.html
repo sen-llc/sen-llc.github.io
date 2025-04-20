@@ -3,10 +3,11 @@
   <div class="p-4 flex flex-col gap-2">
     <h3 class="font-semibold text-lg text-primary">{{ include.post.title }}</h3>
     <p class="text-sm text-gray-700">{{ include.post.description }}</p>
+    <a href="{{ include.post.url }}" class="inline-block text-sm text-[#2a382f] underline">続きを読む</a>
     {% if include.post.link %}
-      <a href="{{ include.post.link }}" target="_blank" class="inline-block text-sm text-[#2a382f] underline">詳しく見る</a>
-    {% else %}
-      <a href="{{ include.post.url }}" class="inline-block text-sm text-[#2a382f] underline">続きを読む</a>
+      <p class="text-xs text-gray-500 mt-1">
+        外部掲載：<a href="{{ include.post.link }}" target="_blank" class="underline">TECTUREページを見る</a>
+      </p>
     {% endif %}
   </div>
 </div>
