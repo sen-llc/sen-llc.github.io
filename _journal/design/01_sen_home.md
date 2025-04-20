@@ -1,7 +1,7 @@
 ---
 layout: default
 theme: design-theme
-title: 巛の家｜川沿いのリノベーション
+title: 《《の家｜川沿いのリノベーション
 date: 2024-09-01
 type: design
 description: 自然素材と回遊性を活かした自邸リノベーション。素材や風の通り方にこだわった設計です。
@@ -11,30 +11,25 @@ link: https://www.tecture.jp/projects/5608
 
 <article class="prose mx-auto py-16 px-4">
   <h1 class="text-3xl font-bold mb-2">{{ page.title }}</h1>
-  <p class="text-sm text-gray-500 mb-8 tracking-wide">カテゴリ：{{ page.type }}</p>
+  <p class="text-sm text-gray-500 mb-3 tracking-wide">カテゴリ：<span class="text-xs">{{ page.type }}</span></p>
 
   {% if page.image %}
     <img src="{{ page.image }}" alt="{{ page.title }}" class="mb-10 rounded aspect-[3/2] object-cover w-full" />
   {% endif %}
 
   <div class="tracking-wide leading-relaxed">
-    <p>
-      築18年の川沿いに位置する集合住宅の改修計画です。
-      間口が狭く奥行きが深い間取りに対して、部屋の中央まで光と風が届く快適な住まいを目指しました。
-    </p>
-    <p>
-      各居室の収納を共用化し、居室を縮小することで、明るく居心地の良い広々としたLDKを拡張しています。
-      また、収納を中心に配置し、廊下や収納を布で柔らかく仕切りオープンな設計としています。
-      さらに緩やかなキャットウォークで囲うことで、光や風が住戸全体を巡る回遊性の高い住空間となりました。
-    </p>
-    <p>
-      内装材には、日本の伝統を感じさせる土由来の塗料や畳、和紙などの自然素材を用いることで、
-      温かみと落ち着きを感じる空間となりました。
-      また、環境に配慮したリサイクル素材、デッドストック品なども積極的に採用しています。
-    </p>
-    <p>
-      人工物に囲まれた既存の住空間から、自然素材の温もりと機能性を兼ね備えた居心地の良い住まいへと生まれ変わりました。
-    </p>
+    <p>築18年の川沿いに位置する集合住宅の改修計画です。<br>
+    間口が狭く奥行きが深い間取りに対して、部屋の中央まで光と風が届く快適な住まいを目指しました。</p>
+
+    <p>各居室の収納を共用化し、居室を縮小することで、明るく居心地の良い広々としたLDKを拡張しています。<br>
+    また、収納を中心に配置し、廊下や収納を布で柔らかく仕切りオープンな設計としています。<br>
+    さらに緩やかなキャットウォークで囲うことで、光や風が住戸全体を巡る回遊性の高い住空間となりました。</p>
+
+    <p>内装材には、日本の伝統を感じさせる土由来の塗料や畳、和紙などの自然素材を用いることで、<br>
+    温かみと落ち着きを感じる空間となりました。<br>
+    また、環境に配慮したリサイクル素材、デッドストック品なども積極的に採用しています。</p>
+
+    <p>人工物に囲まれた既存の住空間から、自然素材の温もりと機能性を兼ね備えた居心地の良い住まいへと生まれ変わりました。</p>
   </div>
 
   <div class="grid md:grid-cols-3 gap-4 my-12">
@@ -67,16 +62,18 @@ link: https://www.tecture.jp/projects/5608
     </a>
   </div>
 
-  <hr class="border-t border-gray-300 my-8">
+  <div class="my-8 border-t border-gray-300"></div>
 
-  <ul class="text-sm space-y-2">
-    <li class="flex items-baseline gap-2"><span class="font-bold w-20">エリア：</span><span>千葉県</span></li>
-    <li class="flex items-baseline gap-2"><span class="font-bold w-20">用途：</span><span>共同住宅</span></li>
-    <li class="flex items-baseline gap-2"><span class="font-bold w-20">延床面積：</span><span>70.28㎡</span></li>
-    <li class="flex items-baseline gap-2"><span class="font-bold w-20">竣工：</span><span>2024年9月</span></li>
-    <li class="flex items-baseline gap-2"><span class="font-bold w-20">施工：</span><span>BE LLC</span></li>
-    <li class="flex items-baseline gap-2"><span class="font-bold w-20">掲載：</span>
-      <a href="https://www.tecture.jp/projects/5608" class="underline">TECTURE掲載ページ</a>
-    </li>
-  </ul>
+  <div class="space-y-2 text-sm">
+    <div class="flex items-baseline gap-2"><span class="w-20">エリア：</span><span>千葉県</span></div>
+    <div class="flex items-baseline gap-2"><span class="w-20">用途：</span><span>共同住宅</span></div>
+    <div class="flex items-baseline gap-2"><span class="w-20">延床面積：</span><span>70.28㎡</span></div>
+    <div class="flex items-baseline gap-2"><span class="w-20">竣工：</span><span>2024年9月</span></div>
+    <div class="flex items-baseline gap-2"><span class="w-20">施工：</span><span>BE LLC</span></div>
+    <div class="flex items-baseline gap-2"><span class="w-20">掲載：</span><a href="https://www.tecture.jp/projects/5608" class="underline">TECTURE掲載ページ</a></div>
+  </div>
+
+  <p class="mt-8">
+    <a href="{{ '/journal.html' | relative_url }}" class="text-sm underline text-gray-500 hover:text-gray-800">← ジャーナル一覧に戻る</a>
+  </p>
 </article>
