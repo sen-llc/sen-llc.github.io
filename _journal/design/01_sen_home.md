@@ -1,5 +1,6 @@
 ---
 title: 巛の家｜川沿いのリノベーション
+layout: journal
 date: 2024-09-01
 type: design
 description: 自然素材と回遊性を活かした自邸リノベーション。素材や風の通り方にこだわった設計です。
