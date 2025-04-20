@@ -3,7 +3,6 @@ description: "空き家から、住まいと暮らしを育てる"
 baseurl: "" # サイトのサブパス（必要なら）
 url: "https://sen-llc.github.io" # サイトの本番URL
 markdown: kramdown
-theme: minima
 
 # Netlify CMS（Decap）と連携するディレクトリ構成
 collections:
