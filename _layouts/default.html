@@ -6,12 +6,12 @@
   <title>{{ page.title }}</title>
 
   <!-- 共通テーマCSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
-  {% if page.theme == "rental-theme" %}
-    <link rel="stylesheet" href="{{ '/assets/css/rental-theme.css' | relative_url }}">
-  {% elsif page.theme == "design-theme" %}
-    <link rel="stylesheet" href="{{ '/assets/css/design-theme.css' | relative_url }}">
-  {% endif %}
+  <link rel="stylesheet" href="{{ "/assets/css/theme.css" | relative_url }}">
+{% if page.theme == "rental-theme" %}
+  <link rel="stylesheet" href="{{ "/assets/css/rental-theme.css" | relative_url }}">
+{% elsif page.theme == "design-theme" %}
+  <link rel="stylesheet" href="{{ "/assets/css/design-theme.css" | relative_url }}">
+{% endif %}
 
   <!-- フォント -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" />
