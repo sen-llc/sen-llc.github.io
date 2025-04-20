@@ -1,10 +1,10 @@
 ---
 layout: default
 theme: design-theme
-title: 《《の家｜川沿いのリノベーション
+title: 巛の家｜ハウスリノベーション
 date: 2024-09-01
 type: design
-description: 自然素材と回遊性を活かした自邸リノベーション。素材や風の通り方にこだわった設計です。
+description: 自然素材と回遊性を活かしたマンションのリノベーションです。
 image: /assets/sen_main.jpg
 link: https://www.tecture.jp/projects/5608
 ---
