@@ -1,8 +1,7 @@
-/* ベースカラー定義 */
 :root {
-  --color-base: #d7d3c6; /* 生成りベース */
-  --color-accent: #2a382f; /* 深緑 */
-  --color-highlight: #9b785c; /* 土・枝のようなブラウン */
+  --color-base: #d7d3c6;
+  --color-accent: #2a382f;
+  --color-highlight: #9b785c;
   --color-white: #ffffff;
   --color-black: #000000;
 
@@ -16,91 +15,4 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-  color: var(--color-accent);
-  margin-bottom: 0.5em;
-}
-
-/* セクションごとの背景切り替え */
-section.theme-invert {
-  background-color: var(--color-accent);
-  color: var(--color-base);
-}
-
-section.theme-invert h1,
-section.theme-invert h2,
-section.theme-invert h3 {
-  color: var(--color-base);
-}
-
-/* ボタンスタイル */
-.button {
-  background-color: var(--color-accent);
-  color: var(--color-base);
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 1rem;
-}
-
-.button:hover {
-  background-color: var(--color-highlight);
-}
-
-/* アイコン画像の共通スタイル */
-.icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(20%) sepia(12%) saturate(745%) hue-rotate(65deg) brightness(95%) contrast(85%);
-}
-
-/* カード型レイアウト */
-.card {
-  background-color: var(--color-white);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  padding: 1.5em;
-  margin: 1em 0;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-/* フッター */
-footer {
-  background-color: var(--color-accent);
-  color: var(--color-base);
-  text-align: center;
-  padding: 2em 1em;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: var(--color-base);
-  text-decoration: underline;
-}
-
-/* レスポンシブ調整 */
-@media (max-width: 768px) {
-  .icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .button {
-    font-size: 0.9rem;
-    padding: 0.4em 0.8em;
-  }
-
-  .card {
-    padding: 1em;
-  }
 }
