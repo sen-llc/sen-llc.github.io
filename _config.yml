@@ -1,7 +1,7 @@
 title: sen llc
 description: "空き家から、住まいと暮らしを育てる"
-baseurl: "" # サイトのサブパス（必要なら）
-url: "https://sen-llc.github.io" # サイトの本番URL
+baseurl: ""
+url: "https://sen-llc.github.io"
 markdown: kramdown
 
 # Netlify CMS（Decap）と連携するディレクトリ構成
@@ -18,6 +18,11 @@ defaults:
     values:
       layout: journal
 
+  - scope:
+      path: ""
+    values:
+      image: "/assets/images"
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -29,13 +34,6 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
-
-# メディアのパス設定（CMSと一致させる）
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: "/assets/images"
 
 # Sass/CSS設定
 sass:
