@@ -27,3 +27,12 @@ a {
   vertical-align: middle;
   fill: currentColor;
 }
+
+a:hover {
+  text-decoration: underline;
+}
+
+section.theme-invert {
+  background-color: var(--color-white);
+  color: var(--color-accent);
+}
