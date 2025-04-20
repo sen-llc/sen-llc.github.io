@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }}</title>
 
-  <!-- ✅ Tailwind CSS CDNを追加 -->
+  <!-- ✅ Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- 共通テーマCSS -->
@@ -25,7 +25,7 @@
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-  <!-- GLightbox CSS -->
+  <!-- ✅ GLightbox CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 
@@ -40,16 +40,11 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 
-  <!-- GLightbox JS -->
+  <!-- ✅ GLightbox JS -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
-    const lightbox = GLightbox({
-      selector: '.glightbox',
-      touchNavigation: true,
-      loop: true,
-      closeButton: true,
-      captions: true,
-      plyr: { css: '', js: '' }
+    document.addEventListener('DOMContentLoaded', function () {
+      GLightbox({ selector: '.glightbox' });
     });
   </script>
 </body>
