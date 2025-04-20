@@ -5,20 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }}</title>
 
-  <!-- 共通テーマCSS -->
-  <link rel="stylesheet" href="{{ "/assets/css/theme.css" | relative_url }}">
-{% if page.theme == "rental-theme" %}
-  <link rel="stylesheet" href="{{ "/assets/css/rental-theme.css" | relative_url }}">
-{% elsif page.theme == "design-theme" %}
-  <link rel="stylesheet" href="{{ "/assets/css/design-theme.css" | relative_url }}">
-{% endif %}
+  <!-- ✅ Tailwind CSS CDNを追加 -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- 共通テーマCSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
+  {% if page.theme == "rental-theme" %}
+    <link rel="stylesheet" href="{{ '/assets/css/rental-theme.css' | relative_url }}">
+  {% elsif page.theme == "design-theme" %}
+    <link rel="stylesheet" href="{{ '/assets/css/design-theme.css' | relative_url }}">
+  {% endif %}
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/logo.svg' | relative_url }}">
 
-  <!-- フォント -->
+  <!-- Googleフォント -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" />
 </head>
-  
+
 <body class="{{ page.theme }}">
   {% include header.html %}
   <main>
