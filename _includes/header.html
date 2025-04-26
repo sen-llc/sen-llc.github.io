@@ -1,167 +1,95 @@
-<header class="fixed top-0 z-50 w-full transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-100/30">
-  <div class="container mx-auto flex items-center justify-between py-4 px-4 md:px-6">
-    <a href="/" class="flex items-center space-x-3 group">
-      <img src="/assets/images/logo.png" alt="sen llc logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105">
-      <span class="text-xl font-light text-[#2a382f] transition-colors duration-300 group-hover:text-[#9b785c]">sen llc</span>
+<header class="fixed w-full bg-white/95 backdrop-blur-sm z-50 transition-all duration-500 border-b border-sen-natural">
+  <div class="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center transition-all duration-500">
+    <!-- Logo -->
+    <a href="/" class="flex items-center space-x-2 group">
+      <img src="/assets/images/logo.svg" alt="sen llc" class="h-7 w-7 md:h-8 md:w-8 transition-transform duration-500 group-hover:rotate-12">
+      <span class="text-lg md:text-xl font-serif tracking-wider text-sen-dark">sen llc</span>
     </a>
-
-    <!-- デスクトップナビゲーション -->
-    <nav class="hidden md:block">
-      <ul class="flex space-x-8">
-        {% assign current_page = page.url | split: '/' | last %}
-        <li>
-          <a href="/rental" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-light py-2 inline-block nav-link {% if current_page == 'rental' or current_page == 'rental.html' %}active{% endif %}">
-            rental
-          </a>
-        </li>
-        <li>
-          <a href="/design" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-light py-2 inline-block nav-link {% if current_page == 'design' or current_page == 'design.html' %}active{% endif %}">
-            design
-          </a>
-        </li>
-        <li>
-          <a href="/journal" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-light py-2 inline-block nav-link {% if current_page == 'journal' or current_page == 'journal.html' %}active{% endif %}">
-            journal
-          </a>
-        </li>
-        <li>
-          <a href="/about" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-light py-2 inline-block nav-link {% if current_page == 'about' or current_page == 'about.html' %}active{% endif %}">
-            about
-          </a>
-        </li>
-        <li>
-          <a href="/contact" class="text-sm text-[#2a382f] hover:text-[#9b785c] tracking-wider font-light py-2 inline-block nav-link {% if current_page == 'contact' or current_page == 'contact.html' %}active{% endif %}">
-            contact
-          </a>
-        </li>
-      </ul>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="/rental" class="nav-link flex items-center {% if page.url contains '/rental/' %}active{% endif %}">
+        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in" aria-hidden="true">
+          <use xlink:href="/assets/icons/icon-set.svg#icon-home"></use>
+        </svg>
+        <span>暮らしを耕す</span>
+      </a>
+      <a href="/design" class="nav-link flex items-center {% if page.url contains '/design/' %}active{% endif %}">
+        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-100" aria-hidden="true">
+          <use xlink:href="/assets/icons/icon-set.svg#icon-ruler"></use>
+        </svg>
+        <span>暮らしを築く</span>
+      </a>
+      <a href="/journal" class="nav-link flex items-center {% if page.url contains '/journal/' %}active{% endif %}">
+        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-200" aria-hidden="true">
+          <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
+        </svg>
+        <span>ジャーナル</span>
+      </a>
+      <a href="/about" class="nav-link flex items-center {% if page.url contains '/about/' %}active{% endif %}">
+        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-300" aria-hidden="true">
+          <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
+        </svg>
+        <span>わたしたちについて</span>
+      </a>
+      <a href="/contact" class="nav-link flex items-center {% if page.url contains '/contact/' %}active{% endif %}">
+        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-400" aria-hidden="true">
+          <use xlink:href="/assets/icons/icon-set.svg#icon-mail"></use>
+        </svg>
+        <span>contact</span>
+      </a>
     </nav>
-
-    <!-- モバイルメニューボタン -->
-    <button class="md:hidden flex items-center" id="menuButton" aria-label="メニューを開く">
-      <span class="sr-only">メニューを開く</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-[#2a382f]">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
+    
+    <!-- Mobile Menu Button - Increased tap target -->
+    <button id="menu-toggle" class="md:hidden flex items-center justify-center text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown p-2 touch-feedback" aria-label="メニューを開く" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
   </div>
   
-  <!-- モバイルメニュー (初期状態では非表示) -->
-  <div id="mobileMenu" class="fixed inset-0 bg-[#2a382f]/95 z-50 flex items-center justify-center transform -translate-y-full transition-transform duration-500 ease-in-out">
-    <button id="closeMenu" class="absolute top-6 right-6 text-white">
-      <span class="sr-only">メニューを閉じる</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-    
-    <nav>
-      <ul class="flex flex-col items-center space-y-8 text-center">
-        <li>
-          <a href="/rental" class="text-2xl text-white hover:text-[#d7d3c6] transition-colors">
-            rental
-          </a>
-        </li>
-        <li>
-          <a href="/design" class="text-2xl text-white hover:text-[#d7d3c6] transition-colors">
-            design
-          </a>
-        </li>
-        <li>
-          <a href="/journal" class="text-2xl text-white hover:text-[#d7d3c6] transition-colors">
-            journal
-          </a>
-        </li>
-        <li>
-          <a href="/about" class="text-2xl text-white hover:text-[#d7d3c6] transition-colors">
-            about
-          </a>
-        </li>
-        <li>
-          <a href="/contact" class="text-2xl text-white hover:text-[#d7d3c6] transition-colors">
-            contact
-          </a>
-        </li>
-      </ul>
-    </nav>
+  <!-- Mobile Navigation - Improved for touch -->
+  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 pt-16 overflow-y-auto">
+    <div class="container mx-auto px-4 py-8">
+      <nav class="flex flex-col space-y-6 items-center text-xl">
+        <a href="/rental" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/rental/' %}active{% endif %}">
+          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in" aria-hidden="true">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-home"></use>
+          </svg>
+          <span>暮らしを耕す</span>
+        </a>
+        <a href="/design" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/design/' %}active{% endif %}">
+          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in delay-100" aria-hidden="true">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-ruler"></use>
+          </svg>
+          <span>暮らしを築く</span>
+        </a>
+        <a href="/journal" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/journal/' %}active{% endif %}">
+          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in delay-200" aria-hidden="true">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
+          </svg>
+          <span>ジャーナル</span>
+        </a>
+        <a href="/about" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/about/' %}active{% endif %}">
+          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in delay-300" aria-hidden="true">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
+          </svg>
+          <span>わたしたちについて</span>
+        </a>
+        <a href="/contact" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/contact/' %}active{% endif %}">
+          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in delay-400" aria-hidden="true">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-mail"></use>
+          </svg>
+          <span>contact</span>
+        </a>
+      </nav>
+      
+      <!-- Mobile menu close button -->
+      <button id="close-mobile-menu" class="absolute top-4 right-4 p-2 text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown" aria-label="メニューを閉じる">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
-
-<style>
-  .nav-link {
-    position: relative;
-  }
-  
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #9b785c;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-  }
-  
-  .nav-link:hover::after, .nav-link.active::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  
-  .nav-link.active {
-    color: #9b785c;
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.getElementById('menuButton');
-    const closeMenu = document.getElementById('closeMenu');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    if (menuButton && closeMenu && mobileMenu) {
-      menuButton.addEventListener('click', function() {
-        mobileMenu.classList.remove('-translate-y-full');
-        document.body.style.overflow = 'hidden';
-      });
-      
-      closeMenu.addEventListener('click', function() {
-        mobileMenu.classList.add('-translate-y-full');
-        document.body.style.overflow = '';
-      });
-    }
-    
-    // スクロール時のヘッダー変更
-    const header = document.querySelector('header');
-    let lastScrollY = window.scrollY;
-    
-    window.addEventListener('scroll', function() {
-      const currentScrollY = window.scrollY;
-      
-      if (header) {
-        if (currentScrollY > 100) {
-          header.classList.add('py-2', 'shadow-sm');
-          header.classList.remove('py-4');
-        } else {
-          header.classList.remove('py-2', 'shadow-sm');
-          header.classList.add('py-4');
-        }
-        
-        if (currentScrollY > lastScrollY && currentScrollY > 200) {
-          // 下スクロール時
-          header.style.transform = 'translateY(-100%)';
-        } else {
-          // 上スクロール時
-          header.style.transform = 'translateY(0)';
-        }
-      }
-      
-      lastScrollY = currentScrollY;
-    });
-  });
-</script>
