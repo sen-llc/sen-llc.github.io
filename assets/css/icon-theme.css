@@ -1,0 +1,388 @@
+/* アイコンテーマスタイル */
+.icon-sen-brown {
+  color: var(--color-sen-brown);
+}
+
+.icon-sen-green {
+  color: var(--color-sen-green);
+}
+
+.icon-sen-green-light {
+  color: var(--color-sen-green-light);
+}
+
+.icon-sen-dark {
+  color: var(--color-sen-dark);
+}
+
+.icon-sen-accent {
+  color: var(--color-sen-accent);
+}
+
+/* アイコンホバーエフェクト - より滑らかな動きに調整 */
+.icon-hover-rotate:hover {
+  transform: rotate(12deg);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.icon-hover-scale:hover {
+  transform: scale(1.15);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.icon-hover-bounce:hover {
+  animation: icon-bounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ページ読み込み時のアニメーション - 時間短縮と滑らかさ向上 */
+.icon-animate-fade-in {
+  opacity: 0;
+  animation: icon-fade-in 0.6s ease-out forwards;
+}
+
+.icon-animate-slide-in {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: icon-slide-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.icon-animate-rotate-in {
+  opacity: 0;
+  transform: rotate(-45deg);
+  animation: icon-rotate-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.icon-animate-scale-in {
+  opacity: 0;
+  transform: scale(0.6);
+  animation: icon-scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.icon-animate-bounce-in {
+  opacity: 0;
+  animation: icon-bounce-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* アニメーション遅延クラス - より短い間隔に */
+.delay-100 {
+  animation-delay: 0.08s;
+}
+
+.delay-200 {
+  animation-delay: 0.16s;
+}
+
+.delay-300 {
+  animation-delay: 0.24s;
+}
+
+.delay-400 {
+  animation-delay: 0.32s;
+}
+
+.delay-500 {
+  animation-delay: 0.4s;
+}
+
+/* スクロール時のアニメーション - より自然な動きに */
+.icon-scroll-pulse {
+  animation: none;
+}
+
+.icon-scroll-pulse.animate {
+  animation: icon-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.icon-scroll-rotate {
+  animation: none;
+}
+
+.icon-scroll-rotate.animate {
+  animation: icon-rotate 6s linear infinite;
+}
+
+.icon-scroll-float {
+  animation: none;
+}
+
+.icon-scroll-float.animate {
+  animation: icon-float 3s ease-in-out infinite;
+}
+
+.icon-scroll-bounce {
+  animation: none;
+}
+
+.icon-scroll-bounce.animate {
+  animation: icon-bounce 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.icon-scroll-shake {
+  animation: none;
+}
+
+.icon-scroll-shake.animate {
+  animation: icon-shake 3s ease-in-out infinite;
+}
+
+/* アニメーションキーフレーム - より自然な動きに調整 */
+@keyframes icon-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes icon-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes icon-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes icon-rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+@keyframes icon-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes icon-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  80% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes icon-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes icon-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes icon-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes icon-shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(4deg);
+  }
+  40% {
+    transform: rotate(-2deg);
+  }
+  60% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform: rotate(-4deg);
+  }
+}
+
+/* SNSアイコンのホバーカラー - トランジション速度調整 */
+.icon-instagram:hover {
+  stroke: #e1306c;
+  transition: stroke 0.2s ease-out;
+}
+
+.icon-twitter:hover {
+  stroke: #1da1f2;
+  transition: stroke 0.2s ease-out;
+}
+
+.icon-facebook:hover {
+  stroke: #4267b2;
+  transition: stroke 0.2s ease-out;
+}
+
+.icon-line:hover {
+  fill: #06c755;
+  transition: fill 0.2s ease-out;
+}
+
+/* 詳細なアイコンの視認性向上 */
+.icon-detailed {
+  stroke-width: 1.5;
+}
+
+/* 小さいサイズでの芽アイコン最適化 */
+svg.w-4 use[*|href*="icon-sprout"],
+svg.w-5 use[*|href*="icon-sprout"] {
+  stroke-width: 1.5;
+}
+
+/* LINEアイコンの調整 */
+svg use[*|href*="icon-line"] {
+  stroke-width: 1.75;
+}
+
+/* ボタン内のアイコン（白色）の視認性向上 */
+.btn svg {
+  stroke-width: 1.75;
+}
+
+/* アクセシビリティ対応 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* フォーカス状態の改善 */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-sen-brown);
+  outline-offset: 2px;
+}
+
+/* 高コントラストモード対応 */
+@media (forced-colors: active) {
+  .icon-sen-brown,
+  .icon-sen-green,
+  .icon-sen-green-light,
+  .icon-sen-dark,
+  .icon-sen-accent {
+    forced-color-adjust: none;
+  }
+
+  svg {
+    fill: CanvasText;
+    stroke: CanvasText;
+  }
+
+  a:focus,
+  button:focus {
+    outline: 2px solid CanvasText;
+  }
+}
+
+/* キーボードユーザー向けのフォーカススタイル */
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.js-focus-visible .focus-visible {
+  outline: 2px solid var(--color-sen-brown);
+  outline-offset: 2px;
+}
+
+/* レスポンシブ対応 */
+@media (prefers-reduced-motion: reduce) {
+  .icon-animate-fade-in,
+  .icon-animate-slide-in,
+  .icon-animate-rotate-in,
+  .icon-animate-scale-in,
+  .icon-animate-bounce-in,
+  .icon-scroll-pulse,
+  .icon-scroll-rotate,
+  .icon-scroll-float,
+  .icon-scroll-bounce,
+  .icon-scroll-shake,
+  .icon-hover-rotate:hover,
+  .icon-hover-scale:hover,
+  .icon-hover-bounce:hover {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  /* キーボードフォーカスは維持 */
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 2px solid var(--color-sen-brown);
+    outline-offset: 2px;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .icon-sen-brown {
+    color: var(--color-sen-accent);
+  }
+
+  .icon-sen-green {
+    color: var(--color-sen-green-light);
+  }
+}
