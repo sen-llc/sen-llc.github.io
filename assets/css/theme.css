@@ -1,91 +1,183 @@
 :root {
-  --color-base: #d7d3c6;
-  --color-accent: #2a382f;
-  --color-highlight: #9b785c;
-  --color-white: #ffffff;
-  --color-black: #000000;
-
-  --font-family: 'Zen Maru Gothic', sans-serif;
+  /* メインカラー */
+  --primary: #2a382f;
+  --primary-light: #3a4a3f;
+  --primary-dark: #1a281f;
+  
+  /* アクセントカラー */
+  --accent: #9b785c;
+  --accent-light: #b8967c;
+  --accent-dark: #7d5a3e;
+  
+  /* 背景色 */
+  --background: #f8f5f0;
+  --background-alt: #efeae2;
+  
+  /* テキスト色 */
+  --text: #2a382f;
+  --text-light: #5a685f;
+  
+  /* ベージュ */
+  --beige: #d7d3c6;
+  --beige-light: #e7e3d6;
+  --beige-dark: #c7c3b6;
+  
+  /* トランジション設定 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
+/* ベーススタイル */
 body {
-  font-family: var(--font-family);
-  background-color: var(--color-base);
-  color: var(--color-accent);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  font-feature-settings: "palt" 1;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  font-weight: 300;
 }
 
+/* リンクスタイル */
 a {
-  color: var(--color-highlight);
-  text-decoration: underline;
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-normal);
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-.icon {
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  fill: currentColor;
-}
-
-/* ステップ診断ボタン選択済み */
-.diagnosis-option {
-  background-color: var(--color-accent);
-  color: white;
+/* ボタンスタイル */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
   padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  transition: all var(--transition-normal);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  transition: all var(--transition-normal);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* セクションスタイル */
+section {
+  padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 8rem 0;
+  }
+}
+
+/* 見出しスタイル */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* 画像スタイル */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* ユーティリティクラス */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* テキスト行数制限 */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* スクリーンリーダー用 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-  opacity: 0.9;
+  border-width: 0;
 }
 
-.diagnosis-option:hover {
-  background-color: var(--color-highlight);
-  opacity: 1;
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }
-
-.diagnosis-option.selected {
-  background-color: var(--color-highlight);
-  transform: scale(1.05);
-  box-shadow: 0 0 0 3px rgba(155, 120, 92, 0.3);
-}
-
-/* 各質問ステップ */
-.step-card {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-  transition: opacity 0.4s ease-in-out;
-}
-
-/* theme invert 用 */
-section.theme-invert {
-  background-color: var(--color-white);
-  color: var(--color-accent);
-}
-
-/* ヘッダー用モバイルアニメーション */
-.transition-transform {
-  transition: transform 0.3s ease;
-}
-.translate-x-full {
-  transform: translateX(100%);
-}
-.translate-x-0 {
-  transform: translateX(0%);
-}
-
-/* テキストサイズ調整の互換性対策 */
-html {
-  text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
