@@ -1,50 +1,153 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }}</title>
-
-  <!-- ✅ Tailwind CSS CDN -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>{% if page.title %}{{ page.title }}{% else %}sen llc - 暮らしを耕す{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}住む、つくる、手に入れる。最初からデザイン性の高い空間で、あなたらしい暮らしを育んでいきましょう。{% endif %}">
+  <meta name="theme-color" content="#2a382f">
+  
+  <!-- プリロード -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" as="style">
+  
+  <!-- スタイルシート -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- 共通テーマCSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
-  {% if page.theme == "rental-theme" %}
-    <link rel="stylesheet" href="{{ '/assets/css/rental-theme.css' | relative_url }}">
-  {% elsif page.theme == "design-theme" %}
-    <link rel="stylesheet" href="{{ '/assets/css/design-theme.css' | relative_url }}">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  
+  <!-- ページ固有のスタイル -->
+  {% if page.url contains 'rental' %}
+  <link rel="stylesheet" href="/assets/css/rental-theme.css">
+  {% elsif page.url contains 'design' %}
+  <link rel="stylesheet" href="/assets/css/design-theme.css">
   {% endif %}
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="{{ '/assets/logo.svg' | relative_url }}">
-
-  <!-- Googleフォント -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" />
-
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-  <!-- ✅ GLightbox CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  
+  <!-- クリティカルCSS -->
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    body.loaded {
+      opacity: 1;
+    }
+    
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f8f5f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(42, 56, 47, 0.1);
+      border-radius: 50%;
+      border-top-color: #9b785c;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
-
-<body class="{{ page.theme }}">
+<body>
+  <!-- スキップナビゲーション -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#2a382f] focus:text-white focus:outline-none">
+    メインコンテンツにスキップ
+  </a>
+  
+  <!-- ローディング画面 -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+  </div>
+  
   {% include header.html %}
-  <main>
+  
+  <main id="main-content">
     {{ content }}
   </main>
+  
   {% include footer.html %}
-
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
-  <!-- ✅ GLightbox JS -->
+  
+  <!-- スクリプト -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      GLightbox({ selector: '.glightbox' });
+    // ページ読み込み完了時の処理
+    window.addEventListener('load', function() {
+      document.body.classList.add('loaded');
+      document.getElementById('loadingScreen').classList.add('hidden');
+      
+      // AOSの初期化
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out',
+        once: true,
+        offset: 50,
+      });
+      
+      // GLightboxの初期化
+      const lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true
+      });
+      
+      // 画像の遅延読み込み
+      if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+          }
+        });
+      } else {
+        // Fallback for browsers that don't support native lazy loading
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+        document.body.appendChild(script);
+      }
+    });
+    
+    // スムーススクロール
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (!targetElement) return;
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      });
     });
   </script>
 </body>
