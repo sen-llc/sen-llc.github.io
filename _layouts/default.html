@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f0ebe2">
   <title>{% if page.title %}{{ page.title }} | {% endif %}sen llc</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}暮らしを耕す。住まいと空間に手をかけて、時間をかけて、豊かにしていく。{% endif %}">
@@ -19,7 +19,7 @@
   
   <!-- Preload critical assets -->
   <link rel="preload" href="/assets/css/theme.css" as="style">
-  <link rel="preload" href="/assets/images/hero-bg.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="/assets/images/hero-bg.jpg" as="image">
   
   <!-- Fonts with display=swap for better performance -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -69,30 +69,26 @@
   </script>
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/assets/css/theme.css">
-  <link rel="stylesheet" href="/assets/css/touch-feedback.css">
-  <link rel="stylesheet" href="/assets/css/diagnosis.css">
-  <link rel="stylesheet" href="/assets/css/icon-theme.css">
-  <link rel="stylesheet" href="/assets/css/animation-utilities.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/touch-feedback.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/diagnosis.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/icon-theme.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/animation-utilities.css">
+  <!-- ブラウザ互換性のためのCSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/browser-compatibility.css">
   {% if page.layout == 'journal' or page.url contains '/journal/' %}
-    <link rel="stylesheet" href="/assets/css/journal-theme.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/journal-theme.css">
   {% elsif page.url contains '/rental/' %}
-    <link rel="stylesheet" href="/assets/css/rental-theme.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/rental-theme.css">
   {% elsif page.url contains '/design/' %}
-    <link rel="stylesheet" href="/assets/css/design-theme.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/design-theme.css">
   {% endif %}
   
   <!-- GLightbox -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-  </noscript>
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
   <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  </noscript>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="font-sans text-sen-dark bg-white">
   <div class="min-h-screen flex flex-col">
@@ -106,10 +102,10 @@
   </div>
   
   <!-- GLightbox -->
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
   <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
   <!-- 診断機能 -->
   <script src="/assets/js/diagnosis.js" defer></script>
