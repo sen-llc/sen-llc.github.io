@@ -1,0 +1,81 @@
+/* タップフィードバック用のスタイル */
+.touch-feedback {
+  position: relative;
+  overflow: hidden;
+}
+
+.touch-feedback::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.touch-feedback.active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+/* ボタンのアクティブ状態 */
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* ナビゲーションリンクのアクティブ状態 */
+.nav-link:active,
+.mobile-nav-link:active {
+  opacity: 0.7;
+}
+
+/* アイコンボタンのアクティブ状態 */
+.icon-btn:active,
+a:has(> svg):active svg {
+  transform: scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+/* カードのアクティブ状態 */
+.card:active {
+  transform: translateY(-2px);
+  transition: transform 0.1s ease;
+}
+
+/* タッチデバイス用のホバー代替 */
+@media (hover: none) {
+  .btn:hover {
+    transform: none;
+  }
+
+  .icon-hover-scale:hover,
+  .icon-hover-rotate:hover,
+  .icon-hover-bounce:hover {
+    transform: none;
+  }
+
+  .touch-device .nav-link:hover::after {
+    width: 0;
+  }
+
+  .touch-device .nav-link.active::after {
+    width: 100%;
+  }
+}
+
+/* アクセシビリティ対応 */
+@media (prefers-reduced-motion: reduce) {
+  .touch-feedback::after {
+    display: none;
+  }
+}
