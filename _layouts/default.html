@@ -1,153 +1,261 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>{% if page.title %}{{ page.title }}{% else %}sen llc - 暮らしを耕す{% endif %}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}住む、つくる、手に入れる。最初からデザイン性の高い空間で、あなたらしい暮らしを育んでいきましょう。{% endif %}">
-  <meta name="theme-color" content="#2a382f">
+  <meta name="theme-color" content="#f0ebe2">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}sen llc</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}暮らしを耕す。住まいと空間に手をかけて、時間をかけて、豊かにしていく。{% endif %}">
   
-  <!-- プリロード -->
+  <!-- アクセシビリティ対応 -->
+  <meta name="color-scheme" content="light">
+  <meta name="format-detection" content="telephone=no">
+  
+  <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" as="style">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
   
-  <!-- スタイルシート -->
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Preload critical assets -->
+  <link rel="preload" href="/assets/css/theme.css" as="style">
+  <link rel="preload" href="/assets/images/hero-bg.jpg" as="image" fetchpriority="high">
+  
+  <!-- Fonts with display=swap for better performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </noscript>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/theme.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sen-beige': '#f5f3f0',
+            'sen-cream': '#f8f5f0',
+            'sen-brown': '#8c7e6d',
+            'sen-dark': '#3c3c3c',
+            'sen-accent': '#d4c9b9',
+            'sen-green': '#5c6e58',
+            'sen-green-light': '#a4b494',
+            'sen-natural': '#f0ebe2',
+          },
+          fontFamily: {
+            'sans': ['"Zen Maru Gothic"', 'sans-serif'],
+            'serif': ['Noto Serif JP', 'serif'],
+          },
+          spacing: {
+            '100': '25rem',
+            '120': '30rem',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          },
+          screens: {
+            'xs': '480px',
+          }
+        }
+      }
+    }
+  </script>
   
-  <!-- ページ固有のスタイル -->
-  {% if page.url contains 'rental' %}
-  <link rel="stylesheet" href="/assets/css/rental-theme.css">
-  {% elsif page.url contains 'design' %}
-  <link rel="stylesheet" href="/assets/css/design-theme.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/touch-feedback.css">
+  <link rel="stylesheet" href="/assets/css/diagnosis.css">
+  <link rel="stylesheet" href="/assets/css/icon-theme.css">
+  <link rel="stylesheet" href="/assets/css/animation-utilities.css">
+  {% if page.layout == 'journal' or page.url contains '/journal/' %}
+    <link rel="stylesheet" href="/assets/css/journal-theme.css">
+  {% elsif page.url contains '/rental/' %}
+    <link rel="stylesheet" href="/assets/css/rental-theme.css">
+  {% elsif page.url contains '/design/' %}
+    <link rel="stylesheet" href="/assets/css/design-theme.css">
   {% endif %}
   
-  <!-- クリティカルCSS -->
-  <style>
-    body {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    body.loaded {
-      opacity: 1;
-    }
-    
-    .loading-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #f8f5f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    
-    .loading-screen.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-    
-    .loading-spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid rgba(42, 56, 47, 0.1);
-      border-radius: 50%;
-      border-top-color: #9b785c;
-      animation: spin 1s ease-in-out infinite;
-    }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  </style>
-</head>
-<body>
-  <!-- スキップナビゲーション -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#2a382f] focus:text-white focus:outline-none">
-    メインコンテンツにスキップ
-  </a>
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  </noscript>
   
-  <!-- ローディング画面 -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loading-spinner"></div>
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </noscript>
+</head>
+<body class="font-sans text-sen-dark bg-white">
+  <div class="min-h-screen flex flex-col">
+    {% include header.html %}
+    
+    <main class="flex-grow">
+      {{ content }}
+    </main>
+    
+    {% include footer.html %}
   </div>
   
-  {% include header.html %}
+  <!-- GLightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
   
-  <main id="main-content">
-    {{ content }}
-  </main>
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   
-  {% include footer.html %}
+  <!-- 診断機能 -->
+  <script src="/assets/js/diagnosis.js" defer></script>
   
-  <!-- スクリプト -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <!-- アイコンアニメーション -->
+  <script src="/assets/js/icon-animation.js" defer></script>
+  <script src="/assets/js/animation-sequence.js" defer></script>
+
+  <!-- アクセシビリティ対応 -->
+  <script src="/assets/js/accessibility.js" defer></script>
+  <script src="/assets/js/touch-feedback.js" defer></script>
   
   <script>
-    // ページ読み込み完了時の処理
-    window.addEventListener('load', function() {
-      document.body.classList.add('loaded');
-      document.getElementById('loadingScreen').classList.add('hidden');
+    // Initialize libraries after they're loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize GLightbox
+      if (typeof GLightbox !== 'undefined') {
+        const lightbox = GLightbox({
+          selector: '.glightbox',
+          touchNavigation: true,
+          loop: true,
+        });
+      }
       
-      // AOSの初期化
-      AOS.init({
-        duration: 800,
-        easing: 'ease-out',
-        once: true,
-        offset: 50,
+      // Initialize AOS with mobile-friendly settings
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-out',
+          once: true,
+          offset: window.innerWidth < 768 ? 50 : 100,
+          disable: window.innerWidth < 480 ? true : false
+        });
+      }
+      
+      // Mobile menu toggle
+      const menuButton = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const header = document.querySelector('header');
+      
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+          document.body.classList.toggle('overflow-hidden');
+        });
+      }
+      
+      // ヘッダーのスクロール縮小アニメーション
+      let lastScrollTop = 0;
+      const scrollThreshold = window.innerWidth < 768 ? 30 : 50;
+      
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > scrollThreshold) {
+          header.classList.add('header-scrolled');
+        } else {
+          header.classList.remove('header-scrolled');
+        }
+        
+        lastScrollTop = scrollTop;
       });
       
-      // GLightboxの初期化
-      const lightbox = GLightbox({
-        selector: '.glightbox',
-        touchNavigation: true,
-        loop: true,
-        autoplayVideos: true
-      });
-      
-      // 画像の遅延読み込み
-      if ('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-          if (img.dataset.src) {
-            img.src = img.dataset.src;
+      // Smooth scroll for anchor links with touch optimization
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              document.body.classList.remove('overflow-hidden');
+            }
           }
         });
-      } else {
-        // Fallback for browsers that don't support native lazy loading
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-        document.body.appendChild(script);
-      }
-    });
-    
-    // スムーススクロール
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (!targetElement) return;
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - 100,
-          behavior: 'smooth'
-        });
       });
+      
+      // Lazy load images
+      if ('loading' in HTMLImageElement.prototype) {
+        // Browser supports native lazy loading
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+          img.src = img.dataset.src;
+        });
+      } else {
+        // Fallback for browsers that don't support lazy loading
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const image = entry.target;
+                image.src = image.dataset.src;
+                observer.unobserve(image);
+              }
+            });
+          });
+          
+          lazyImages.forEach(image => {
+            imageObserver.observe(image);
+          });
+        } else {
+          // Fallback for older browsers
+          let active = false;
+          
+          const lazyLoad = function() {
+            if (active === false) {
+              active = true;
+              
+              setTimeout(function() {
+                lazyImages.forEach(function(lazyImage) {
+                  if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.removeAttribute("data-src");
+                    
+                    if (lazyImages.length === 0) {
+                      document.removeEventListener("scroll", lazyLoad);
+                      window.removeEventListener("resize", lazyLoad);
+                      window.removeEventListener("orientationChange", lazyLoad);
+                    }
+                  }
+                });
+                
+                active = false;
+              }, 200);
+            }
+          };
+          
+          document.addEventListener("scroll", lazyLoad);
+          window.addEventListener("resize", lazyLoad);
+          window.addEventListener("orientationChange", lazyLoad);
+        }
+      }
     });
   </script>
 </body>
