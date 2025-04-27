@@ -52,12 +52,20 @@
 
 .chevron-2 {
   transform: translateX(0px);
-  opacity: 0;
 }
 
 .chevron-3 {
   transform: translateX(20px);
+}
+
+/* 最終的な「巛」の文字 */
+.sen-final {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 3.5rem;
+  color: #2a382f;
   opacity: 0;
+  position: absolute;
+  line-height: 1;
 }
 
 /* アニメーション定義 */
@@ -70,24 +78,6 @@
   }
 }
 
-@keyframes rotate180 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(180deg);
-  }
-}
-
-@keyframes compressX {
-  from {
-    transform: scaleX(1);
-  }
-  to {
-    transform: scaleX(0.5);
-  }
-}
-
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -95,16 +85,6 @@
   to {
     opacity: 0;
   }
-}
-
-/* 最終的な「巛」の文字 */
-.sen-final {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 3.5rem;
-  color: #2a382f;
-  opacity: 0;
-  position: absolute;
-  line-height: 1;
 }
 
 /* モバイル対応 */
