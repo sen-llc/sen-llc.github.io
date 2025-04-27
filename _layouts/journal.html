@@ -2,15 +2,87 @@
 layout: default
 ---
 
-<article class="prose mx-auto py-16 px-4">
-  <h1 class="text-3xl font-bold mb-2">{{ page.title }}</h1>
-  {% if page.type %}
-    <p class="text-sm text-gray-500 mb-6">{{ page.type }}</p>
+<article class="pt-24 pb-16">
+  <!-- Hero Image -->
+  <div class="w-full h-[50vh] md:h-[60vh] relative overflow-hidden">
+    <img 
+      src="{{ page.image }}" 
+      alt="{{ page.title }}" 
+      class="w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+  </div>
+  
+  <!-- Article Header -->
+  <header class="container mx-auto px-4 max-w-3xl -mt-24 relative z-10">
+    <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg">
+      <div class="flex items-center text-sm text-gray-500 mb-4">
+        <span class="uppercase tracking-wider">{{ page.type }}</span>
+        <span class="mx-2">•</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+      </div>
+      <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif mb-6">{{ page.title }}</h1>
+      
+      {% if page.description %}
+      <p class="text-gray-700 text-lg leading-relaxed mb-4">{{ page.description }}</p>
+      {% endif %}
+      
+      <!-- Project Info (if available) -->
+      {% if page.location or page.area or page.year %}
+      <div class="border-t border-gray-200 pt-4 mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+        {% if page.location %}
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-medium text-gray-500">エリア:</span>
+          <span>{{ page.location }}</span>
+        </div>
+        {% endif %}
+        
+        {% if page.area %}
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-medium text-gray-500">面積:</span>
+          <span>{{ page.area }}</span>
+        </div>
+        {% endif %}
+        
+        {% if page.year %}
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-medium text-gray-500">年:</span>
+          <span>{{ page.year }}</span>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+  
+  <!-- Article Content -->
+  <div class="container mx-auto px-4 max-w-3xl mt-12">
+    <div class="prose prose-lg max-w-none tracking-wide leading-relaxed">
+      {{ content }}
+    </div>
+    
+    <!-- Back to Journal -->
+    <div class="mt-16 pt-8 border-t border-gray-200">
+      <a href="/journal" class="inline-flex items-center text-sen-brown hover:underline">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        ジャーナル一覧に戻る
+      </a>
+    </div>
+  </div>
+  
+  <!-- Related Articles -->
+  {% assign related_posts = site.journal | where: "category", page.category | where_exp: "post", "post.url != page.url" | sort: 'date' | reverse | limit: 3 %}
+  {% if related_posts.size > 0 %}
+  <div class="container mx-auto px-4 max-w-5xl mt-20">
+    <h2 class="text-2xl font-serif mb-8">関連記事</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% for post in related_posts %}
+        {% include journal-card.html post=post %}
+      {% endfor %}
+    </div>
+  </div>
   {% endif %}
-
-  {% if page.image %}
-    <img src="{{ page.image }}" alt="{{ page.title }}" class="mb-6 rounded" />
-  {% endif %}
-
-  {{ content }}
 </article>
