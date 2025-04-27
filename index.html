@@ -7,19 +7,19 @@ layout: default
   <!-- 写真スタック -->
   <div class="photo-stack">
     <div class="photo-item" style="width: 50%; top: 15%; left: 10%; transform: rotate(-3deg); z-index: 1;">
-      <img src="/assets/images/first-view/photo1.jpg" alt="暮らしの風景" loading="eager">
+      <img src="{{ site.baseurl }}/assets/images/first-view/photo1.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';">
     </div>
     <div class="photo-item" style="width: 40%; top: 25%; left: 30%; transform: rotate(2deg); z-index: 2;">
-      <img src="/assets/images/first-view/photo2.jpg" alt="暮らしの風景" loading="eager">
+      <img src="{{ site.baseurl }}/assets/images/first-view/photo2.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';">
     </div>
     <div class="photo-item" style="width: 45%; top: 40%; left: 15%; transform: rotate(-1deg); z-index: 3;">
-      <img src="/assets/images/first-view/photo3.jpg" alt="暮らしの風景" loading="eager">
+      <img src="{{ site.baseurl }}/assets/images/first-view/photo3.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';">
     </div>
     <div class="photo-item" style="width: 35%; top: 20%; left: 55%; transform: rotate(4deg); z-index: 4;">
-      <img src="/assets/images/first-view/photo4.jpg" alt="暮らしの風景" loading="eager">
+      <img src="{{ site.baseurl }}/assets/images/first-view/photo4.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';">
     </div>
     <div class="photo-item" style="width: 40%; top: 45%; left: 50%; transform: rotate(-2deg); z-index: 5;">
-      <img src="/assets/images/first-view/photo5.jpg" alt="暮らしの風景" loading="eager">
+      <img src="{{ site.baseurl }}/assets/images/first-view/photo5.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';">
     </div>
   </div>
   
@@ -86,7 +86,7 @@ layout: default
     <!-- サービス01 -->
     <div class="service-block">
       <div class="service-image">
-        <img src="/assets/images/service-rental.jpg" alt="暮らしを耕す" loading="lazy">
+        <img src="{{ site.baseurl }}/assets/images/rental-preview.png" alt="暮らしを耕す" loading="lazy" onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';">
         <div class="service-image-overlay"></div>
       </div>
       <div class="service-content">
@@ -97,7 +97,7 @@ layout: default
           <p>DIYできる自然素材の空間で、子どもや動物と一緒に、</p>
           <p>伸びやかな暮らしを楽しむあなたへ。</p>
         </div>
-        <a href="/rental" class="service-link">
+        <a href="{{ site.baseurl }}/rental" class="service-link">
           詳しく見る
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -110,7 +110,7 @@ layout: default
     <!-- サービス02 -->
     <div class="service-block from-right">
       <div class="service-image">
-        <img src="/assets/images/service-design.jpg" alt="暮らしを築く" loading="lazy">
+        <img src="{{ site.baseurl }}/assets/images/design-preview.png" alt="暮らしを築く" loading="lazy" onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';">
         <div class="service-image-overlay"></div>
       </div>
       <div class="service-content">
@@ -119,9 +119,9 @@ layout: default
         <div class="service-description">
           <p>理想の暮らしを思い描きながら、</p>
           <p>一部屋からでも、少しずつ手をかけるところから。</p>
-          <p>私たちがそばで、耕す暮らしを一緒に育てていきま���。</p>
+          <p>私たちがそばで、耕す暮らしを一緒に育てていきます。</p>
         </div>
-        <a href="/design" class="service-link">
+        <a href="{{ site.baseurl }}/design" class="service-link">
           詳しく見る
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -150,6 +150,7 @@ layout: default
                   alt="{{ post.title }}" 
                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   loading="lazy"
+                  onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
                 >
               </div>
               <div class="p-5">
@@ -165,7 +166,7 @@ layout: default
       </div>
       
       <div class="text-center mt-10">
-        <a href="/journal" class="inline-flex items-center text-sen-dark hover:text-sen-brown transition-colors duration-300">
+        <a href="{{ site.baseurl }}/journal" class="inline-flex items-center text-sen-dark hover:text-sen-brown transition-colors duration-300">
           もっと見る
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -185,7 +186,7 @@ layout: default
         <p>「ちょっと話を聞いてみたい」<br>「こんな暮らしができるかな」<br>そんな気持ちでも、大丈夫です。</p>
         <p>ゆっくり、あなたの住まいのことを一緒に考えましょう。</p>
       </div>
-      <a href="/contact" class="contact-button">
+      <a href="{{ site.baseurl }}/contact" class="contact-button">
         お問い合わせはこちら
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -201,10 +202,11 @@ layout: default
   <!-- 背景パターン -->
   <div class="absolute inset-0 opacity-5 z-0">
     <img 
-      src="/assets/images/concept-bg.jpg" 
+      src="{{ site.baseurl }}/assets/images/concept-bg.jpg" 
       alt="" 
       class="w-full h-full object-cover"
       loading="lazy"
+      onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
     >
   </div>
   
@@ -228,7 +230,7 @@ layout: default
         </div>
         <div class="concept-arrow md:block hidden">
           <svg class="h-6 w-6 icon-scroll-float">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-arrow-right"></use>
           </svg>
         </div>
         <div class="concept-arrow-mobile md:hidden">
@@ -248,7 +250,7 @@ layout: default
         </div>
         <div class="concept-arrow md:block hidden">
           <svg class="h-6 w-6 icon-scroll-float">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-arrow-right"></use>
           </svg>
         </div>
         <div class="concept-arrow-mobile md:hidden">
@@ -357,7 +359,7 @@ layout: default
         <div class="mt-6 md:mt-8 flex justify-between">
           <button id="prev-question" class="btn btn-outline hidden">
             <svg class="w-5 h-5 mr-2 rotate-180 icon-sen-brown">
-              <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+              <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-arrow-right"></use>
             </svg>
             前の質問へ
           </button>
@@ -378,7 +380,7 @@ layout: default
               <div class="result-icon-wrapper mb-5 md:mb-6 relative">
                 <div class="absolute inset-0 bg-sen-beige rounded-full scale-125 opacity-20 animate-pulse"></div>
                 <svg id="result-icon" class="w-20 h-20 md:w-24 md:h-24 relative z-10 icon-scroll-pulse animate">
-                  <use id="result-icon-use" xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
+                  <use id="result-icon-use" xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-sprout"></use>
                 </svg>
               </div>
               
@@ -394,17 +396,17 @@ layout: default
               <div class="flex justify-center space-x-4">
                 <button class="share-btn share-twitter mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="Twitterでシェア">
                   <svg class="w-6 h-6 icon-animate-scale-in" aria-hidden="true">
-                    <use xlink:href="/assets/icons/icon-set.svg#icon-twitter"></use>
+                    <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-twitter"></use>
                   </svg>
                 </button>
                 <button class="share-btn share-facebook mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="Facebookでシェア">
                   <svg class="w-6 h-6 icon-animate-scale-in delay-100" aria-hidden="true">
-                    <use xlink:href="/assets/icons/icon-set.svg#icon-facebook"></use>
+                    <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-facebook"></use>
                   </svg>
                 </button>
                 <button class="share-btn share-line mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="LINEでシェア">
                   <svg class="w-6 h-6 icon-animate-scale-in delay-200" aria-hidden="true">
-                    <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
+                    <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-line"></use>
                   </svg>
                 </button>
                 <button id="copy-result-url" class="share-btn mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="URLをコピー">
@@ -421,12 +423,12 @@ layout: default
               <a id="result-link" href="#" class="btn btn-primary w-full max-w-xs mb-4 flex items-center justify-center group">
                 <span id="result-link-text"></span>
                 <svg class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1">
-                  <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+                  <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-arrow-right"></use>
                 </svg>
               </a>
               <button id="restart-diagnosis" class="text-sen-brown hover:underline flex items-center text-sm mobile-touch-target py-2">
                 <svg class="h-4 w-4 mr-1 icon-sen-brown icon-hover-rotate">
-                  <use xlink:href="/assets/icons/icon-set.svg#icon-cycle"></use>
+                  <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-cycle"></use>
                 </svg>
                 もう一度診断する
               </button>
