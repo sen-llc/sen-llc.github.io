@@ -5,7 +5,7 @@ title: 巛の家｜ハウスリノベーション
 date: 2024-09-01
 type: design
 description: 自然素材と回遊性を活かしたマンションのリノベーションです。
-image: /assets/sen_main.jpg
+image: /assets/images/sen_main.jpg
 link: https://www.tecture.jp/projects/5608
 ---
 
