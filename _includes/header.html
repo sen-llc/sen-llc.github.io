@@ -1,95 +1,99 @@
-<header class="fixed w-full bg-white/95 backdrop-blur-sm z-50 transition-all duration-500 border-b border-sen-natural">
-  <div class="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center transition-all duration-500">
+<header class="fixed w-full bg-sen-beige z-50 transition-all duration-300 border-b border-[#e0ded6]">
+  <div class="container mx-auto px-4 h-[70px] flex justify-between items-center">
     <!-- Logo -->
-    <a href="/" class="flex items-center space-x-2 group">
-      <img src="/assets/images/logo.svg" alt="sen llc" class="h-7 w-7 md:h-8 md:w-8 transition-transform duration-500 group-hover:rotate-12">
+    <a href="/" class="flex items-center space-x-3 group">
+      <img src="/assets/images/logo.svg" alt="sen llc" class="h-[40px] w-auto transition-transform duration-300 group-hover:rotate-6">
       <span class="text-lg md:text-xl font-serif tracking-wider text-sen-dark">sen llc</span>
     </a>
     
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center space-x-8">
-      <a href="/rental" class="nav-link flex items-center {% if page.url contains '/rental/' %}active{% endif %}">
-        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in" aria-hidden="true">
-          <use xlink:href="/assets/icons/icon-set.svg#icon-home"></use>
-        </svg>
-        <span>暮らしを耕す</span>
-      </a>
-      <a href="/design" class="nav-link flex items-center {% if page.url contains '/design/' %}active{% endif %}">
-        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-100" aria-hidden="true">
-          <use xlink:href="/assets/icons/icon-set.svg#icon-ruler"></use>
-        </svg>
-        <span>暮らしを築く</span>
-      </a>
-      <a href="/journal" class="nav-link flex items-center {% if page.url contains '/journal/' %}active{% endif %}">
-        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-200" aria-hidden="true">
-          <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
-        </svg>
-        <span>ジャーナル</span>
-      </a>
-      <a href="/about" class="nav-link flex items-center {% if page.url contains '/about/' %}active{% endif %}">
-        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-300" aria-hidden="true">
-          <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
-        </svg>
-        <span>わたしたちについて</span>
-      </a>
-      <a href="/contact" class="nav-link flex items-center {% if page.url contains '/contact/' %}active{% endif %}">
-        <svg class="w-4 h-4 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-400" aria-hidden="true">
-          <use xlink:href="/assets/icons/icon-set.svg#icon-mail"></use>
-        </svg>
-        <span>contact</span>
-      </a>
+      <a href="/rental" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">Rental</a>
+      <a href="/design" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">Design</a>
+      <a href="/journal" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">Journal</a>
+      <a href="/about" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">About</a>
     </nav>
     
-    <!-- Mobile Menu Button - Increased tap target -->
-    <button id="menu-toggle" class="md:hidden flex items-center justify-center text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown p-2 touch-feedback" aria-label="メニューを開く" aria-expanded="false">
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden flex items-center justify-center text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-md p-2" aria-label="メニューを開く" aria-expanded="false">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
   </div>
   
-  <!-- Mobile Navigation - Improved for touch -->
-  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 pt-16 overflow-y-auto">
-    <div class="container mx-auto px-4 py-8">
-      <nav class="flex flex-col space-y-6 items-center text-xl">
-        <a href="/rental" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/rental/' %}active{% endif %}">
-          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-home"></use>
-          </svg>
-          <span>暮らしを耕す</span>
-        </a>
-        <a href="/design" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/design/' %}active{% endif %}">
-          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in delay-100" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-ruler"></use>
-          </svg>
-          <span>暮らしを築く</span>
-        </a>
-        <a href="/journal" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/journal/' %}active{% endif %}">
-          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in delay-200" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
-          </svg>
-          <span>ジャーナル</span>
-        </a>
-        <a href="/about" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/about/' %}active{% endif %}">
-          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in delay-300" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
-          </svg>
-          <span>わたしたちについて</span>
-        </a>
-        <a href="/contact" class="mobile-nav-link w-full text-center py-3 flex items-center justify-center {% if page.url contains '/contact/' %}active{% endif %}">
-          <svg class="w-5 h-5 mr-2 text-sen-brown opacity-70 icon-sen-brown icon-animate-scale-in delay-400" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-mail"></use>
-          </svg>
-          <span>contact</span>
-        </a>
-      </nav>
-      
-      <!-- Mobile menu close button -->
-      <button id="close-mobile-menu" class="absolute top-4 right-4 p-2 text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown" aria-label="メニューを閉じる">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
+  <!-- Mobile Navigation Overlay -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-sen-beige z-50 flex flex-col justify-center items-center">
+    <button id="close-mobile-menu" class="absolute top-5 right-5 p-2 text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-md" aria-label="メニューを閉じる">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    
+    <nav class="flex flex-col items-center space-y-6 text-xl">
+      <a href="/rental" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">Rental</a>
+      <a href="/design" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">Design</a>
+      <a href="/journal" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">Journal</a>
+      <a href="/about" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">About</a>
+    </nav>
   </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-mobile-menu');
+    const body = document.body;
+    
+    if (menuToggle && mobileMenu && closeMenu) {
+      // メニューを開く
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.remove('hidden');
+        body.classList.add('overflow-hidden');
+        menuToggle.setAttribute('aria-expanded', 'true');
+      });
+      
+      // メニューを閉じる
+      closeMenu.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        body.classList.remove('overflow-hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+      
+      // モバイルメニュー内のリンクをクリックしたときにメニューを閉じる
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          body.classList.remove('overflow-hidden');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+      
+      // ESCキーでメニューを閉じる
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+          closeMenu.click();
+        }
+      });
+    }
+    
+    // 現在のページをアクティブにする
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('nav a');
+    
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      if (currentPath === linkPath || (linkPath !== '/' && currentPath.startsWith(linkPath))) {
+        link.classList.add('text-sen-brown');
+        link.classList.add('font-medium');
+        
+        // デスクトップナビゲーションの場合、下線を追加
+        if (!link.closest('#mobile-menu')) {
+          link.classList.add('after:w-full');
+        }
+      }
+    });
+  });
+</script>
