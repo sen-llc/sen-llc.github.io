@@ -1,523 +1,425 @@
 ---
 layout: default
-title: レンタル | sen llc
-description: 自分好みにカスタマイズできる住まい。DIY可能な賃貸で、あなたらしい暮らしを育てませんか？
 ---
 
-<!-- 1. ファーストビュー -->
-<section class="relative min-h-[80vh] flex items-center justify-center bg-sen-natural overflow-hidden">
-  <div class="absolute inset-0 z-0 opacity-10">
+<!-- ファーストビュー -->
+<section class="first-view">
+  <!-- 写真スタック -->
+  <div class="photo-stack">
+    <!-- 写真はJavaScriptで動的に生成 -->
+  </div>
+  
+  <!-- オーバーレイ -->
+  <div class="photo-overlay"></div>
+  
+  <!-- キャッチコピー -->
+  <div class="catchphrase-container">
+    <h1 class="catchphrase"></h1>
+  </div>
+  
+  <!-- スクロールガイド -->
+  <div class="scroll-guide" id="scroll-guide">
+    <span>Scroll</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <polyline points="19 12 12 19 5 12"></polyline>
+    </svg>
+  </div>
+</section>
+
+<!-- リード文セクション -->
+<section class="lead-section" id="lead-section">
+  <div class="lead-text-container">
+    <div class="lead-text" id="lead-text">
+      <div class="lead-text-group">
+        <p>空き家でも、</p>
+        <p>賃貸でも、</p>
+        <p>実家の一室でも。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>壁に色を重ね、</p>
+        <p>床を張り替え、</p>
+        <p>お気に入りの灯りを灯して。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>少しずつ、</p>
+        <p>あなたらしい空間へと育てていく。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>住まいは、</p>
+        <p>もっと自由に、育てていける。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>自分好みに暮らしをカスタマイズしたり、</p>
+        <p>プロと一緒に考え、つくりあげる空間づくりも。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>一緒に、</p>
+        <p>あなたの住まいづくりを始めませんか。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- サービス紹介セクション -->
+<section class="service-section">
+  <div class="service-container">
+    <!-- サービス01 -->
+    <div class="service-block">
+      <div class="service-image">
+        <img src="/assets/images/service-rental.jpg" alt="暮らしを耕す" loading="lazy">
+        <div class="service-image-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-theme">暮らしを耕す</div>
+        <h2 class="service-title">自分好みにカスタマイズする住まい</h2>
+        <div class="service-description">
+          <p>賃貸でも、住まいに手を加えて育てていく選択肢を。</p>
+          <p>DIYできる自然素材の空間で、子どもや動物と一緒に、</p>
+          <p>伸びやかな暮らしを楽しむあなたへ。</p>
+        </div>
+        <a href="/rental" class="service-link">
+          詳しく見る
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- サービス02 -->
+    <div class="service-block from-right">
+      <div class="service-image">
+        <img src="/assets/images/service-design.jpg" alt="暮らしを築く" loading="lazy">
+        <div class="service-image-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-theme">暮らしを築く</div>
+        <h2 class="service-title">想いをかたちにする設計サポート</h2>
+        <div class="service-description">
+          <p>理想の暮らしを思い描きながら、</p>
+          <p>一部屋からでも、少しずつ手をかけるところから。</p>
+          <p>私たちがそばで、耕す暮らしを一緒に育てていきます。</p>
+        </div>
+        <a href="/design" class="service-link">
+          詳しく見る
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最新ジャーナル一覧セクション -->
+<section class="journal-section">
+  <div class="container mx-auto px-4 py-16 md:py-20">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-medium mb-8 md:mb-12 text-center">最近の耕しごと</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {% assign sorted_journal = site.journal | sort: 'date' | reverse %}
+        {% for post in sorted_journal limit: 3 %}
+          <div class="journal-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <a href="{{ post.url | relative_url }}" class="block">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="{{ post.thumbnail | relative_url }}" 
+                  alt="{{ post.title }}" 
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                >
+              </div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-medium px-3 py-1 bg-sen-beige rounded-full">{{ post.category }}</span>
+                  <time datetime="{{ post.date | date_to_xmlschema }}" class="text-xs text-gray-500">{{ post.date | date: "%Y.%m.%d" }}</time>
+                </div>
+                <h3 class="text-lg font-medium text-sen-dark hover:text-sen-brown transition-colors duration-300">{{ post.title }}</h3>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/journal" class="inline-flex items-center text-sen-dark hover:text-sen-brown transition-colors duration-300">
+          もっと見る
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせセクション -->
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-content">
+      <h2 class="contact-title">住まいのこと、<br>小さなことからご相談ください。</h2>
+      <div class="contact-description">
+        <p>「ちょっと話を聞いてみたい」<br>「こんな暮らしができるかな」<br>そんな気持ちでも、大丈夫です。</p>
+        <p>ゆっくり、あなたの住まいのことを一緒に考えましょう。</p>
+      </div>
+      <a href="/contact" class="contact-button">
+        お問い合わせはこちら
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- コンセプトセクション -->
+<section id="concept" class="py-16 md:py-24 px-4 bg-sen-natural relative">
+  <!-- 背景パターン -->
+  <div class="absolute inset-0 opacity-5 z-0">
     <img 
-      src="{{ '/assets/images/rental-hero-bg.jpg' | relative_url }}" 
-      alt="暮らしを耕す" 
+      src="/assets/images/concept-bg.jpg" 
+      alt="" 
       class="w-full h-full object-cover"
-      fetchpriority="high"
+      loading="lazy"
     >
   </div>
   
-  <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
-    <div class="inline-flex items-center bg-white/80 backdrop-blur-sm px-4 py-1 rounded-full text-sm text-sen-green mb-6">
-      <span>Rental - 暮らしを育てる</span>
-    </div>
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 md:mb-6 tracking-wider">自分の手で、育てていく住まい。</h1>
-    <p class="text-xl md:text-2xl font-light tracking-wide mb-8 md:mb-10">自分好みにカスタマイズする暮らし</p>
-    <div class="w-16 h-1 bg-sen-brown mx-auto"></div>
-  </div>
-</section>
-
-<!-- 2. リード文（Rentalのコンセプト紹介） -->
-<section class="py-16 md:py-24 px-4">
-  <div class="container mx-auto max-w-3xl" data-aos="fade-up">
-    <div class="prose prose-lg mx-auto tracking-wide leading-relaxed text-center">
-      <p class="mb-6">
-        壁に、好きな色を塗って。<br>
-        棚を取り付けて。<br>
-        あかりを灯して。
+  <div class="container mx-auto max-w-5xl relative z-10">
+    <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
+      <h2 class="section-title">空き家を育てる、暮らしを耕す</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto mt-6">
+        私たちは、空き家を「育てる」ことで、新しい暮らしの場を創り出します。<br class="hidden md:block">
+        手をかけて、時間をかけて、住まいと共に成長していく。<br class="hidden md:block">
+        そんな「耕す暮らし」の循環を大切にしています。
       </p>
-      <p class="mb-6">
-        少しずつ、あなたらしい空間に育てていく。
-      </p>
-      <p class="mb-6">
-        借りている家でも、もっと自分らしくできたら。<br>
-        そんなふうに思ったこと、ありませんか？
-      </p>
-      <p class="mb-6">
-        住まいは、少し手をかけるだけでぐっと自分に近づいていきます。
-      </p>
-      <p class="mb-6">
-        壁を塗ったり、棚をつけたり。<br>
-        床を張り替えたり、壁を移動したり。
-      </p>
-      <p class="mb-6">
-        暮らしに合わせて、手を加えながら育てていく住まい。
-      </p>
-      <p>
-        ここでは、ひとつの空き家を時間とともに育ててきた、<br>
-        3つの変化のかたちをご紹介します。
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- 3. Rentalサービス紹介（くらしを育てる3レベル） -->
-<section class="py-16 md:py-20 px-4 bg-sen-beige">
-  <div class="container mx-auto max-w-5xl">
-    <div class="text-center mb-12" data-aos="fade-up">
-      <span class="inline-block bg-sen-brown text-white px-4 py-1 rounded-full text-sm mb-4">LEVEL 1</span>
-      <h2 class="text-2xl md:text-3xl font-medium">手をかける</h2>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-      <!-- 画像エリア -->
-      <div class="space-y-4" data-aos="fade-up">
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <p class="text-sm text-sen-brown mb-2 font-medium">Before</p>
-            <img 
-              src="{{ '/assets/images/level1_before.jpg' | relative_url }}" 
-              alt="リフォーム前" 
-              class="w-full aspect-square object-cover rounded-lg"
-              loading="lazy"
-            >
-          </div>
-          <div>
-            <p class="text-sm text-sen-brown mb-2 font-medium">After</p>
-            <img 
-              src="{{ '/assets/images/level1_after.jpg' | relative_url }}" 
-              alt="リフォーム後" 
-              class="w-full aspect-square object-cover rounded-lg"
-              loading="lazy"
-            >
-          </div>
+    <!-- コンセプトフロー - モバイル向けに縦並びに -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 concept-flow mt-10 md:mt-16">
+      <div class="relative text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="concept-step bg-sen-cream">
+          <svg class="h-8 w-8 md:h-10 md:w-10 text-sen-green icon-sen-green icon-animate-scale-in" aria-hidden="true">
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-home"></use>
+          </svg>
         </div>
+        <div class="concept-arrow md:block hidden">
+          <svg class="h-6 w-6 icon-scroll-float">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+          </svg>
+        </div>
+        <div class="concept-arrow-mobile md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon-scroll-float" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7l4 4m0 0l4-4m-4 4V3" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium mt-4 mb-2">空き家を見つける</h3>
+        <p class="text-sm text-gray-600">眠っている空間に<br>新しい可能性を見出します</p>
       </div>
       
-      <!-- テキストエリア -->
-      <div data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-xl md:text-2xl font-medium mb-4">ひとりと猫で、暮らしを整えはじめる</h3>
-        <p class="text-base leading-relaxed mb-6">
-          空き家になった実家の一室。<br>
-          猫と一緒に暮らすために、ほんの少しだけ手を加えた。
-        </p>
-        <p class="text-base leading-relaxed mb-6">
-          畳の上にタイルカーペットを敷いて、壁にペンキを塗る。<br>
-          和紙の照明を吊るして、梁にはキャットウォークも。
-        </p>
-        <p class="text-base leading-relaxed mb-6">
-          大きな工事はしなくても、<br>
-          部屋の空気が、手をかけるたびにやわらかく変わっていった。
+      <div class="relative text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="concept-step bg-sen-cream">
+          <svg class="h-8 w-8 md:h-10 md:w-10 text-sen-brown icon-sen-brown icon-animate-scale-in delay-200" aria-hidden="true">
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-tool"></use>
+          </svg>
+        </div>
+        <div class="concept-arrow md:block hidden">
+          <svg class="h-6 w-6 icon-scroll-float">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+          </svg>
+        </div>
+        <div class="concept-arrow-mobile md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon-scroll-float" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7l4 4m0 0l4-4m-4 4V3" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium mt-4 mb-2">手をかける</h3>
+        <p class="text-sm text-gray-600">DIYや設計を通して<br>住まいに命を吹き込みます</p>
+      </div>
+      
+      <div class="relative text-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="concept-step bg-sen-cream">
+          <svg class="h-8 w-8 md:h-10 md:w-10 text-sen-green-light icon-sen-green-light icon-animate-scale-in delay-400" aria-hidden="true">
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-cycle"></use>
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium mt-4 mb-2">循環させる</h3>
+        <p class="text-sm text-gray-600">住み継ぎ、手入れを重ねて<br>価値を高めていきます</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 診断モーダル - タッチ操作に最適化 -->
+<div id="diagnosis-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center hidden">
+  <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto mx-4">
+    <div class="p-5 md:p-8">
+      <div class="flex justify-between items-center mb-5 md:mb-6">
+        <h3 class="text-lg md:text-xl font-medium">あなたに合った住まいのかたちは？</h3>
+        <button id="close-diagnosis-modal" class="text-gray-500 hover:text-gray-700 p-2 mobile-touch-target">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <div id="diagnosis-intro-modal">
+        <div class="flex justify-center mb-6">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center bg-sen-beige/50">
+                <svg class="w-12 h-12 text-sen-green icon-sen-green icon-animate-bounce-in" aria-hidden="true">
+                  <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-sprout"></use>
+                </svg>
+              </div>
+              <span class="text-xs text-gray-600">育てる</span>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center bg-sen-beige/50">
+                <svg class="w-10 h-10 text-sen-brown icon-sen-brown icon-animate-bounce-in delay-200">
+                  <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-ruler"></use>
+                </svg>
+              </div>
+              <span class="text-xs text-gray-600">つくる</span>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center bg-sen-beige/50">
+                <svg class="w-10 h-10 text-sen-green-light icon-sen-green-light icon-animate-bounce-in delay-400">
+                  <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-cycle"></use>
+                </svg>
+              </div>
+              <span class="text-xs text-gray-600">循環させる</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="text-gray-700 mb-6 md:mb-8">
+          3つの質問に答えると、<br>
+          「育てる住まい」か「つくる住まい」か、<br>
+          あなたにぴったりの入り口が見つかります。
         </p>
         
-        <div class="bg-white p-6 rounded-lg mt-8">
-          <p class="text-sen-brown italic mb-4">
-            猫が梁の上を歩く音が、いつものBGMになった。<br>
-            この部屋が、だんだん"自分の場所"になっていく。
-          </p>
-          
-          <h4 class="font-medium text-sen-brown mb-3">このときやったこと</h4>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-animate-fade-in delay-100">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>壁を落ち着いた色に塗装</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-animate-fade-in delay-200">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>畳の上にタイルカーペットを敷く</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-animate-fade-in delay-300">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>和紙の照明に交換</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-animate-fade-in delay-400">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>キャットウォークを梁に設置</span>
-            </li>
-          </ul>
+        <div class="flex justify-center">
+          <button id="start-diagnosis" class="btn btn-primary">
+            <svg class="w-5 h-5 mr-2 icon-sen-green icon-animate-scale-in" aria-hidden="true">
+              <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-sprout"></use>
+            </svg>
+            診断をはじめる
+          </button>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- LEVEL 2 -->
-<section class="py-16 md:py-20 px-4">
-  <div class="container mx-auto max-w-5xl">
-    <div class="text-center mb-12" data-aos="fade-up">
-      <span class="inline-block bg-sen-brown text-white px-4 py-1 rounded-full text-sm mb-4">LEVEL 2</span>
-      <h2 class="text-2xl md:text-3xl font-medium">整える</h2>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-      <!-- テキストエリア (モバイルでは順序入れ替え) -->
-      <div class="md:order-2" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-xl md:text-2xl font-medium mb-4">暮らしに合わせて、空間も広がっていく</h3>
-        <p class="text-base leading-relaxed mb-6">
-          猫が増えたり、誰かと一緒に暮らすようになったり。<br>
-          生活のリズムが変わると、住まいに必要なことも変わっていきました。
-        </p>
-        <p class="text-base leading-relaxed mb-6">
-          細かく区切られていた間取りを見直して、<br>
-          壁を取り払って広いワンルームに。<br>
-          畳を外して、フロアタイルに張り替えた。
-        </p>
-        <p class="text-base leading-relaxed mb-6">
-          空間がひとつながりになると、<br>
-          心にも余白が生まれた。
-        </p>
+      
+      <div id="diagnosis-questions" class="hidden">
+        <!-- ステップバー -->
+        <div class="step-progress mb-6 md:mb-8">
+          <div class="step-bar-container">
+            <div class="step-bar"></div>
+            <div class="step-circles">
+              <div class="step-circle active" data-step="1">1</div>
+              <div class="step-circle" data-step="2">2</div>
+              <div class="step-circle" data-step="3">3</div>
+            </div>
+          </div>
+        </div>
         
-        <div class="bg-sen-beige p-6 rounded-lg mt-8">
-          <p class="text-sen-brown italic mb-4">
-            空間を広げたら、気持ちにも余白ができた。<br>
-            暮らしの呼吸が、ちょっと深くなった気がする。
-          </p>
-          
-          <h4 class="font-medium text-sen-brown mb-3">このときやったこと</h4>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-pulse">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>間仕切り壁を撤去</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-pulse">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>畳を撤去してフロアタイルに変更</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-pulse">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>家具で空間をゾーニング</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-pulse">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>断熱・遮音もプチ改善</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- 画像エリア -->
-      <div class="md:order-1 space-y-4" data-aos="fade-up">
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <p class="text-sm text-sen-brown mb-2 font-medium">Before</p>
-            <img 
-              src="{{ '/assets/images/level2_before.jpg' | relative_url }}" 
-              alt="リフォーム前" 
-              class="w-full aspect-square object-cover rounded-lg"
-              loading="lazy"
-            >
-          </div>
-          <div>
-            <p class="text-sm text-sen-brown mb-2 font-medium">After</p>
-            <img 
-              src="{{ '/assets/images/level2_after.jpg' | relative_url }}" 
-              alt="リフォーム後" 
-              class="w-full aspect-square object-cover rounded-lg"
-              loading="lazy"
-            >
+        <!-- 質問が動的に表示される場所 -->
+        <div class="question-container">
+          <h3 class="text-lg md:text-xl font-medium mb-4 md:mb-6 text-center question-title"></h3>
+          <div class="question-description text-center mb-6 md:mb-8 text-gray-700"></div>
+          <div class="flex flex-col gap-3 md:gap-4 max-w-md mx-auto options-container">
+            <!-- 選択肢がここに動的に追加されます -->
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LEVEL 3 -->
-<section class="py-16 md:py-20 px-4 bg-sen-beige">
-  <div class="container mx-auto max-w-5xl">
-    <div class="text-center mb-12" data-aos="fade-up">
-      <span class="inline-block bg-sen-brown text-white px-4 py-1 rounded-full text-sm mb-4">LEVEL 3</span>
-      <h2 class="text-2xl md:text-3xl font-medium">育て直す</h2>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-      <!-- 画像エリア -->
-      <div class="space-y-4" data-aos="fade-up">
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <p class="text-sm text-sen-brown mb-2 font-medium">Before</p>
-            <img 
-              src="{{ '/assets/images/level3_before.jpg' | relative_url }}" 
-              alt="リフォーム前" 
-              class="w-full aspect-square object-cover rounded-lg"
-              loading="lazy"
-            >
-          </div>
-          <div>
-            <p class="text-sm text-sen-brown mb-2 font-medium">After</p>
-            <img 
-              src="{{ '/assets/images/level3_after.jpg' | relative_url }}" 
-              alt="リフォーム後" 
-              class="w-full aspect-square object-cover rounded-lg"
-              loading="lazy"
-            >
-          </div>
-        </div>
-      </div>
-      
-      <!-- テキストエリア -->
-      <div data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-xl md:text-2xl font-medium mb-4">住まいが、"場"になっていく</h3>
-        <p class="text-base leading-relaxed mb-6">
-          暮らしと仕事。<br>
-          好きなことと、日々の営み。
-        </p>
-        <p class="text-base leading-relaxed mb-6">
-          全部を分けずに、ひとつの場所でつないでみたくなった。
-        </p>
-        <p class="text-base leading-relaxed mb-6">
-          玄関横の一室を、土間のあるスペースに変える。<br>
-          鏡と椅子を置いて、小さなサロンのような場所に。
-        </p>
-        <p class="text-base leading-relaxed mb-6">
-          住まいは、ただ"住む"だけのものじゃない。<br>
-          育てた分だけ、新しい役割を受け入れてくれる。
-        </p>
         
-        <div class="bg-white p-6 rounded-lg mt-8">
-          <p class="text-sen-brown italic mb-4">
-            土間に立つと、背筋がちょっと伸びる。<br>
-            この場所が、これからの自分を育ててくれそうな気がしている。
-          </p>
+        <div class="mt-6 md:mt-8 flex justify-between">
+          <button id="prev-question" class="btn btn-outline hidden">
+            <svg class="w-5 h-5 mr-2 rotate-180 icon-sen-brown">
+              <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+            </svg>
+            前の質問へ
+          </button>
+          <div class="flex-grow"></div>
+          <div class="text-sm text-gray-500 self-center question-counter"></div>
+        </div>
+      </div>
+      
+      <div id="diagnosis-result" class="hidden">
+        <div class="result-container bg-white rounded-lg p-6 md:p-8 relative overflow-hidden">
+          <!-- 背景装飾 -->
+          <div class="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-sen-beige rounded-bl-full opacity-50 -mr-6 md:-mr-8 -mt-6 md:-mt-8"></div>
+          <div class="absolute bottom-0 left-0 w-20 md:w-24 h-20 md:h-24 bg-sen-accent rounded-tr-full opacity-30 -ml-4 md:-ml-6 -mb-4 md:-mb-6"></div>
           
-          <h4 class="font-medium text-sen-brown mb-3">このときやったこと</h4>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-rotate">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>玄関横の床を土間仕上げに改修</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-rotate">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>小さな鏡＋椅子でサロン仕様に</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-rotate">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>照明・素材をリフレッシュ</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-rotate">
-                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-check' | relative_url }}"></use>
-              </svg>
-              <span>空間をフレキシブルに活用できるよう設計</span>
-            </li>
-          </ul>
+          <!-- 結果コンテンツ -->
+          <div class="relative z-10">
+            <div class="flex flex-col items-center mb-6 md:mb-8">
+              <div class="result-icon-wrapper mb-5 md:mb-6 relative">
+                <div class="absolute inset-0 bg-sen-beige rounded-full scale-125 opacity-20 animate-pulse"></div>
+                <svg id="result-icon" class="w-20 h-20 md:w-24 md:h-24 relative z-10 icon-scroll-pulse animate">
+                  <use id="result-icon-use" xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
+                </svg>
+              </div>
+              
+              <div class="result-badge bg-sen-beige text-sen-brown px-3 py-1 md:px-4 md:py-1 rounded-full text-sm font-medium mb-3 md:mb-4">診断結果</div>
+              
+              <h3 id="result-title" class="text-xl md:text-2xl font-serif mb-2 text-center"></h3>
+              <p id="result-text" class="text-gray-700 mb-5 md:mb-6 text-center max-w-md text-sm md:text-base"></p>
+            </div>
+            
+            <!-- SNS共有ボタン - タッチ操作に最適化 -->
+            <div class="share-container mb-5 md:mb-6">
+              <p class="text-sm text-gray-500 text-center mb-3">診断結果をシェアする</p>
+              <div class="flex justify-center space-x-4">
+                <button class="share-btn share-twitter mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="Twitterでシェア">
+                  <svg class="w-6 h-6 icon-animate-scale-in" aria-hidden="true">
+                    <use xlink:href="/assets/icons/icon-set.svg#icon-twitter"></use>
+                  </svg>
+                </button>
+                <button class="share-btn share-facebook mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="Facebookでシェア">
+                  <svg class="w-6 h-6 icon-animate-scale-in delay-100" aria-hidden="true">
+                    <use xlink:href="/assets/icons/icon-set.svg#icon-facebook"></use>
+                  </svg>
+                </button>
+                <button class="share-btn share-line mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="LINEでシェア">
+                  <svg class="w-6 h-6 icon-animate-scale-in delay-200" aria-hidden="true">
+                    <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
+                  </svg>
+                </button>
+                <button id="copy-result-url" class="share-btn mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="URLをコピー">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 icon-animate-scale-in delay-300" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+              <div id="copy-message" class="text-xs text-center mt-2 text-green-600 opacity-0 transition-opacity">URLをコピーしました！</div>
+            </div>
+            
+            <div class="result-action-area border-t border-gray-100 pt-5 md:pt-6 flex flex-col items-center">
+              <a id="result-link" href="#" class="btn btn-primary w-full max-w-xs mb-4 flex items-center justify-center group">
+                <span id="result-link-text"></span>
+                <svg class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1">
+                  <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+                </svg>
+              </a>
+              <button id="restart-diagnosis" class="text-sen-brown hover:underline flex items-center text-sm mobile-touch-target py-2">
+                <svg class="h-4 w-4 mr-1 icon-sen-brown icon-hover-rotate">
+                  <use xlink:href="/assets/icons/icon-set.svg#icon-cycle"></use>
+                </svg>
+                もう一度診断する
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- 4. DIY会参加レポート -->
-<section class="py-16 md:py-20 px-4">
-  <div class="container mx-auto max-w-3xl text-center" data-aos="fade-up">
-    <h2 class="text-2xl md:text-3xl font-medium mb-8">DIYとの関わりについて</h2>
-    <p class="text-base md:text-lg leading-relaxed mb-6">
-      今はまだ、私たち自身も手を動かしながら学んでいます。
-    </p>
-    <p class="text-base md:text-lg leading-relaxed">
-      地域のDIY会やワークショップに参加し、<br>
-      空き家の修繕や道具の扱い方を身につけながら、<br>
-      次の暮らしを育てる準備を続けています。
-    </p>
-  </div>
-  
-  <div class="container mx-auto max-w-4xl mt-12 px-4" data-aos="fade-up" data-aos-delay="100">
-    <div class="relative h-[300px] md:h-[400px]">
-      <!-- DIY会の写真をランダムに配置 -->
-      <a href="{{ '/assets/images/diy_workshop1.jpg' | relative_url }}" class="glightbox absolute top-[10%] left-[10%] w-[60%] md:w-[45%] rotate-[-3deg] z-10 transform hover:scale-105 transition-transform duration-300">
-        <img 
-          src="{{ '/assets/images/diy_workshop1.jpg' | relative_url }}" 
-          alt="DIYワークショップの様子" 
-          class="w-full h-full object-cover rounded-lg shadow-md"
-          loading="lazy"
-        >
-      </a>
-      <a href="{{ '/assets/images/diy_workshop2.jpg' | relative_url }}" class="glightbox absolute top-[20%] left-[40%] w-[60%] md:w-[40%] rotate-[2deg] z-20 transform hover:scale-105 transition-transform duration-300">
-        <img 
-          src="{{ '/assets/images/diy_workshop2.jpg' | relative_url }}" 
-          alt="DIYワークショップの様子" 
-          class="w-full h-full object-cover rounded-lg shadow-md"
-          loading="lazy"
-        >
-      </a>
-      <a href="{{ '/assets/images/diy_workshop3.jpg' | relative_url }}" class="glightbox absolute top-[35%] left-[20%] w-[55%] md:w-[35%] rotate-[-1deg] z-30 transform hover:scale-105 transition-transform duration-300">
-        <img 
-          src="{{ '/assets/images/diy_workshop3.jpg' | relative_url }}" 
-          alt="DIYワークショップの様子" 
-          class="w-full h-full object-cover rounded-lg shadow-md"
-          loading="lazy"
-        >
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- 5. 賃貸物件紹介 -->
-<section class="py-16 md:py-20 px-4 bg-sen-natural">
-  <div class="container mx-auto max-w-3xl text-center" data-aos="fade-up">
-    <div class="inline-flex items-center bg-white px-4 py-1 rounded-full text-sm text-sen-green mb-6">
-      <svg class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-bounce-in">
-        <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-home' | relative_url }}"></use>
-      </svg>
-      Coming Soon
-    </div>
-    <h2 class="text-2xl md:text-3xl font-medium mb-8">募集中の住まい</h2>
-    <p class="text-base md:text-lg leading-relaxed mb-8">
-      ただいま、整備中の住まいがいくつかあります。<br><br>
-      LINEにご登録いただいた方には、<br>
-      準備が整い次第、先行でご案内しています。
-    </p>
-    <a href="#" class="btn btn-primary inline-flex items-center">
-      <svg class="w-5 h-5 mr-2 text-white icon-hover-bounce" aria-hidden="true">
-        <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
-      </svg>
-      <span>LINEに登録する</span>
-    </a>
-  </div>
-</section>
-
-<!-- 6. FAQ（よくある質問） -->
-<section class="py-16 md:py-20 px-4">
-  <div class="container mx-auto max-w-3xl" data-aos="fade-up">
-    <h2 class="text-2xl md:text-3xl font-medium mb-10 text-center">よくあるご質問</h2>
-    
-    <div class="space-y-4 md:space-y-6">
-      <!-- FAQ 1 -->
-      <div class="border border-sen-accent rounded-lg overflow-hidden">
-        <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
-          <span class="font-medium">DIYしても大丈夫？</span>
-          <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-arrow-right' | relative_url }}"></use>
-          </svg>
-        </button>
-        <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
-          <p>はい、許可不要で棚や塗装など可能です。ただし、構造躯体に関わる作業はご相談ください。</p>
-        </div>
-      </div>
-      
-      <!-- FAQ 2 -->
-      <div class="border border-sen-accent rounded-lg overflow-hidden">
-        <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
-          <span class="font-medium">ペットOKですか？</span>
-          <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-arrow-right' | relative_url }}"></use>
-          </svg>
-        </button>
-        <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
-          <p>多くの物件で対応しています。詳細は物件ごとにご案内します。</p>
-        </div>
-      </div>
-      
-      <!-- FAQ 3 -->
-      <div class="border border-sen-accent rounded-lg overflow-hidden">
-        <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
-          <span class="font-medium">原状回復は？</span>
-          <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-arrow-right' | relative_url }}"></use>
-          </svg>
-        </button>
-        <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
-          <p>大掛かりなものは不要です。退去時はクリーニング実費のみご負担ください。</p>
-        </div>
-      </div>
-      
-      <!-- FAQ 4 -->
-      <div class="border border-sen-accent rounded-lg overflow-hidden">
-        <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
-          <span class="font-medium">道具や素材の相談はできますか？</span>
-          <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-arrow-right' | relative_url }}"></use>
-          </svg>
-        </button>
-        <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
-          <p>設計士として、DIYのご相談にも対応しています。お気軽にどうぞ。</p>
-        </div>
-      </div>
-      
-      <!-- FAQ 5 -->
-      <div class="border border-sen-accent rounded-lg overflow-hidden">
-        <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
-          <span class="font-medium">今すぐ住める物件はありますか？</span>
-          <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-arrow-right' | relative_url }}"></use>
-          </svg>
-        </button>
-        <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
-          <p>整備中のため、LINE登録の方に優先でご案内しています。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. お問い合わせ誘導（CTA） -->
-<section class="py-16 md:py-24 px-4 bg-sen-natural">
-  <div class="container mx-auto max-w-3xl text-center" data-aos="fade-up">
-    <h2 class="text-2xl md:text-3xl font-medium mb-6">ちょっと手をかけるだけで、<br>住まいは、もっと自分らしくなる。</h2>
-    <p class="text-lg md:text-xl mb-10">
-      あなたの手で、<br>
-      暮らしを耕してみませんか？
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-      <a href="#" class="btn btn-primary inline-flex items-center justify-center">
-        <svg class="w-5 h-5 mr-2 text-white icon-animate-scale-in" aria-hidden="true">
-          <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
-        </svg>
-        <span>LINEで相談する</span>
-      </a>
-      <a href="#" class="btn btn-outline inline-flex items-center justify-center">
-        <img src="{{ '/assets/images/icon-instagram.svg' | relative_url }}" alt="Instagram" class="w-5 h-5 mr-2 icon-instagram icon-animate-scale-in delay-200">
-        <span>Instagramで活動を見る</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ用JavaScript -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const faqToggles = document.querySelectorAll('.faq-toggle');
-    
-    faqToggles.forEach(toggle => {
-      toggle.addEventListener('click', function() {
-        const content = this.nextElementSibling;
-        const arrow = this.querySelector('.faq-arrow');
-        
-        // 開閉状態を切り替え
-        if (content.classList.contains('hidden')) {
-          content.classList.remove('hidden');
-          arrow.classList.add('rotate-90');
-          content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-          arrow.classList.remove('rotate-90');
-          content.style.maxHeight = '0px';
-          
-          // アニメーション完了後に非表示に
-          setTimeout(() => {
-            content.classList.add('hidden');
-          }, 300);
-        }
-      });
-    });
-  });
-</script>
+</div>
