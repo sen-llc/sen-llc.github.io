@@ -159,6 +159,19 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  // エラーハンドリングを追加
+  window.addEventListener(
+    "error",
+    (event) => {
+      // runtime.lastError エラーを抑制
+      if (event.message && event.message.includes("runtime.lastError")) {
+        event.preventDefault()
+        console.debug("Suppressed runtime.lastError:", event.message)
+      }
+    },
+    true,
+  )
+
   // 低電力モード検出（可能な場合）
   if ("connection" in navigator && navigator.connection.saveData) {
     console.log("データセーバーモードが有効なため、アニメーションを制限しています")
