@@ -14,7 +14,7 @@
       <!-- 左カラム：ロゴ＋一言紹介 -->
       <div class="space-y-4 md:space-y-5 text-center md:text-left">
         <a href="/" class="inline-flex items-center space-x-2 group">
-          <img src="/assets/images/logo.svg" alt="sen llc" class="h-6 w-6 md:h-7 md:w-7 transition-transform duration-300 group-hover:rotate-12">
+          <img src="{{ site.baseurl }}/assets/images/logo.png" alt="sen llc" class="h-6 w-6 md:h-7 md:w-7 transition-transform duration-300 group-hover:rotate-12" onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';">
           <span class="text-lg font-serif tracking-wider text-sen-dark">sen llc</span>
         </a>
         <p class="text-sm leading-relaxed text-sen-dark">
@@ -25,13 +25,19 @@
         <!-- SNSアイコン - モバイルでは表示、PCでは非表示 -->
         <div class="flex justify-center md:hidden space-x-5 pt-2">
           <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="Instagramでフォローする">
-            <svg class="w-5 h-5 icon-sen-brown icon-hover-scale" aria-hidden="true">
-              <use xlink:href="/assets/icons/icon-set.svg#icon-instagram"></use>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 icon-sen-brown icon-hover-scale" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
           <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="LINEで友達になる">
-            <svg class="w-6 h-6 icon-sen-brown icon-hover-scale" aria-hidden="true">
-              <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 icon-sen-brown icon-hover-scale" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0-4.418-4.03-8-9-8s-9 3.582-9 8c0 3.941 3.27 7.241 7.5 7.87v2.13l1.164-1.095a13.538 13.538 0 0 0 2.345-2.712c3.996-.863 6.991-4.182 6.991-8.193z"></path>
+              <path d="M14.5 8v4"></path>
+              <path d="M9.5 8v4"></path>
+              <path d="M9.5 10H12"></path>
+              <path d="M14.5 10H17"></path>
             </svg>
           </a>
         </div>
@@ -40,40 +46,44 @@
       <!-- 中央カラム：各ページリンク -->
       <div class="text-center md:text-left">
         <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
-          <svg class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
           サイトマップ
         </h3>
         <ul class="space-y-3 text-sm">
           <li>
             <a href="/rental" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
-              <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in" aria-hidden="true">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-home"></use>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
               暮らしを耕す
             </a>
           </li>
           <li>
             <a href="/design" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
-              <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-100" aria-hidden="true">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-ruler"></use>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-100" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19.875 12c.621 0 1.125.512 1.125 1.143v5.714c0 .631-.504 1.143-1.125 1.143H4.125C3.504 20 3 19.488 3 18.857v-5.714C3 12.512 3.504 12 4.125 12h15.75z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3 15h2v2H3v-2zM9 15h2v2H9v-2zM15 15h2v2h-2v-2zM6 13v4M12 13v4M18 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
               暮らしを築く
             </a>
           </li>
           <li>
             <a href="/journal" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
-              <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-200" aria-hidden="true">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-200" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
               </svg>
               耕しごと
             </a>
           </li>
           <li>
             <a href="/about" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
-              <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-300" aria-hidden="true">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path>
+                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path>
               </svg>
               運営会社
             </a>
@@ -84,22 +94,28 @@
       <!-- 右カラム：SNSアイコン -->
       <div class="text-center md:text-left">
         <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
-          <svg class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
           フォローする
         </h3>
         <!-- SNSアイコン - PCでのみ表示 -->
         <div class="hidden md:flex md:flex-col space-y-3">
           <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
-            <svg class="w-5 h-5 mr-2 icon-sen-brown" aria-hidden="true">
-              <use xlink:href="/assets/icons/icon-set.svg#icon-instagram"></use>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 icon-sen-brown" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
             <span class="text-sm">Instagram</span>
           </a>
           <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
-            <svg class="w-5 h-5 mr-2 icon-sen-brown" aria-hidden="true">
-              <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 icon-sen-brown" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0-4.418-4.03-8-9-8s-9 3.582-9 8c0 3.941 3.27 7.241 7.5 7.87v2.13l1.164-1.095a13.538 13.538 0 0 0 2.345-2.712c3.996-.863 6.991-4.182 6.991-8.193z"></path>
+              <path d="M14.5 8v4"></path>
+              <path d="M9.5 8v4"></path>
+              <path d="M9.5 10H12"></path>
+              <path d="M14.5 10H17"></path>
             </svg>
             <span class="text-sm">LINE</span>
           </a>
