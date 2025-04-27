@@ -1,24 +1,76 @@
-# ファイル: _config.yml
-title: sen-llc
-description: サイトの説明
-baseurl: "" # ユーザーサイトの場合は空にする
-url: "https://sen-llc.github.io" # あなたのGitHub Pagesのドメイン
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# ビルド設定
+# Site settings
+title: sen llc
+description: "空き家から、住まいと暮らしを育てる"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://sen-llc.github.io" # the base hostname & protocol for your site
+
+# Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# 除外ファイル
+# Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
   - .github
+  - README.md
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
 
-# GitHub Pages互換性のための設定
+# Netlify CMS (Decap) と連携するディレクトリ構成
+collections:
+  journal:
+    output: true
+    permalink: /journal/:title/
+    sort_by: date
+
+defaults:
+  - scope:
+      path: ""
+      type: "journal"
+    values:
+      layout: journal
+  
+  - scope:
+      path: ""
+    values:
+      image: "/assets/images"
+
+# Sass/CSS設定
+sass:
+  style: compressed
+
+# カスタム変数
+custom_css:
+  - theme
+  - header
+  - footer
+  - touch-feedback
+  - diagnosis
+  - icon-theme
+  - animation-utilities
+  - loading-animation
+  - first-view
+  - service-section
+  - journal-section
+  - contact-section
+  - diagnosis-button
+  - browser-compatibility
+  - placeholder-styles
+
+# GitHub Pages compatibility
 github: [metadata]
 safe: true
