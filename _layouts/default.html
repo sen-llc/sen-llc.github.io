@@ -6,7 +6,7 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Tailwind Config -->
@@ -42,7 +42,7 @@
     }
   </script>
 
-  <!-- 正しいCSSたち -->
+  <!-- 読み込むCSSファイル -->
   <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/header.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}">
@@ -64,6 +64,7 @@
 
   {% include footer.html %}
 
+  <!-- 背景画像：concept-bg.pngに修正済み -->
   <style>
     body {
       background-image: url('{{ "/assets/images/concept-bg.png" | relative_url }}');
