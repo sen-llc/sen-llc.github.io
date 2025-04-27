@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
       iconUse.setAttributeNS(
         "http://www.w3.org/1999/xlink",
         "xlink:href",
-        `/assets/icons/icon-set.png#icon-${option.icon || "check"}`,
+        `${window.location.pathname.includes("/index.html") ? "" : window.location.pathname}/assets/icons/icon-set.svg#icon-${option.icon || "check"}`,
       )
 
       iconSvg.appendChild(iconUse)
