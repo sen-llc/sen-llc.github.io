@@ -1,46 +1,245 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en' }}">
-
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-
-  <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
-
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
-
-  {% if site.google_analytics %}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f0ebe2">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}sen llc</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}暮らしを耕す。住まいと空間に手をかけて、時間をかけて、豊かにしていく。{% endif %}">
+  
+  <!-- アクセシビリティ対応 -->
+  <meta name="color-scheme" content="light">
+  <meta name="format-detection" content="telephone=no">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="/assets/css/theme.css" as="style">
+  <link rel="preload" href="/assets/images/hero-bg.jpg" as="image">
+  
+  <!-- Fonts with display=swap for better performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+  </noscript>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '{{ site.google_analytics }}');
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sen-beige': '#f5f3f0',
+            'sen-cream': '#f8f5f0',
+            'sen-brown': '#8c7e6d',
+            'sen-dark': '#3c3c3c',
+            'sen-accent': '#d4c9b9',
+            'sen-green': '#5c6e58',
+            'sen-green-light': '#a4b494',
+            'sen-natural': '#f0ebe2',
+          },
+          fontFamily: {
+            'sans': ['"Zen Maru Gothic"', 'sans-serif'],
+            'serif': ['Noto Serif JP', 'serif'],
+            'mincho': ['"Zen Old Mincho"', 'serif'],
+          },
+          spacing: {
+            '100': '25rem',
+            '120': '30rem',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          },
+          screens: {
+            'xs': '480px',
+          }
+        }
+      }
+    }
   </script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/header.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/footer.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/touch-feedback.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/diagnosis.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/icon-theme.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/animation-utilities.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/loading-animation.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/first-view.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/service-section.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/journal-section.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/contact-section.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/diagnosis-button.css">
+  <!-- ブラウザ互換性のためのCSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/browser-compatibility.css">
+  {% if page.layout == 'journal' or page.url contains '/journal/' %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/journal-theme.css">
+  {% elsif page.url contains '/rental/' %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/rental-theme.css">
+  {% elsif page.url contains '/design/' %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/design-theme.css">
   {% endif %}
+  
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-
-<body>
-
-  {% include header.html %}
-
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
+<body class="font-sans text-sen-dark bg-white pt-[70px]">
+  <div class="min-h-screen flex flex-col">
+    {% include header.html %}
+    
+    <main class="flex-grow">
       {{ content }}
-    </div>
-  </main>
+    </main>
+    
+    {% include footer.html %}
+  </div>
+  
+  <!-- 診断誘導ボタン -->
+  <div class="diagnosis-cta">
+    <h3 class="diagnosis-cta-title">住まい診断</h3>
+    <button id="diagnosis-cta-button" class="diagnosis-cta-button touch-feedback">
+      <span class="diagnosis-cta-icon">
+        <svg class="w-5 h-5 md:w-6 md:h-6 icon-sen-green icon-animate-scale-in" aria-hidden="true">
+          <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-sprout"></use>
+        </svg>
+      </span>
+      <span class="diagnosis-cta-text">診断をはじめる</span>
+    </button>
+    <p class="diagnosis-cta-description">あなたにぴったりの住まいを見つけましょう</p>
+  </div>
+  
+  <!-- GLightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-  {% include footer.html %}
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- ローディングアニメーション -->
+  <script src="{{ site.baseurl }}/assets/js/loading-animation.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/loading-animation-session.js"></script>
+  
+  <!-- ファーストビューアニメーション -->
+  <script src="{{ site.baseurl }}/assets/js/photo-stack.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/typing-animation.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/scroll-effects.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/scroll-guide.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/lead-text-animation.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/section-animations.js"></script>
+  
+  <!-- 診断機能 -->
+  <script src="{{ site.baseurl }}/assets/js/diagnosis.js" defer></script>
+  <script src="{{ site.baseurl }}/assets/js/diagnosis-button.js" defer></script>
+  
+  <!-- アイコンアニメーション -->
+  <script src="{{ site.baseurl }}/assets/js/icon-animation.js" defer></script>
+  <script src="{{ site.baseurl }}/assets/js/animation-sequence.js" defer></script>
 
-  <script src="{{ '/assets/js/svg-fallback.js' | relative_url }}"></script>
+  <!-- アクセシビリティ対応 -->
+  <script src="{{ site.baseurl }}/assets/js/accessibility.js" defer></script>
+  <script src="{{ site.baseurl }}/assets/js/touch-feedback.js" defer></script>
+
+  <!-- SVGフォールバック -->
+  <script src="{{ site.baseurl }}/assets/js/svg-fallback.js" defer></script>
+  
+  <!-- ページトップへ戻るボタン -->
+  <script src="{{ site.baseurl }}/assets/js/back-to-top.js" defer></script>
+  
+  <script>
+    // Initialize libraries after they're loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize GLightbox
+      if (typeof GLightbox !== 'undefined') {
+        const lightbox = GLightbox({
+          selector: '.glightbox',
+          touchNavigation: true,
+          loop: true,
+        });
+      }
+      
+      // Initialize AOS with mobile-friendly settings
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-out',
+          once: true,
+          offset: window.innerWidth < 768 ? 50 : 100,
+          disable: window.innerWidth < 480 ? true : false
+        });
+      }
+      
+      // Lazy load images
+      if ('loading' in HTMLImageElement.prototype) {
+        // Browser supports native lazy loading
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+          img.src = img.dataset.src;
+        });
+      } else {
+        // Fallback for browsers that don't support lazy loading
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const image = entry.target;
+                image.src = image.dataset.src;
+                observer.unobserve(image);
+              }
+            });
+          });
+          
+          lazyImages.forEach(image => {
+            imageObserver.observe(image);
+          });
+        } else {
+          // Fallback for older browsers
+          let active = false;
+          
+          const lazyLoad = function() {
+            if (active === false) {
+              active = true;
+              
+              setTimeout(function() {
+                lazyImages.forEach(function(lazyImage) {
+                  if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.removeAttribute("data-src");
+                    
+                    if (lazyImages.length === 0) {
+                      document.removeEventListener("scroll", lazyLoad);
+                      window.removeEventListener("resize", lazyLoad);
+                      window.removeEventListener("orientationChange", lazyLoad);
+                    }
+                  }
+                });
+                
+                active = false;
+              }, 200);
+            }
+          };
+          
+          document.addEventListener("scroll", lazyLoad);
+          window.addEventListener("resize", lazyLoad);
+          window.addEventListener("orientationChange", lazyLoad);
+        }
+      }
+    });
+  </script>
 </body>
-
 </html>
