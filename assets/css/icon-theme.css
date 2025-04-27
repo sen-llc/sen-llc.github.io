@@ -249,7 +249,7 @@
   }
 }
 
-/* SNSアイコンのホバーカラー - トランジション速度調整 */
+/* SNSアイコ���のホバーカラー - トランジション速度調整 */
 .icon-instagram:hover {
   stroke: #e1306c;
   transition: stroke 0.2s ease-out;
