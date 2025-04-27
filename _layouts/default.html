@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: en }}">
+<html lang="{{ site.lang | default: 'en' }}">
 
 <head>
   <meta charset="utf-8">
@@ -9,11 +9,11 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-  <link rel="stylesheet" href="/assets/css/theme.css">
-  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
 
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
 
   {% if site.google_analytics %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -40,6 +40,7 @@
 
   {% include footer.html %}
 
+  <script src="{{ '/assets/js/svg-fallback.js' | relative_url }}"></script>
 </body>
 
 </html>
