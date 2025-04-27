@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sen llc - 空き家から、住まいと暮らしを育てる</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
     <header>
@@ -24,7 +24,7 @@
             <h2>Learn and Grow</h2>
             <p>Start your journey with us today.</p>
             <svg class="icon">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
+                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-sprout' | relative_url }}"></use>
             </svg>
         </section>
 
@@ -32,7 +32,7 @@
             <h3>Our Mission</h3>
             <p>To provide high-quality education and resources.</p>
             <svg class="icon">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-bulb"></use>
+                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-bulb' | relative_url }}"></use>
             </svg>
         </section>
 
@@ -40,7 +40,7 @@
             <h3>Contact Us</h3>
             <p>Get in touch with us.</p>
             <svg class="icon">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-mail"></use>
+                <use xlink:href="{{ '/assets/icons/icon-set.svg#icon-mail' | relative_url }}"></use>
             </svg>
         </section>
     </main>
@@ -48,5 +48,7 @@
     <footer>
         <p>&copy; 2024 Example. All rights reserved.</p>
     </footer>
+    
+    <script src="{{ '/assets/js/svg-fallback.js' | relative_url }}"></script>
 </body>
 </html>
