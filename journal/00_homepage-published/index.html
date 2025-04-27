@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f0ebe2">
+  <title>ホームページを公開しました | sen llc</title>
+  <meta name="description" content="暮らしを耕す。住まいと空間に手をかけて、時間をかけて、豊かにしていく。">
+  
+  <!-- サイトのベースURL（JavaScript用） -->
+  <meta name="baseurl" content="">
+  
+  <!-- アクセシビリティ対応 -->
+  <meta name="color-scheme" content="light">
+  <meta name="format-detection" content="telephone=no">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts with display=swap for better performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Fix for -ms-high-contrast deprecation -->
+  <style>
+    @media (forced-colors: active) {
+      /* Forced Colors Mode styles */
+      .icon-sen-brown,
+      .icon-sen-green,
+      .icon-sen-green-light,
+      .icon-sen-dark,
+      .icon-sen-accent {
+        forced-color-adjust: none;
+      }
+    }
+  </style>
+  
+  <!-- Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sen-beige': '#f5f3f0',
+            'sen-cream': '#f8f5f0',
+            'sen-brown': '#8c7e6d',
+            'sen-dark': '#3c3c3c',
+            'sen-accent': '#d4c9b9',
+            'sen-green': '#5c6e58',
+            'sen-green-light': '#a4b494',
+            'sen-natural': '#f0ebe2',
+          },
+          fontFamily: {
+            'sans': ['"Zen Maru Gothic"', 'sans-serif'],
+            'serif': ['Noto Serif JP', 'serif'],
+            'mincho': ['"Zen Old Mincho"', 'serif'],
+          },
+          spacing: {
+            '100': '25rem',
+            '120': '30rem',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          },
+          screens: {
+            'xs': '480px',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/header.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/touch-feedback.css">
+  <link rel="stylesheet" href="/assets/css/diagnosis.css">
+  <link rel="stylesheet" href="/assets/css/icon-theme.css">
+  <link rel="stylesheet" href="/assets/css/animation-utilities.css">
+  <link rel="stylesheet" href="/assets/css/loading-animation.css">
+  <link rel="stylesheet" href="/assets/css/first-view.css">
+  <link rel="stylesheet" href="/assets/css/service-section.css">
+  <link rel="stylesheet" href="/assets/css/journal-section.css">
+  <link rel="stylesheet" href="/assets/css/contact-section.css">
+  <link rel="stylesheet" href="/assets/css/diagnosis-button.css">
+  <!-- ブラウザ互換性のためのCSS -->
+  <link rel="stylesheet" href="/assets/css/browser-compatibility.css">
+  
+    <link rel="stylesheet" href="/assets/css/journal-theme.css">
+  
+  
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-sans text-sen-dark bg-white pt-[70px]">
+  <div class="loading-screen">
+  <div class="loading-container">
+    <div class="sen-symbol">
+      <span class="chevron chevron-1">〉</span>
+      <span class="chevron chevron-2">〉</span>
+      <span class="chevron chevron-3">〉</span>
+      <span class="sen-final">巛</span>
+    </div>
+  </div>
+</div>
+
+  <div class="min-h-screen flex flex-col">
+    <header class="fixed w-full bg-sen-beige z-50 transition-all duration-300 border-b border-[#e0ded6]">
+  <div class="container mx-auto px-4 h-[70px] flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/" class="flex items-center space-x-3 group">
+      <img src="/assets/images/logo.png" alt="sen llc" class="h-[40px] w-auto transition-transform duration-300 group-hover:rotate-6" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+      <span class="text-lg md:text-xl font-serif tracking-wider text-sen-dark">sen llc</span>
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="/rental" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">Rental</a>
+      <a href="/design" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">Design</a>
+      <a href="/journal" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">Journal</a>
+      <a href="/about" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">About</a>
+    </nav>
+    
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden flex items-center justify-center text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-md p-2" aria-label="メニューを開く" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile Navigation Overlay -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-sen-beige z-50 flex flex-col justify-center items-center">
+    <button id="close-mobile-menu" class="absolute top-5 right-5 p-2 text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-md" aria-label="メニューを閉じる">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    
+    <nav class="flex flex-col items-center space-y-6 text-xl">
+      <a href="/rental" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">Rental</a>
+      <a href="/design" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">Design</a>
+      <a href="/journal" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">Journal</a>
+      <a href="/about" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">About</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-mobile-menu');
+    const body = document.body;
+    
+    if (menuToggle && mobileMenu && closeMenu) {
+      // メニューを開く
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.remove('hidden');
+        body.classList.add('overflow-hidden');
+        menuToggle.setAttribute('aria-expanded', 'true');
+      });
+      
+      // メニューを閉じる
+      closeMenu.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        body.classList.remove('overflow-hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+      
+      // モバイルメニュー内のリンクをクリックしたときにメニューを閉じる
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          body.classList.remove('overflow-hidden');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+      
+      // ESCキーでメニューを閉じる
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+          closeMenu.click();
+        }
+      });
+    }
+    
+    // 現在のページをアクティブにする
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('nav a');
+    
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      if (currentPath === linkPath || (linkPath !== '/' && currentPath.startsWith(linkPath))) {
+        link.classList.add('text-sen-brown');
+        link.classList.add('font-medium');
+        
+        // デスクトップナビゲーションの場合、下線を追加
+        if (!link.closest('#mobile-menu')) {
+          link.classList.add('after:w-full');
+        }
+      }
+    });
+  });
+</script>
+
+    
+    <main class="flex-grow">
+      <article class="pt-24 pb-16">
+  <!-- Hero Image -->
+  <div class="w-full h-[50vh] md:h-[60vh] relative overflow-hidden">
+    <img 
+      src="/assets/images" 
+      alt="ホームページを公開しました" 
+      class="w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+  </div>
+  
+  <!-- Article Header -->
+  <header class="container mx-auto px-4 max-w-3xl -mt-24 relative z-10">
+    <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg">
+      <div class="flex items-center text-sm text-gray-500 mb-4">
+        <span class="uppercase tracking-wider"></span>
+        <span class="mx-2">•</span>
+        <time datetime="2025-04-27T00:00:00+00:00">2025.04.27</time>
+      </div>
+      <h1 class="text-2xl md:text-3xl lg:text-4xl font-serif mb-6">ホームページを公開しました</h1>
+      
+      
+      
+      <!-- Project Info (if available) -->
+      
+    </div>
+  </header>
+  
+  <!-- Article Content -->
+  <div class="container mx-auto px-4 max-w-3xl mt-12">
+    <div class="prose prose-lg max-w-none tracking-wide leading-relaxed">
+      <p>ホームページを公開しました。</p>
+
+<p>自分たちの家づくりを通して、<br />
+家づくりの楽しさや、住まいを育てる面白さを知り、<br />
+それをもっと多くの人に伝えたい、という思いからスタートしました。</p>
+
+<p>自由な発想で、<br />
+自分たちの暮らしに合わせた間取り。<br />
+自然素材に囲まれた、温かみのある家。</p>
+
+<p>足りないところや、<br />
+合わないなと思ったところは、<br />
+少しずつ手をかけて、育てていけばいい。</p>
+
+<p>自分たちのタイミングで、<br />
+暮らしを自分たちの手で育てていく感覚。</p>
+
+<p>この場所では、そんな<br />
+「育てる暮らし」を広げる取り組みを紹介していきます。</p>
+
+<p>Instagramでも、日々の小さな発信を続けています。<br />
+よかったら、そちらも覗いてみてください。</p>
+
+<p>まだはじまったばかりの小さな場所ですが、<br />
+ここから少しずつ、<br />
+耕すように、積み重ねていきたいと思っています。</p>
+
+<p>どうぞ、これからよろしくお願いいたします。</p>
+
+<p>sen llc代表　川上　武昭</p>
+
+    </div>
+    
+    <!-- Back to Journal -->
+    <div class="mt-16 pt-8 border-t border-gray-200">
+      <a href="/journal" class="inline-flex items-center text-sen-brown hover:underline">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        ジャーナル一覧に戻る
+      </a>
+    </div>
+  </div>
+  
+  <!-- Related Articles -->
+  
+  
+</article>
+
+    </main>
+    
+    <!-- ページトップへ戻るボタン -->
+<div class="back-to-top-container">
+  <button id="back-to-top" class="back-to-top" aria-label="ページトップへ戻る">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+</div>
+
+<footer class="bg-sen-natural py-10 md:py-12">
+  <div class="container mx-auto px-4">
+    <!-- メインフッターコンテンツ -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+      <!-- 左カラム：ロゴ＋一言紹介 -->
+      <div class="space-y-4 md:space-y-5 text-center md:text-left">
+        <a href="/" class="inline-flex items-center space-x-2 group">
+          <img src="/assets/images/logo.png" alt="sen llc" class="h-6 w-6 md:h-7 md:w-7 transition-transform duration-300 group-hover:rotate-12" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+          <span class="text-lg font-serif tracking-wider text-sen-dark">sen llc</span>
+        </a>
+        <p class="text-sm leading-relaxed text-sen-dark">
+          暮らしを育て、<br>
+          手をかけ、耕していく。<br><br>
+          私たちは、そんな住まいづくりを支えます。
+        </p>
+        <!-- SNSアイコン - モバイルでは表示、PCでは非表示 -->
+        <div class="flex justify-center md:hidden space-x-5 pt-2">
+          <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="Instagramでフォローする">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 icon-sen-brown icon-hover-scale" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="LINEで友達になる">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 icon-sen-brown icon-hover-scale" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0-4.418-4.03-8-9-8s-9 3.582-9 8c0 3.941 3.27 7.241 7.5 7.87v2.13l1.164-1.095a13.538 13.538 0 0 0 2.345-2.712c3.996-.863 6.991-4.182 6.991-8.193z"></path>
+              <path d="M14.5 8v4"></path>
+              <path d="M9.5 8v4"></path>
+              <path d="M9.5 10H12"></path>
+              <path d="M14.5 10H17"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- 中央カラム：各ページリンク -->
+      <div class="text-center md:text-left">
+        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+          サイトマップ
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="/rental" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              暮らしを耕す
+            </a>
+          </li>
+          <li>
+            <a href="/design" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-100" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19.875 12c.621 0 1.125.512 1.125 1.143v5.714c0 .631-.504 1.143-1.125 1.143H4.125C3.504 20 3 19.488 3 18.857v-5.714C3 12.512 3.504 12 4.125 12h15.75z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3 15h2v2H3v-2zM9 15h2v2H9v-2zM15 15h2v2h-2v-2zM6 13v4M12 13v4M18 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              暮らしを築く
+            </a>
+          </li>
+          <li>
+            <a href="/journal" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-200" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              耕しごと
+            </a>
+          </li>
+          <li>
+            <a href="/about" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path>
+                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path>
+              </svg>
+              運営会社
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- 右カラム：SNSアイコン -->
+      <div class="text-center md:text-left">
+        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          フォローする
+        </h3>
+        <!-- SNSアイコン - PCでのみ表示 -->
+        <div class="hidden md:flex md:flex-col space-y-3">
+          <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 icon-sen-brown" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span class="text-sm">Instagram</span>
+          </a>
+          <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 icon-sen-brown" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0-4.418-4.03-8-9-8s-9 3.582-9 8c0 3.941 3.27 7.241 7.5 7.87v2.13l1.164-1.095a13.538 13.538 0 0 0 2.345-2.712c3.996-.863 6.991-4.182 6.991-8.193z"></path>
+              <path d="M14.5 8v4"></path>
+              <path d="M9.5 8v4"></path>
+              <path d="M9.5 10H12"></path>
+              <path d="M14.5 10H17"></path>
+            </svg>
+            <span class="text-sm">LINE</span>
+          </a>
+        </div>
+        <p class="text-sm leading-relaxed text-sen-dark mt-4 hidden md:block">
+          最新情報やイベント情報を<br>
+          SNSでも発信しています。
+        </p>
+      </div>
+    </div>
+    
+    <!-- コピーライト＋プライバシーポリシー -->
+    <div class="border-t border-[#e0ded6] mt-8 md:mt-10 pt-6 md:pt-8 text-center">
+      <p class="text-xs text-sen-dark">&copy; 2025 sen llc. All Rights Reserved.</p>
+      <a href="/privacy-policy" class="text-xs text-sen-dark hover:text-sen-brown transition-colors mt-2 inline-block">プライバシーポリシー</a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+  <!-- 診断誘導ボタン -->
+  <div class="diagnosis-cta">
+    <h3 class="diagnosis-cta-title">住まい診断</h3>
+    <button id="diagnosis-cta-button" class="diagnosis-cta-button touch-feedback">
+      <span class="diagnosis-cta-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6 icon-sen-green icon-animate-scale-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path>
+          <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path>
+        </svg>
+      </span>
+      <span class="diagnosis-cta-text">診断をはじめる</span>
+    </button>
+    <p class="diagnosis-cta-description">あなたにぴったりの住まいを見つけましょう</p>
+  </div>
+  
+  <!-- GLightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- インラインSVGアイコン -->
+  <script src="/assets/js/inline-svg-icons.js"></script>
+  
+  <!-- ローディングアニメーション -->
+  <script src="/assets/js/loading-animation.js"></script>
+  <script src="/assets/js/loading-animation-session.js"></script>
+  
+  <!-- ファーストビューアニメーション -->
+  <script src="/assets/js/photo-stack.js"></script>
+  <script src="/assets/js/typing-animation.js"></script>
+  <script src="/assets/js/scroll-effects.js"></script>
+  <script src="/assets/js/scroll-guide.js"></script>
+  <script src="/assets/js/lead-text-animation.js"></script>
+  <script src="/assets/js/section-animations.js"></script>
+  
+  <!-- 診断機能 -->
+  <script src="/assets/js/diagnosis.js" defer></script>
+  <script src="/assets/js/diagnosis-button.js" defer></script>
+  
+  <!-- アイコンアニメーション -->
+  <script src="/assets/js/icon-animation.js" defer></script>
+  <script src="/assets/js/animation-sequence.js" defer></script>
+
+  <!-- アクセシビリティ対応 -->
+  <script src="/assets/js/accessibility.js" defer></script>
+  <script src="/assets/js/touch-feedback.js" defer></script>
+  
+  <!-- ページトップへ戻るボタン -->
+  <script src="/assets/js/back-to-top.js" defer></script>
+  
+  <!-- 画像エラーハンドラ -->
+  <script src="/assets/js/image-error-handler.js"></script>
+  
+  <script>
+    // エラーハンドリング
+    window.addEventListener('error', function(e) {
+      // Tailwind未定義エラーを抑制
+      if (e.message && e.message.includes('tailwind is not defined')) {
+        console.warn('Tailwind CDN may be blocked or failed to load. Using fallback styles.');
+        e.preventDefault();
+      }
+      
+      // runtime.lastError エラーを抑制
+      if (e.message && e.message.includes('runtime.lastError')) {
+        console.warn('Runtime error suppressed:', e.message);
+        e.preventDefault();
+      }
+    }, true);
+    
+    // Initialize libraries after they're loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize GLightbox
+      if (typeof GLightbox !== 'undefined') {
+        const lightbox = GLightbox({
+          selector: '.glightbox',
+          touchNavigation: true,
+          loop: true,
+        });
+      }
+      
+      // Initialize AOS with mobile-friendly settings
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-out',
+          once: true,
+          offset: window.innerWidth < 768 ? 50 : 100,
+          disable: window.innerWidth < 480 ? true : false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

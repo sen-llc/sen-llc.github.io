@@ -1,0 +1,73 @@
+/* フッタースタイル */
+.back-to-top-container {
+  position: relative;
+  height: 0;
+}
+
+.back-to-top {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #f5f5f0;
+  color: #2a382f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.back-to-top:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(42, 56, 47, 0.3);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+  }
+
+  .back-to-top svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* フッターリンクのホバーエフェクト */
+footer a {
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+footer a:hover svg {
+  opacity: 1;
+}
+
+/* アクセシビリティ対応 */
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top,
+  .back-to-top:hover {
+    transition: none;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .back-to-top {
+    background-color: #2a382f;
+    color: #f5f5f0;
+  }
+}

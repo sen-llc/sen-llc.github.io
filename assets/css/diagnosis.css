@@ -1,0 +1,293 @@
+/* 診断結果のスタイル */
+.result-container {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.result-icon-wrapper {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.result-icon-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.result-badge {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.result-action-area {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+/* 診断結果タイプごとのスタイル */
+.result-type-sprout .result-icon-wrapper {
+  background-color: rgba(144, 238, 144, 0.2);
+}
+
+.result-type-ruler .result-icon-wrapper {
+  background-color: rgba(135, 206, 235, 0.2);
+}
+
+.result-type-cycle .result-icon-wrapper {
+  background-color: rgba(255, 192, 203, 0.2);
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* 診断質問のスタイル改善 */
+.question-container {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.options-container button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.options-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.options-container button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.options-container button:hover::after {
+  opacity: 1;
+}
+
+.options-container button.selected {
+  background-color: var(--color-sen-beige);
+  border-color: var(--color-sen-brown);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* ステップバーのスタイル */
+.step-progress {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.step-bar-container {
+  position: relative;
+  height: 40px;
+}
+
+.step-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 2px;
+  background-color: var(--color-sen-accent);
+  width: 0%;
+  transition: width 0.5s ease;
+  z-index: 1;
+}
+
+.step-circles {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  z-index: 2;
+}
+
+.step-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-circle::before {
+  content: attr(data-step-label);
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  white-space: nowrap;
+  color: #9ca3af;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.step-circle:hover::before {
+  opacity: 1;
+}
+
+.step-circle.active {
+  background-color: var(--color-sen-brown);
+  border-color: var(--color-sen-brown);
+  color: white;
+  transform: scale(1.1);
+}
+
+.step-circle.completed {
+  background-color: var(--color-sen-accent);
+  border-color: var(--color-sen-accent);
+  color: white;
+}
+
+/* ステップバーのアニメーション */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(140, 126, 109, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(140, 126, 109, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(140, 126, 109, 0);
+  }
+}
+
+.step-circle.active {
+  animation: pulse-border 2s infinite;
+}
+
+/* 共有ボタンのスタイル */
+.share-container {
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.share-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background-color: #f5f5f5;
+}
+
+.share-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.share-twitter:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+.share-facebook:hover {
+  background-color: rgba(24, 119, 242, 0.1);
+}
+
+.share-line:hover {
+  background-color: rgba(6, 199, 85, 0.1);
+}
+
+#copy-message {
+  transition: opacity 0.3s ease;
+}
+
+/* 共有ボタンのアニメーション */
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.share-btn {
+  animation: pop 0.5s forwards;
+  opacity: 0;
+}
+
+.share-twitter {
+  animation-delay: 0.1s;
+}
+
+.share-facebook {
+  animation-delay: 0.2s;
+}
+
+.share-line {
+  animation-delay: 0.3s;
+}
+
+#copy-result-url {
+  animation-delay: 0.4s;
+}

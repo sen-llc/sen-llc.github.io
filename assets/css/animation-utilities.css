@@ -1,0 +1,295 @@
+/**
+ * アニメーションユーティリティクラス
+ * 様々なアニメーション効果を提供するユーティリティクラスのコレクション
+ */
+
+/* アニメーション基本設定 */
+:root {
+  --animation-timing-fast: 0.2s;
+  --animation-timing-normal: 0.4s;
+  --animation-timing-slow: 0.6s;
+  --animation-easing-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --animation-easing-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --animation-easing-standard: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* リサイズ中はアニメーションを一時停止（パフォーマンス向上） */
+.resize-in-progress * {
+  animation-play-state: paused !important;
+  transition: none !important;
+}
+
+/* フェードイン系アニメーション */
+.fade-in {
+  opacity: 0;
+  animation: utility-fade-in var(--animation-timing-normal) var(--animation-easing-standard) forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: utility-fade-in-up var(--animation-timing-normal) var(--animation-easing-smooth) forwards;
+}
+
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: utility-fade-in-down var(--animation-timing-normal) var(--animation-easing-smooth) forwards;
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: utility-fade-in-left var(--animation-timing-normal) var(--animation-easing-smooth) forwards;
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: utility-fade-in-right var(--animation-timing-normal) var(--animation-easing-smooth) forwards;
+}
+
+/* スケール系アニメーション */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: utility-scale-in var(--animation-timing-normal) var(--animation-easing-bounce) forwards;
+}
+
+.scale-in-up {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  animation: utility-scale-in-up var(--animation-timing-normal) var(--animation-easing-bounce) forwards;
+}
+
+/* 回転系アニメーション */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-15deg);
+  animation: utility-rotate-in var(--animation-timing-normal) var(--animation-easing-bounce) forwards;
+}
+
+.rotate-in-cw {
+  opacity: 0;
+  transform: rotate(-45deg);
+  animation: utility-rotate-in-cw var(--animation-timing-normal) var(--animation-easing-bounce) forwards;
+}
+
+.rotate-in-ccw {
+  opacity: 0;
+  transform: rotate(45deg);
+  animation: utility-rotate-in-ccw var(--animation-timing-normal) var(--animation-easing-bounce) forwards;
+}
+
+/* バウンス系アニメーション */
+.bounce-in {
+  opacity: 0;
+  animation: utility-bounce-in var(--animation-timing-slow) var(--animation-easing-bounce) forwards;
+}
+
+/* ホバーアニメーション */
+.hover-float:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s var(--animation-easing-bounce);
+}
+
+.hover-grow:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s var(--animation-easing-bounce);
+}
+
+.hover-rotate:hover {
+  transform: rotate(5deg);
+  transition: transform 0.3s var(--animation-easing-bounce);
+}
+
+/* アニメーション速度バリエーション */
+.animation-fast {
+  animation-duration: var(--animation-timing-fast) !important;
+}
+
+.animation-slow {
+  animation-duration: var(--animation-timing-slow) !important;
+}
+
+/* アニメーション遅延 */
+.delay-0 {
+  animation-delay: 0s !important;
+}
+.delay-100 {
+  animation-delay: 0.1s !important;
+}
+.delay-200 {
+  animation-delay: 0.2s !important;
+}
+.delay-300 {
+  animation-delay: 0.3s !important;
+}
+.delay-400 {
+  animation-delay: 0.4s !important;
+}
+.delay-500 {
+  animation-delay: 0.5s !important;
+}
+.delay-700 {
+  animation-delay: 0.7s !important;
+}
+.delay-1000 {
+  animation-delay: 1s !important;
+}
+
+/* アニメーションキーフレーム */
+@keyframes utility-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes utility-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes utility-fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes utility-fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes utility-fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes utility-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes utility-scale-in-up {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes utility-rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(-15deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+@keyframes utility-rotate-in-cw {
+  from {
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+@keyframes utility-rotate-in-ccw {
+  from {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+@keyframes utility-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(0.9);
+  }
+  80% {
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* アクセシビリティ対応 */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in-up,
+  .fade-in-down,
+  .fade-in-left,
+  .fade-in-right,
+  .scale-in,
+  .scale-in-up,
+  .rotate-in,
+  .rotate-in-cw,
+  .rotate-in-ccw,
+  .bounce-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hover-float:hover,
+  .hover-grow:hover,
+  .hover-rotate:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f0ebe2">
+  <title>sen llc</title>
+  <meta name="description" content="暮らしを耕す。住まいと空間に手をかけて、時間をかけて、豊かにしていく。">
+  
+  <!-- サイトのベースURL（JavaScript用） -->
+  <meta name="baseurl" content="">
+  
+  <!-- アクセシビリティ対応 -->
+  <meta name="color-scheme" content="light">
+  <meta name="format-detection" content="telephone=no">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts with display=swap for better performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Fix for -ms-high-contrast deprecation -->
+  <style>
+    @media (forced-colors: active) {
+      /* Forced Colors Mode styles */
+      .icon-sen-brown,
+      .icon-sen-green,
+      .icon-sen-green-light,
+      .icon-sen-dark,
+      .icon-sen-accent {
+        forced-color-adjust: none;
+      }
+    }
+  </style>
+  
+  <!-- Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sen-beige': '#f5f3f0',
+            'sen-cream': '#f8f5f0',
+            'sen-brown': '#8c7e6d',
+            'sen-dark': '#3c3c3c',
+            'sen-accent': '#d4c9b9',
+            'sen-green': '#5c6e58',
+            'sen-green-light': '#a4b494',
+            'sen-natural': '#f0ebe2',
+          },
+          fontFamily: {
+            'sans': ['"Zen Maru Gothic"', 'sans-serif'],
+            'serif': ['Noto Serif JP', 'serif'],
+            'mincho': ['"Zen Old Mincho"', 'serif'],
+          },
+          spacing: {
+            '100': '25rem',
+            '120': '30rem',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          },
+          screens: {
+            'xs': '480px',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/header.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/touch-feedback.css">
+  <link rel="stylesheet" href="/assets/css/diagnosis.css">
+  <link rel="stylesheet" href="/assets/css/icon-theme.css">
+  <link rel="stylesheet" href="/assets/css/animation-utilities.css">
+  <link rel="stylesheet" href="/assets/css/loading-animation.css">
+  <link rel="stylesheet" href="/assets/css/first-view.css">
+  <link rel="stylesheet" href="/assets/css/service-section.css">
+  <link rel="stylesheet" href="/assets/css/journal-section.css">
+  <link rel="stylesheet" href="/assets/css/contact-section.css">
+  <link rel="stylesheet" href="/assets/css/diagnosis-button.css">
+  <!-- ブラウザ互換性のためのCSS -->
+  <link rel="stylesheet" href="/assets/css/browser-compatibility.css">
+  
+  
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-sans text-sen-dark bg-white pt-[70px]">
+  <div class="loading-screen">
+  <div class="loading-container">
+    <div class="sen-symbol">
+      <span class="chevron chevron-1">〉</span>
+      <span class="chevron chevron-2">〉</span>
+      <span class="chevron chevron-3">〉</span>
+      <span class="sen-final">巛</span>
+    </div>
+  </div>
+</div>
+
+  <div class="min-h-screen flex flex-col">
+    <header class="fixed w-full bg-sen-beige z-50 transition-all duration-300 border-b border-[#e0ded6]">
+  <div class="container mx-auto px-4 h-[70px] flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/" class="flex items-center space-x-3 group">
+      <img src="/assets/images/logo.png" alt="sen llc" class="h-[40px] w-auto transition-transform duration-300 group-hover:rotate-6" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+      <span class="text-lg md:text-xl font-serif tracking-wider text-sen-dark">sen llc</span>
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="/rental" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">Rental</a>
+      <a href="/design" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">Design</a>
+      <a href="/journal" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">Journal</a>
+      <a href="/about" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sen-brown hover:after:w-full after:transition-all after:duration-200">About</a>
+    </nav>
+    
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden flex items-center justify-center text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-md p-2" aria-label="メニューを開く" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile Navigation Overlay -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-sen-beige z-50 flex flex-col justify-center items-center">
+    <button id="close-mobile-menu" class="absolute top-5 right-5 p-2 text-sen-dark focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-md" aria-label="メニューを閉じる">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    
+    <nav class="flex flex-col items-center space-y-6 text-xl">
+      <a href="/rental" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">Rental</a>
+      <a href="/design" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">Design</a>
+      <a href="/journal" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">Journal</a>
+      <a href="/about" class="text-sen-dark hover:text-sen-brown transition-colors duration-200 py-2">About</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-mobile-menu');
+    const body = document.body;
+    
+    if (menuToggle && mobileMenu && closeMenu) {
+      // メニューを開く
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.remove('hidden');
+        body.classList.add('overflow-hidden');
+        menuToggle.setAttribute('aria-expanded', 'true');
+      });
+      
+      // メニューを閉じる
+      closeMenu.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        body.classList.remove('overflow-hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+      
+      // モバイルメニュー内のリンクをクリックしたときにメニューを閉じる
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          body.classList.remove('overflow-hidden');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+      
+      // ESCキーでメニューを閉じる
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+          closeMenu.click();
+        }
+      });
+    }
+    
+    // 現在のページをアクティブにする
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('nav a');
+    
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      if (currentPath === linkPath || (linkPath !== '/' && currentPath.startsWith(linkPath))) {
+        link.classList.add('text-sen-brown');
+        link.classList.add('font-medium');
+        
+        // デスクトップナビゲーションの場合、下線を追加
+        if (!link.closest('#mobile-menu')) {
+          link.classList.add('after:w-full');
+        }
+      }
+    });
+  });
+</script>
+
+    
+    <main class="flex-grow">
+      <!-- ファーストビュー -->
+<section class="first-view">
+  <!-- 写真スタック -->
+  <div class="photo-stack">
+    <div class="photo-item" style="width: 50%; top: 15%; left: 10%; transform: rotate(-3deg); z-index: 1;">
+      <img src="/assets/images/first-view/photo1.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+    </div>
+    <div class="photo-item" style="width: 40%; top: 25%; left: 30%; transform: rotate(2deg); z-index: 2;">
+      <img src="/assets/images/first-view/photo2.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+    </div>
+    <div class="photo-item" style="width: 45%; top: 40%; left: 15%; transform: rotate(-1deg); z-index: 3;">
+      <img src="/assets/images/first-view/photo3.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+    </div>
+    <div class="photo-item" style="width: 35%; top: 20%; left: 55%; transform: rotate(4deg); z-index: 4;">
+      <img src="/assets/images/first-view/photo4.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+    </div>
+    <div class="photo-item" style="width: 40%; top: 45%; left: 50%; transform: rotate(-2deg); z-index: 5;">
+      <img src="/assets/images/first-view/photo5.jpg" alt="暮らしの風景" loading="eager" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+    </div>
+  </div>
+  
+  <!-- オーバーレイ -->
+  <div class="photo-overlay"></div>
+  
+  <!-- キャッチコピー -->
+  <div class="catchphrase-container">
+    <h1 class="catchphrase"></h1>
+  </div>
+  
+  <!-- スクロールガイド -->
+  <div class="scroll-guide" id="scroll-guide">
+    <span>Scroll</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <polyline points="19 12 12 19 5 12"></polyline>
+    </svg>
+  </div>
+</section>
+
+<!-- リード文セクション -->
+<section class="lead-section" id="lead-section">
+  <div class="lead-text-container">
+    <div class="lead-text" id="lead-text">
+      <div class="lead-text-group">
+        <p>空き家でも、</p>
+        <p>賃貸でも、</p>
+        <p>実家の一室でも。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>壁に色を重ね、</p>
+        <p>床を張り替え、</p>
+        <p>お気に入りの灯りを灯して。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>少しずつ、</p>
+        <p>あなたらしい空間へと育てていく。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>住まいは、</p>
+        <p>もっと自由に、育てていける。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>自分好みに暮らしをカスタマイズしたり、</p>
+        <p>プロと一緒に考え、つくりあげる空間づくりも。</p>
+      </div>
+      
+      <div class="lead-text-group">
+        <p>一緒に、</p>
+        <p>あなたの住まいづくりを始めませんか。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- サービス紹介セクション -->
+<section class="service-section">
+  <div class="service-container">
+    <!-- サービス01 -->
+    <div class="service-block">
+      <div class="service-image">
+        <img src="/assets/images/rental-preview.png" alt="暮らしを耕す" loading="lazy" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+        <div class="service-image-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-theme">暮らしを耕す</div>
+        <h2 class="service-title">自分好みにカスタマイズする住まい</h2>
+        <div class="service-description">
+          <p>賃貸でも、住まいに手を加えて育てていく選択肢を。</p>
+          <p>DIYできる自然素材の空間で、子どもや動物と一緒に、</p>
+          <p>伸びやかな暮らしを楽しむあなたへ。</p>
+        </div>
+        <a href="/rental" class="service-link">
+          詳しく見る
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- サービス02 -->
+    <div class="service-block from-right">
+      <div class="service-image">
+        <img src="/assets/images/design-preview.png" alt="暮らしを築く" loading="lazy" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+        <div class="service-image-overlay"></div>
+      </div>
+      <div class="service-content">
+        <div class="service-theme">暮らしを築く</div>
+        <h2 class="service-title">想いをかたちにする設計サポート</h2>
+        <div class="service-description">
+          <p>理想の暮らしを思い描きながら、</p>
+          <p>一部屋からでも、少しずつ手をかけるところから。</p>
+          <p>私たちがそばで、耕す暮らしを一緒に育てていきます。</p>
+        </div>
+        <a href="/design" class="service-link">
+          詳しく見る
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最新ジャーナル一覧セクション -->
+<section class="journal-section">
+  <div class="container mx-auto px-4 py-16 md:py-20">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-medium mb-8 md:mb-12 text-center">最近の耕しごと</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        
+        
+          <div class="journal-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <a href="/journal/00_dummy/" class="block">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/assets/images/coming-soon-alt.svg" 
+                  alt="Coming Soon" 
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                >
+              </div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-medium px-3 py-1 bg-sen-beige rounded-full"></span>
+                  <time datetime="2025-04-27T09:28:54+00:00" class="text-xs text-gray-500">2025.04.27</time>
+                </div>
+                <h3 class="text-lg font-medium text-sen-dark hover:text-sen-brown transition-colors duration-300">Coming Soon</h3>
+              </div>
+            </a>
+          </div>
+        
+          <div class="journal-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <a href="/journal/00_homepage-published/" class="block">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="/assets/images/homepage-published.png" 
+                  alt="ホームページを公開しました" 
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                >
+              </div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-medium px-3 py-1 bg-sen-beige rounded-full">news</span>
+                  <time datetime="2025-04-27T00:00:00+00:00" class="text-xs text-gray-500">2025.04.27</time>
+                </div>
+                <h3 class="text-lg font-medium text-sen-dark hover:text-sen-brown transition-colors duration-300">ホームページを公開しました</h3>
+              </div>
+            </a>
+          </div>
+        
+          <div class="journal-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <a href="/journal/01_sen_home/" class="block">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img 
+                  src="" 
+                  alt="巛の家｜ハウスリノベーション" 
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                >
+              </div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-medium px-3 py-1 bg-sen-beige rounded-full"></span>
+                  <time datetime="2024-09-01T00:00:00+00:00" class="text-xs text-gray-500">2024.09.01</time>
+                </div>
+                <h3 class="text-lg font-medium text-sen-dark hover:text-sen-brown transition-colors duration-300">巛の家｜ハウスリノベーション</h3>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/journal" class="inline-flex items-center text-sen-dark hover:text-sen-brown transition-colors duration-300">
+          もっと見る
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせセクション -->
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-content">
+      <h2 class="contact-title">住まいのこと、<br>小さなことからご相談ください。</h2>
+      <div class="contact-description">
+        <p>「ちょっと話を聞いてみたい」<br>「こんな暮らしができるかな」<br>そんな気持ちでも、大丈夫です。</p>
+        <p>ゆっくり、あなたの住まいのことを一緒に考えましょう。</p>
+      </div>
+      <a href="/contact" class="contact-button">
+        お問い合わせはこちら
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- コンセプトセクション -->
+<section id="concept" class="py-16 md:py-24 px-4 bg-sen-natural relative">
+  <!-- 背景パターン -->
+  <div class="absolute inset-0 opacity-5 z-0">
+    <img 
+      src="/assets/images/concept-bg.jpg" 
+      alt="" 
+      class="w-full h-full object-cover"
+      loading="lazy"
+      onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+    >
+  </div>
+  
+  <div class="container mx-auto max-w-5xl relative z-10">
+    <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
+      <h2 class="section-title">空き家を育てる、暮らしを耕す</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto mt-6">
+        私たちは、空き家を「育てる」ことで、新しい暮らしの場を創り出します。<br class="hidden md:block">
+        手をかけて、時間をかけて、住まいと共に成長していく。<br class="hidden md:block">
+        そんな「耕す暮らし」の循環を大切にしています。
+      </p>
+    </div>
+    
+    <!-- コンセプトフロー - モバイル向けに縦並びに -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 concept-flow mt-10 md:mt-16">
+      <div class="relative text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="concept-step bg-sen-cream">
+          <svg class="h-8 w-8 md:h-10 md:w-10 text-sen-green icon-sen-green icon-animate-scale-in" aria-hidden="true">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-home"></use>
+          </svg>
+        </div>
+        <div class="concept-arrow md:block hidden">
+          <svg class="h-6 w-6 icon-scroll-float">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+          </svg>
+        </div>
+        <div class="concept-arrow-mobile md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon-scroll-float" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7l4 4m0 0l4-4m-4 4V3" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium mt-4 mb-2">空き家を見つける</h3>
+        <p class="text-sm text-gray-600">眠っている空間に<br>新しい可能性を見出します</p>
+      </div>
+      
+      <div class="relative text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="concept-step bg-sen-cream">
+          <svg class="h-8 w-8 md:h-10 md:w-10 text-sen-brown icon-sen-brown icon-animate-scale-in delay-200" aria-hidden="true">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-tool"></use>
+          </svg>
+        </div>
+        <div class="concept-arrow md:block hidden">
+          <svg class="h-6 w-6 icon-scroll-float">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+          </svg>
+        </div>
+        <div class="concept-arrow-mobile md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon-scroll-float" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7l4 4m0 0l4-4m-4 4V3" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium mt-4 mb-2">手をかける</h3>
+        <p class="text-sm text-gray-600">DIYや設計を通して<br>住まいに命を吹き込みます</p>
+      </div>
+      
+      <div class="relative text-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="concept-step bg-sen-cream">
+          <svg class="h-8 w-8 md:h-10 md:w-10 text-sen-green-light icon-sen-green-light icon-animate-scale-in delay-400" aria-hidden="true">
+            <use xlink:href="/assets/icons/icon-set.svg#icon-cycle"></use>
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium mt-4 mb-2">循環させる</h3>
+        <p class="text-sm text-gray-600">住み継ぎ、手入れを重ねて<br>価値を高めていきます</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 診断モーダル - タッチ操作に最適化 -->
+<div id="diagnosis-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center hidden">
+  <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto mx-4">
+    <div class="p-5 md:p-8">
+      <div class="flex justify-between items-center mb-5 md:mb-6">
+        <h3 class="text-lg md:text-xl font-medium">あなたに合った住まいのかたちは？</h3>
+        <button id="close-diagnosis-modal" class="text-gray-500 hover:text-gray-700 p-2 mobile-touch-target">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <div id="diagnosis-intro-modal">
+        <div class="flex justify-center mb-6">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center bg-sen-beige/50">
+                <svg class="w-12 h-12 text-sen-green icon-sen-green icon-animate-bounce-in" aria-hidden="true">
+                  <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
+                </svg>
+              </div>
+              <span class="text-xs text-gray-600">育てる</span>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center bg-sen-beige/50">
+                <svg class="w-10 h-10 text-sen-brown icon-sen-brown icon-animate-bounce-in delay-200">
+                  <use xlink:href="/assets/icons/icon-set.svg#icon-ruler"></use>
+                </svg>
+              </div>
+              <span class="text-xs text-gray-600">つくる</span>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center bg-sen-beige/50">
+                <svg class="w-10 h-10 text-sen-green-light icon-sen-green-light icon-animate-bounce-in delay-400">
+                  <use xlink:href="/assets/icons/icon-set.svg#icon-cycle"></use>
+                </svg>
+              </div>
+              <span class="text-xs text-gray-600">循環させる</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="text-gray-700 mb-6 md:mb-8">
+          3つの質問に答えると、<br>
+          「育てる住まい」か「つくる住まい」か、<br>
+          あなたにぴったりの入り口が見つかります。
+        </p>
+        
+        <div class="flex justify-center">
+          <button id="start-diagnosis" class="btn btn-primary">
+            <svg class="w-5 h-5 mr-2 icon-sen-green icon-animate-scale-in" aria-hidden="true">
+              <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
+            </svg>
+            診断をはじめる
+          </button>
+        </div>
+      </div>
+      
+      <div id="diagnosis-questions" class="hidden">
+        <!-- ステップバー -->
+        <div class="step-progress mb-6 md:mb-8">
+          <div class="step-bar-container">
+            <div class="step-bar"></div>
+            <div class="step-circles">
+              <div class="step-circle active" data-step="1">1</div>
+              <div class="step-circle" data-step="2">2</div>
+              <div class="step-circle" data-step="3">3</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 質問が動的に表示される場所 -->
+        <div class="question-container">
+          <h3 class="text-lg md:text-xl font-medium mb-4 md:mb-6 text-center question-title"></h3>
+          <div class="question-description text-center mb-6 md:mb-8 text-gray-700"></div>
+          <div class="flex flex-col gap-3 md:gap-4 max-w-md mx-auto options-container">
+            <!-- 選択肢がここに動的に追加されます -->
+          </div>
+        </div>
+        
+        <div class="mt-6 md:mt-8 flex justify-between">
+          <button id="prev-question" class="btn btn-outline hidden">
+            <svg class="w-5 h-5 mr-2 rotate-180 icon-sen-brown">
+              <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+            </svg>
+            前の質問へ
+          </button>
+          <div class="flex-grow"></div>
+          <div class="text-sm text-gray-500 self-center question-counter"></div>
+        </div>
+      </div>
+      
+      <div id="diagnosis-result" class="hidden">
+        <div class="result-container bg-white rounded-lg p-6 md:p-8 relative overflow-hidden">
+          <!-- 背景装飾 -->
+          <div class="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-sen-beige rounded-bl-full opacity-50 -mr-6 md:-mr-8 -mt-6 md:-mt-8"></div>
+          <div class="absolute bottom-0 left-0 w-20 md:w-24 h-20 md:h-24 bg-sen-accent rounded-tr-full opacity-30 -ml-4 md:-ml-6 -mb-4 md:-mb-6"></div>
+          
+          <!-- 結果コンテンツ -->
+          <div class="relative z-10">
+            <div class="flex flex-col items-center mb-6 md:mb-8">
+              <div class="result-icon-wrapper mb-5 md:mb-6 relative">
+                <div class="absolute inset-0 bg-sen-beige rounded-full scale-125 opacity-20 animate-pulse"></div>
+                <svg id="result-icon" class="w-20 h-20 md:w-24 md:h-24 relative z-10 icon-scroll-pulse animate">
+                  <use id="result-icon-use" xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
+                </svg>
+              </div>
+              
+              <div class="result-badge bg-sen-beige text-sen-brown px-3 py-1 md:px-4 md:py-1 rounded-full text-sm font-medium mb-3 md:mb-4">診断結果</div>
+              
+              <h3 id="result-title" class="text-xl md:text-2xl font-serif mb-2 text-center"></h3>
+              <p id="result-text" class="text-gray-700 mb-5 md:mb-6 text-center max-w-md text-sm md:text-base"></p>
+            </div>
+            
+            <!-- SNS共有ボタン - タッチ操作に最適化 -->
+            <div class="share-container mb-5 md:mb-6">
+              <p class="text-sm text-gray-500 text-center mb-3">診断結果をシェアする</p>
+              <div class="flex justify-center space-x-4">
+                <button class="share-btn share-twitter mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="Twitterでシェア">
+                  <svg class="w-6 h-6 icon-animate-scale-in" aria-hidden="true">
+                    <use xlink:href="/assets/icons/icon-set.svg#icon-twitter"></use>
+                  </svg>
+                </button>
+                <button class="share-btn share-facebook mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="Facebookでシェア">
+                  <svg class="w-6 h-6 icon-animate-scale-in delay-100" aria-hidden="true">
+                    <use xlink:href="/assets/icons/icon-set.svg#icon-facebook"></use>
+                  </svg>
+                </button>
+                <button class="share-btn share-line mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="LINEでシェア">
+                  <svg class="w-6 h-6 icon-animate-scale-in delay-200" aria-hidden="true">
+                    <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
+                  </svg>
+                </button>
+                <button id="copy-result-url" class="share-btn mobile-touch-target focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full" aria-label="URLをコピー">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 icon-animate-scale-in delay-300" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+              <div id="copy-message" class="text-xs text-center mt-2 text-green-600 opacity-0 transition-opacity">URLをコピーしました！</div>
+            </div>
+            
+            <div class="result-action-area border-t border-gray-100 pt-5 md:pt-6 flex flex-col items-center">
+              <a id="result-link" href="#" class="btn btn-primary w-full max-w-xs mb-4 flex items-center justify-center group">
+                <span id="result-link-text"></span>
+                <svg class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1">
+                  <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+                </svg>
+              </a>
+              <button id="restart-diagnosis" class="text-sen-brown hover:underline flex items-center text-sm mobile-touch-target py-2">
+                <svg class="h-4 w-4 mr-1 icon-sen-brown icon-hover-rotate">
+                  <use xlink:href="/assets/icons/icon-set.svg#icon-cycle"></use>
+                </svg>
+                もう一度診断する
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </main>
+    
+    <!-- ページトップへ戻るボタン -->
+<div class="back-to-top-container">
+  <button id="back-to-top" class="back-to-top" aria-label="ページトップへ戻る">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+</div>
+
+<footer class="bg-sen-natural py-10 md:py-12">
+  <div class="container mx-auto px-4">
+    <!-- メインフッターコンテンツ -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+      <!-- 左カラム：ロゴ＋一言紹介 -->
+      <div class="space-y-4 md:space-y-5 text-center md:text-left">
+        <a href="/" class="inline-flex items-center space-x-2 group">
+          <img src="/assets/images/logo.png" alt="sen llc" class="h-6 w-6 md:h-7 md:w-7 transition-transform duration-300 group-hover:rotate-12" onerror="this.onerror=null; this.src='/assets/images/placeholder.png';">
+          <span class="text-lg font-serif tracking-wider text-sen-dark">sen llc</span>
+        </a>
+        <p class="text-sm leading-relaxed text-sen-dark">
+          暮らしを育て、<br>
+          手をかけ、耕していく。<br><br>
+          私たちは、そんな住まいづくりを支えます。
+        </p>
+        <!-- SNSアイコン - モバイルでは表示、PCでは非表示 -->
+        <div class="flex justify-center md:hidden space-x-5 pt-2">
+          <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="Instagramでフォローする">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 icon-sen-brown icon-hover-scale" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="LINEで友達になる">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 icon-sen-brown icon-hover-scale" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0-4.418-4.03-8-9-8s-9 3.582-9 8c0 3.941 3.27 7.241 7.5 7.87v2.13l1.164-1.095a13.538 13.538 0 0 0 2.345-2.712c3.996-.863 6.991-4.182 6.991-8.193z"></path>
+              <path d="M14.5 8v4"></path>
+              <path d="M9.5 8v4"></path>
+              <path d="M9.5 10H12"></path>
+              <path d="M14.5 10H17"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- 中央カラム：各ページリンク -->
+      <div class="text-center md:text-left">
+        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+          サイトマップ
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="/rental" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              暮らしを耕す
+            </a>
+          </li>
+          <li>
+            <a href="/design" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-100" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19.875 12c.621 0 1.125.512 1.125 1.143v5.714c0 .631-.504 1.143-1.125 1.143H4.125C3.504 20 3 19.488 3 18.857v-5.714C3 12.512 3.504 12 4.125 12h15.75z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3 15h2v2H3v-2zM9 15h2v2H9v-2zM15 15h2v2h-2v-2zM6 13v4M12 13v4M18 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              暮らしを築く
+            </a>
+          </li>
+          <li>
+            <a href="/journal" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-200" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              耕しごと
+            </a>
+          </li>
+          <li>
+            <a href="/about" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path>
+                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path>
+              </svg>
+              運営会社
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- 右カラム：SNSアイコン -->
+      <div class="text-center md:text-left">
+        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          フォローする
+        </h3>
+        <!-- SNSアイコン - PCでのみ表示 -->
+        <div class="hidden md:flex md:flex-col space-y-3">
+          <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 icon-sen-brown" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span class="text-sm">Instagram</span>
+          </a>
+          <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 icon-sen-brown" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0-4.418-4.03-8-9-8s-9 3.582-9 8c0 3.941 3.27 7.241 7.5 7.87v2.13l1.164-1.095a13.538 13.538 0 0 0 2.345-2.712c3.996-.863 6.991-4.182 6.991-8.193z"></path>
+              <path d="M14.5 8v4"></path>
+              <path d="M9.5 8v4"></path>
+              <path d="M9.5 10H12"></path>
+              <path d="M14.5 10H17"></path>
+            </svg>
+            <span class="text-sm">LINE</span>
+          </a>
+        </div>
+        <p class="text-sm leading-relaxed text-sen-dark mt-4 hidden md:block">
+          最新情報やイベント情報を<br>
+          SNSでも発信しています。
+        </p>
+      </div>
+    </div>
+    
+    <!-- コピーライト＋プライバシーポリシー -->
+    <div class="border-t border-[#e0ded6] mt-8 md:mt-10 pt-6 md:pt-8 text-center">
+      <p class="text-xs text-sen-dark">&copy; 2025 sen llc. All Rights Reserved.</p>
+      <a href="/privacy-policy" class="text-xs text-sen-dark hover:text-sen-brown transition-colors mt-2 inline-block">プライバシーポリシー</a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+  <!-- 診断誘導ボタン -->
+  <div class="diagnosis-cta">
+    <h3 class="diagnosis-cta-title">住まい診断</h3>
+    <button id="diagnosis-cta-button" class="diagnosis-cta-button touch-feedback">
+      <span class="diagnosis-cta-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6 icon-sen-green icon-animate-scale-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path>
+          <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path>
+        </svg>
+      </span>
+      <span class="diagnosis-cta-text">診断をはじめる</span>
+    </button>
+    <p class="diagnosis-cta-description">あなたにぴったりの住まいを見つけましょう</p>
+  </div>
+  
+  <!-- GLightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- インラインSVGアイコン -->
+  <script src="/assets/js/inline-svg-icons.js"></script>
+  
+  <!-- ローディングアニメーション -->
+  <script src="/assets/js/loading-animation.js"></script>
+  <script src="/assets/js/loading-animation-session.js"></script>
+  
+  <!-- ファーストビューアニメーション -->
+  <script src="/assets/js/photo-stack.js"></script>
+  <script src="/assets/js/typing-animation.js"></script>
+  <script src="/assets/js/scroll-effects.js"></script>
+  <script src="/assets/js/scroll-guide.js"></script>
+  <script src="/assets/js/lead-text-animation.js"></script>
+  <script src="/assets/js/section-animations.js"></script>
+  
+  <!-- 診断機能 -->
+  <script src="/assets/js/diagnosis.js" defer></script>
+  <script src="/assets/js/diagnosis-button.js" defer></script>
+  
+  <!-- アイコンアニメーション -->
+  <script src="/assets/js/icon-animation.js" defer></script>
+  <script src="/assets/js/animation-sequence.js" defer></script>
+
+  <!-- アクセシビリティ対応 -->
+  <script src="/assets/js/accessibility.js" defer></script>
+  <script src="/assets/js/touch-feedback.js" defer></script>
+  
+  <!-- ページトップへ戻るボタン -->
+  <script src="/assets/js/back-to-top.js" defer></script>
+  
+  <!-- 画像エラーハンドラ -->
+  <script src="/assets/js/image-error-handler.js"></script>
+  
+  <script>
+    // エラーハンドリング
+    window.addEventListener('error', function(e) {
+      // Tailwind未定義エラーを抑制
+      if (e.message && e.message.includes('tailwind is not defined')) {
+        console.warn('Tailwind CDN may be blocked or failed to load. Using fallback styles.');
+        e.preventDefault();
+      }
+      
+      // runtime.lastError エラーを抑制
+      if (e.message && e.message.includes('runtime.lastError')) {
+        console.warn('Runtime error suppressed:', e.message);
+        e.preventDefault();
+      }
+    }, true);
+    
+    // Initialize libraries after they're loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize GLightbox
+      if (typeof GLightbox !== 'undefined') {
+        const lightbox = GLightbox({
+          selector: '.glightbox',
+          touchNavigation: true,
+          loop: true,
+        });
+      }
+      
+      // Initialize AOS with mobile-friendly settings
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-out',
+          once: true,
+          offset: window.innerWidth < 768 ? 50 : 100,
+          disable: window.innerWidth < 480 ? true : false
+        });
+      }
+    });
+  </script>
+</body>
+</html>

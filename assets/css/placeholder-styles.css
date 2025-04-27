@@ -1,0 +1,96 @@
+/* プレースホルダー画像のスタイル */
+.placeholder-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-sen-beige, #f5f3f0);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+}
+
+.placeholder-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(140, 126, 109, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(140, 126, 109, 0.1) 50%,
+    rgba(140, 126, 109, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  opacity: 0.5;
+}
+
+.placeholder-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1rem;
+}
+
+.placeholder-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.5rem;
+  color: var(--color-sen-brown, #8c7e6d);
+  opacity: 0.7;
+}
+
+.placeholder-text {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-sen-dark, #3c3c3c);
+  margin: 0;
+}
+
+/* 画像エラー時のスタイル */
+img.error-placeholder {
+  object-fit: contain !important;
+  padding: 1rem;
+  background-color: var(--color-sen-beige, #f5f3f0);
+}
+
+/* アニメーション */
+@keyframes pulse-placeholder {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.placeholder-icon {
+  animation: pulse-placeholder 2s ease-in-out infinite;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 640px) {
+  .placeholder-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .placeholder-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* アクセシビリティ対応 */
+@media (prefers-reduced-motion: reduce) {
+  .placeholder-icon {
+    animation: none;
+  }
+}
