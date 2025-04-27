@@ -35,8 +35,47 @@
     }
   </style>
   
-  <!-- Tailwind CSS - Using local file instead of CDN -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tailwind.min.css">
+  <!-- Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sen-beige': '#f5f3f0',
+            'sen-cream': '#f8f5f0',
+            'sen-brown': '#8c7e6d',
+            'sen-dark': '#3c3c3c',
+            'sen-accent': '#d4c9b9',
+            'sen-green': '#5c6e58',
+            'sen-green-light': '#a4b494',
+            'sen-natural': '#f0ebe2',
+          },
+          fontFamily: {
+            'sans': ['"Zen Maru Gothic"', 'sans-serif'],
+            'serif': ['Noto Serif JP', 'serif'],
+            'mincho': ['"Zen Old Mincho"', 'serif'],
+          },
+          spacing: {
+            '100': '25rem',
+            '120': '30rem',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          },
+          screens: {
+            'xs': '480px',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
