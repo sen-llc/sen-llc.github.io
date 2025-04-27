@@ -3,7 +3,7 @@ name: Build and Deploy Jekyll site to GitHub Pages
 on:
   push:
     branches:
-      - main  # ←サイトのソースがあるブランチ（あなたが使ってるブランチ名に合わせてね）
+      - main
 
 jobs:
   build-deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.0  # ←好きなバージョンにできる！
+          ruby-version: 3.1.0
 
       - name: Install dependencies
         run: |
@@ -29,6 +29,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
           publish_branch: gh-pages
