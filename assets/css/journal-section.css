@@ -1,0 +1,83 @@
+/* 最新ジャーナル一覧セクション */
+.journal-section {
+  background-color: #f5f3f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.journal-card {
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+}
+
+.journal-card a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.journal-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.journal-card h3 {
+  line-height: 1.4;
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* カテゴリーラベル */
+.journal-card .category {
+  font-size: 0.75rem;
+  color: #2a382f;
+  background-color: #f5f3f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  display: inline-block;
+}
+
+/* 日付 */
+.journal-card time {
+  font-size: 0.75rem;
+  color: #8c7e6d;
+}
+
+/* もっと見るリンク */
+.journal-section .more-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #2a382f;
+  transition: color 0.3s ease;
+}
+
+.journal-section .more-link:hover {
+  color: #8c7e6d;
+}
+
+.journal-section .more-link svg {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.journal-section .more-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 767px) {
+  .journal-card {
+    margin-bottom: 1.5rem;
+  }
+}
