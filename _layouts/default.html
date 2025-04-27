@@ -7,6 +7,9 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}sen llc</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}暮らしを耕す。住まいと空間に手をかけて、時間をかけて、豊かにしていく。{% endif %}">
   
+  <!-- サイトのベースURL（JavaScript用） -->
+  <meta name="baseurl" content="{{ site.baseurl }}">
+  
   <!-- アクセシビリティ対応 -->
   <meta name="color-scheme" content="light">
   <meta name="format-detection" content="telephone=no">
@@ -165,6 +168,9 @@
   <!-- ページトップへ戻るボタン -->
   <script src="{{ site.baseurl }}/assets/js/back-to-top.js" defer></script>
   
+  <!-- 画像エラーハンドラ -->
+  <script src="{{ site.baseurl }}/assets/js/image-error-handler.js"></script>
+  
   <script>
     // エラーハンドリング
     window.addEventListener('error', function(e) {
@@ -174,19 +180,19 @@
         e.preventDefault();
       }
       
-      // 404エラーを抑制
-      if (e.target && e.target.tagName === 'IMG') {
-        console.warn('Image failed to load:', e.target.src);
-        // 画像の読み込みに失敗した場合のフォールバック処理
-        e.target.onerror = null; // 無限ループを防止
-        e.target.src = '{{ site.baseurl }}/assets/images/placeholder.png';
+      // runtime.lastError エラーを抑制
+      if (e.message && e.message.includes('runtime.lastError')) {
+        console.warn('Runtime error suppressed:', e.message);
+        e.preventDefault();
       }
     }, true);
     
     // Initialize libraries after they're loaded
     document.addEventListener('DOMContentLoaded', function() {
       // Fix SVG paths for GitHub Pages
-      fixSvgPaths();
+      if (typeof fixSvgPaths === 'function') {
+        fixSvgPaths();
+      }
       
       // Initialize GLightbox
       if (typeof GLightbox !== 'undefined') {
@@ -207,88 +213,7 @@
           disable: window.innerWidth < 480 ? true : false
         });
       }
-      
-      // Lazy load images
-      if ('loading' in HTMLImageElement.prototype) {
-        // Browser supports native lazy loading
-        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-          if (img.dataset.src) {
-            img.src = img.dataset.src;
-          }
-        });
-      } else {
-        // Fallback for browsers that don't support lazy loading
-        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-        
-        if ('IntersectionObserver' in window) {
-          const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const image = entry.target;
-                if (image.dataset.src) {
-                  image.src = image.dataset.src;
-                  image.removeAttribute("data-src");
-                }
-                observer.unobserve(image);
-              }
-            });
-          });
-          
-          lazyImages.forEach(image => {
-            imageObserver.observe(image);
-          });
-        } else {
-          // Fallback for older browsers
-          let active = false;
-          
-          const lazyLoad = function() {
-            if (active === false) {
-              active = true;
-              
-              setTimeout(function() {
-                lazyImages.forEach(function(lazyImage) {
-                  if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                    if (lazyImage.dataset.src) {
-                      lazyImage.src = lazyImage.dataset.src;
-                      lazyImage.removeAttribute("data-src");
-                    }
-                    
-                    if (lazyImages.length === 0) {
-                      document.removeEventListener("scroll", lazyLoad);
-                      window.removeEventListener("resize", lazyLoad);
-                      window.removeEventListener("orientationChange", lazyLoad);
-                    }
-                  }
-                });
-                
-                active = false;
-              }, 200);
-            }
-          };
-          
-          document.addEventListener("scroll", lazyLoad);
-          window.addEventListener("resize", lazyLoad);
-          window.addEventListener("orientationChange", lazyLoad);
-        }
-      }
     });
-    
-    // SVGパスを修正する関数 - GitHub Pages用に最適化
-    function fixSvgPaths() {
-      var elements = document.querySelectorAll("svg use");
-      const baseUrl = '{{ site.baseurl }}';
-
-      for (var i = 0; i < elements.length; i++) {
-        var element = elements[i];
-        var href = element.getAttributeNS("http://www.w3.org/1999/xlink", "href");
-
-        if (href && href.indexOf("icon-set.svg") > -1) {
-          // GitHub Pages用に絶対パスに変換
-          var newHref = baseUrl + "/assets/icons/icon-set.svg" + href.split("icon-set.svg")[1];
-          element.setAttributeNS("http://www.w3.org/1999/xlink", "href", newHref);
-        }
-      }
-    }
   </script>
 </body>
 </html>
