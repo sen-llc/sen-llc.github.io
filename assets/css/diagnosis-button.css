@@ -1,0 +1,159 @@
+/* 診断誘導ボタン共通スタイル */
+.diagnosis-cta {
+  font-family: "Zen Maru Gothic", sans-serif;
+  z-index: 40;
+  transition: all 0.3s ease;
+}
+
+/* PC表示（サイドバー型） */
+@media (min-width: 768px) {
+  .diagnosis-cta {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 200px;
+    background-color: #f5f5f0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: -200px; /* 初期状態では画面外に配置 */
+    opacity: 0;
+    animation: slideCTAIn 0.8s ease-out 1s forwards;
+  }
+
+  .diagnosis-cta-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2a382f;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .diagnosis-cta-title::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2rem;
+    height: 1px;
+    background-color: #8c7e6d;
+  }
+
+  .diagnosis-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a382f;
+    color: #f5f5f0;
+    padding: 0.75rem 1.25rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .diagnosis-cta-button:hover {
+    background-color: #3a4b3f;
+  }
+
+  .diagnosis-cta-icon {
+    margin-right: 0.5rem;
+  }
+
+  .diagnosis-cta-description {
+    font-size: 0.8rem;
+    color: #8c7e6d;
+    line-height: 1.5;
+  }
+
+  @keyframes slideCTAIn {
+    to {
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
+}
+
+/* スマホ表示（フローティングボタン） */
+@media (max-width: 767px) {
+  .diagnosis-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background-color: #2a382f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    animation: fadeCTAIn 0.6s ease-out 1s forwards;
+  }
+
+  .diagnosis-cta-title {
+    display: none;
+  }
+
+  .diagnosis-cta-button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f0;
+    font-size: 0.7rem;
+    transition: background-color 0.3s ease;
+    border-radius: 50%;
+  }
+
+  .diagnosis-cta-button:hover,
+  .diagnosis-cta-button:active {
+    background-color: #3a4b3f;
+  }
+
+  .diagnosis-cta-icon {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+  }
+
+  .diagnosis-cta-description {
+    display: none;
+  }
+
+  @keyframes fadeCTAIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* タップ時のフィードバック */
+  .diagnosis-cta-button:active {
+    transform: scale(0.95);
+  }
+}
+
+/* 診断モーダルが開いている時は非表示 */
+body.diagnosis-modal-open .diagnosis-cta {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* アクセシビリティ対応 */
+@media (prefers-reduced-motion: reduce) {
+  .diagnosis-cta {
+    animation: none;
+    opacity: 1;
+    margin-left: 0;
+  }
+}
