@@ -44,13 +44,13 @@ collections:
 
 defaults:
   - scope:
-    path: ""
-    type: "journal"
+      path: ""
+      type: "journal"
     values:
       layout: journal
   
   - scope:
-    path: ""
+      path: ""
     values:
       image: "/assets/images"
 
