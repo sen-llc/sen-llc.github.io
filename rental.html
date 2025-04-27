@@ -8,10 +8,11 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
 <section class="relative min-h-[80vh] flex items-center justify-center bg-sen-natural overflow-hidden">
   <div class="absolute inset-0 z-0 opacity-10">
     <img 
-      src="/assets/images/hero-bg.png" 
+      src="{{ site.baseurl }}/assets/images/hero-bg.png" 
       alt="暮らしを耕す" 
       class="w-full h-full object-cover"
       fetchpriority="high"
+      onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/concept-bg.png';"
     >
   </div>
   
@@ -74,19 +75,21 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
           <div>
             <p class="text-sm text-sen-brown mb-2 font-medium">Before</p>
             <img 
-              src="/assets/images/level1_before.jpg" 
+              src="{{ site.baseurl }}/assets/images/level1_before.jpg" 
               alt="リフォーム前" 
               class="w-full aspect-square object-cover rounded-lg"
               loading="lazy"
+              onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
             >
           </div>
           <div>
             <p class="text-sm text-sen-brown mb-2 font-medium">After</p>
             <img 
-              src="/assets/images/level1_after.jpg" 
+              src="{{ site.baseurl }}/assets/images/level1_after.jpg" 
               alt="リフォーム後" 
               class="w-full aspect-square object-cover rounded-lg"
               loading="lazy"
+              onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
             >
           </div>
         </div>
@@ -118,25 +121,25 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
           <ul class="space-y-2">
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-animate-fade-in delay-100">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>壁を落ち着いた色に塗装</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-animate-fade-in delay-200">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>畳の上にタイルカーペットを敷く</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-animate-fade-in delay-300">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>和紙の照明に交換</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-animate-fade-in delay-400">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>キャットウォークを梁に設置</span>
             </li>
@@ -183,25 +186,25 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
           <ul class="space-y-2">
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-pulse">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>間仕切り壁を撤去</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-pulse">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>畳を撤去してフロアタイルに変更</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-pulse">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>家具で空間をゾーニング</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-pulse">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>断熱・遮音もプチ改善</span>
             </li>
@@ -215,19 +218,21 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
           <div>
             <p class="text-sm text-sen-brown mb-2 font-medium">Before</p>
             <img 
-              src="/assets/images/level2_before.jpg" 
+              src="{{ site.baseurl }}/assets/images/level2_before.jpg" 
               alt="リフォーム前" 
               class="w-full aspect-square object-cover rounded-lg"
               loading="lazy"
+              onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
             >
           </div>
           <div>
             <p class="text-sm text-sen-brown mb-2 font-medium">After</p>
             <img 
-              src="/assets/images/level2_after.jpg" 
+              src="{{ site.baseurl }}/assets/images/level2_after.jpg" 
               alt="リフォーム後" 
               class="w-full aspect-square object-cover rounded-lg"
               loading="lazy"
+              onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
             >
           </div>
         </div>
@@ -251,19 +256,21 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
           <div>
             <p class="text-sm text-sen-brown mb-2 font-medium">Before</p>
             <img 
-              src="/assets/images/level3_before.jpg" 
+              src="{{ site.baseurl }}/assets/images/level3_before.jpg" 
               alt="リフォーム前" 
               class="w-full aspect-square object-cover rounded-lg"
               loading="lazy"
+              onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
             >
           </div>
           <div>
             <p class="text-sm text-sen-brown mb-2 font-medium">After</p>
             <img 
-              src="/assets/images/level3_after.jpg" 
+              src="{{ site.baseurl }}/assets/images/level3_after.jpg" 
               alt="リフォーム後" 
               class="w-full aspect-square object-cover rounded-lg"
               loading="lazy"
+              onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
             >
           </div>
         </div>
@@ -298,25 +305,25 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
           <ul class="space-y-2">
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-rotate">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>玄関横の床を土間仕上げに改修</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-rotate">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>小さな鏡＋椅子でサロン仕様に</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-rotate">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>照明・素材をリフレッシュ</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-sen-green mr-2 flex-shrink-0 mt-0.5 icon-sen-green icon-scroll-rotate">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-check"></use>
+                <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-check"></use>
               </svg>
               <span>空間をフレキシブルに活用できるよう設計</span>
             </li>
@@ -344,28 +351,31 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
   <div class="container mx-auto max-w-4xl mt-12 px-4" data-aos="fade-up" data-aos-delay="100">
     <div class="relative h-[300px] md:h-[400px]">
       <!-- DIY会の写真をランダムに配置 -->
-      <a href="/assets/images/diy_workshop1.jpg" class="glightbox absolute top-[10%] left-[10%] w-[60%] md:w-[45%] rotate-[-3deg] z-10 transform hover:scale-105 transition-transform duration-300">
+      <a href="{{ site.baseurl }}/assets/images/diy_workshop1.jpg" class="glightbox absolute top-[10%] left-[10%] w-[60%] md:w-[45%] rotate-[-3deg] z-10 transform hover:scale-105 transition-transform duration-300">
         <img 
-          src="/assets/images/diy_workshop1.jpg" 
+          src="{{ site.baseurl }}/assets/images/diy_workshop1.jpg" 
           alt="DIYワークショップの様子" 
           class="w-full h-full object-cover rounded-lg shadow-md"
           loading="lazy"
+          onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
         >
       </a>
-      <a href="/assets/images/diy_workshop2.jpg" class="glightbox absolute top-[20%] left-[40%] w-[60%] md:w-[40%] rotate-[2deg] z-20 transform hover:scale-105 transition-transform duration-300">
+      <a href="{{ site.baseurl }}/assets/images/diy_workshop2.jpg" class="glightbox absolute top-[20%] left-[40%] w-[60%] md:w-[40%] rotate-[2deg] z-20 transform hover:scale-105 transition-transform duration-300">
         <img 
-          src="/assets/images/diy_workshop2.jpg" 
+          src="{{ site.baseurl }}/assets/images/diy_workshop2.jpg" 
           alt="DIYワークショップの様子" 
           class="w-full h-full object-cover rounded-lg shadow-md"
           loading="lazy"
+          onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
         >
       </a>
-      <a href="/assets/images/diy_workshop3.jpg" class="glightbox absolute top-[35%] left-[20%] w-[55%] md:w-[35%] rotate-[-1deg] z-30 transform hover:scale-105 transition-transform duration-300">
+      <a href="{{ site.baseurl }}/assets/images/diy_workshop3.jpg" class="glightbox absolute top-[35%] left-[20%] w-[55%] md:w-[35%] rotate-[-1deg] z-30 transform hover:scale-105 transition-transform duration-300">
         <img 
-          src="/assets/images/diy_workshop3.jpg" 
+          src="{{ site.baseurl }}/assets/images/diy_workshop3.jpg" 
           alt="DIYワークショップの様子" 
           class="w-full h-full object-cover rounded-lg shadow-md"
           loading="lazy"
+          onerror="this.onerror=null; this.src='{{ site.baseurl }}/assets/images/placeholder.png';"
         >
       </a>
     </div>
@@ -377,7 +387,7 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
   <div class="container mx-auto max-w-3xl text-center" data-aos="fade-up">
     <div class="inline-flex items-center bg-white px-4 py-1 rounded-full text-sm text-sen-green mb-6">
       <svg class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-bounce-in">
-        <use xlink:href="/assets/icons/icon-set.svg#icon-home"></use>
+        <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-home"></use>
       </svg>
       Coming Soon
     </div>
@@ -389,7 +399,7 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
     </p>
     <a href="#" class="btn btn-primary inline-flex items-center">
       <svg class="w-5 h-5 mr-2 text-white icon-hover-bounce" aria-hidden="true">
-        <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
+        <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-line"></use>
       </svg>
       <span>LINEに登録する</span>
     </a>
@@ -407,7 +417,7 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
         <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
           <span class="font-medium">DIYしても大丈夫？</span>
           <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-arrow-right"></use>
           </svg>
         </button>
         <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
@@ -420,7 +430,7 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
         <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
           <span class="font-medium">ペットOKですか？</span>
           <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-arrow-right"></use>
           </svg>
         </button>
         <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
@@ -433,7 +443,7 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
         <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
           <span class="font-medium">原状回復は？</span>
           <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-arrow-right"></use>
           </svg>
         </button>
         <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
@@ -446,7 +456,7 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
         <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
           <span class="font-medium">道具や素材の相談はできますか？</span>
           <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-arrow-right"></use>
           </svg>
         </button>
         <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
@@ -459,7 +469,7 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
         <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none">
           <span class="font-medium">今すぐ住める物件はありますか？</span>
           <svg class="w-5 h-5 text-sen-brown transform transition-transform duration-300 faq-arrow icon-sen-brown icon-scroll-float">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
+            <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-arrow-right"></use>
           </svg>
         </button>
         <div class="faq-content px-6 py-4 bg-sen-beige/30 hidden">
@@ -481,12 +491,12 @@ description: 自分好みにカスタマイズできる住まい。DIY可能な�
     <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
       <a href="#" class="btn btn-primary inline-flex items-center justify-center">
         <svg class="w-5 h-5 mr-2 text-white icon-animate-scale-in" aria-hidden="true">
-          <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
+          <use xlink:href="{{ site.baseurl }}/assets/icons/icon-set.svg#icon-line"></use>
         </svg>
         <span>LINEで相談する</span>
       </a>
       <a href="#" class="btn btn-outline inline-flex items-center justify-center">
-        <img src="/assets/images/icon-instagram.svg" alt="Instagram" class="w-5 h-5 mr-2 icon-instagram icon-animate-scale-in delay-200">
+        <img src="{{ site.baseurl }}/assets/images/icon-instagram.svg" alt="Instagram" class="w-5 h-5 mr-2 icon-instagram icon-animate-scale-in delay-200">
         <span>Instagramで活動を見る</span>
       </a>
     </div>
