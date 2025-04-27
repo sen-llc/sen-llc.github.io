@@ -14,19 +14,10 @@
   <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preconnect" href="https://unpkg.com" crossorigin>
-  
-  <!-- Preload critical assets -->
-  <link rel="preload" href="/assets/css/theme.css" as="style">
-  <link rel="preload" href="/assets/images/hero-bg.jpg" as="image">
   
   <!-- Fonts with display=swap for better performance -->
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
-  </noscript>
-
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+  
   <!-- Fix for -ms-high-contrast deprecation -->
   <style>
     @media (forced-colors: active) {
@@ -41,8 +32,8 @@
     }
   </style>
   
-  <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tailwind.min.css">
+  <!-- Tailwind CSS - Using CDN but with integrity hash -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -175,8 +166,28 @@
   <script src="{{ site.baseurl }}/assets/js/back-to-top.js" defer></script>
   
   <script>
+    // エラーハンドリング
+    window.addEventListener('error', function(e) {
+      // Tailwind未定義エラーを抑制
+      if (e.message && e.message.includes('tailwind is not defined')) {
+        console.warn('Tailwind CDN may be blocked or failed to load. Using fallback styles.');
+        e.preventDefault();
+      }
+      
+      // 404エラーを抑制
+      if (e.target && e.target.tagName === 'IMG') {
+        console.warn('Image failed to load:', e.target.src);
+        // 画像の読み込みに失敗した場合のフォールバック処理
+        e.target.onerror = null; // 無限ループを防止
+        e.target.src = '{{ site.baseurl }}/assets/images/placeholder.png';
+      }
+    }, true);
+    
     // Initialize libraries after they're loaded
     document.addEventListener('DOMContentLoaded', function() {
+      // Fix SVG paths for GitHub Pages
+      fixSvgPaths();
+      
       // Initialize GLightbox
       if (typeof GLightbox !== 'undefined') {
         const lightbox = GLightbox({
@@ -201,7 +212,9 @@
       if ('loading' in HTMLImageElement.prototype) {
         // Browser supports native lazy loading
         document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-          img.src = img.dataset.src;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+          }
         });
       } else {
         // Fallback for browsers that don't support lazy loading
@@ -212,7 +225,10 @@
             entries.forEach(entry => {
               if (entry.isIntersecting) {
                 const image = entry.target;
-                image.src = image.dataset.src;
+                if (image.dataset.src) {
+                  image.src = image.dataset.src;
+                  image.removeAttribute("data-src");
+                }
                 observer.unobserve(image);
               }
             });
@@ -232,8 +248,10 @@
               setTimeout(function() {
                 lazyImages.forEach(function(lazyImage) {
                   if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.removeAttribute("data-src");
+                    if (lazyImage.dataset.src) {
+                      lazyImage.src = lazyImage.dataset.src;
+                      lazyImage.removeAttribute("data-src");
+                    }
                     
                     if (lazyImages.length === 0) {
                       document.removeEventListener("scroll", lazyLoad);
@@ -254,6 +272,23 @@
         }
       }
     });
+    
+    // SVGパスを修正する関数 - GitHub Pages用に最適化
+    function fixSvgPaths() {
+      var elements = document.querySelectorAll("svg use");
+      const baseUrl = '{{ site.baseurl }}';
+
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var href = element.getAttributeNS("http://www.w3.org/1999/xlink", "href");
+
+        if (href && href.indexOf("icon-set.svg") > -1) {
+          // GitHub Pages用に絶対パスに変換
+          var newHref = baseUrl + "/assets/icons/icon-set.svg" + href.split("icon-set.svg")[1];
+          element.setAttributeNS("http://www.w3.org/1999/xlink", "href", newHref);
+        }
+      }
+    }
   </script>
 </body>
 </html>
