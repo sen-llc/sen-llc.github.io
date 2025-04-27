@@ -1,120 +1,53 @@
-<!-- ページトップへ戻るボタン -->
-<div class="back-to-top-container">
-  <button id="back-to-top" class="back-to-top" aria-label="ページトップへ戻る">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="m18 15-6-6-6 6"/>
-    </svg>
-  </button>
-</div>
+<footer class="site-footer">
+  <div class="wrapper">
 
-<footer class="bg-sen-natural py-10 md:py-12">
-  <div class="container mx-auto px-4">
-    <!-- メインフッターコンテンツ -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-      <!-- 左カラム：ロゴ＋一言紹介 -->
-      <div class="space-y-4 md:space-y-5 text-center md:text-left">
-        <a href="/" class="inline-flex items-center space-x-2 group">
-          <img src="/assets/images/logo.svg" alt="sen llc" class="h-6 w-6 md:h-7 md:w-7 transition-transform duration-300 group-hover:rotate-12">
-          <span class="text-lg font-serif tracking-wider text-sen-dark">sen llc</span>
-        </a>
-        <p class="text-sm leading-relaxed text-sen-dark">
-          暮らしを育て、<br>
-          手をかけ、耕していく。<br><br>
-          私たちは、そんな住まいづくりを支えます。
-        </p>
-        <!-- SNSアイコン - モバイルでは表示、PCでは非表示 -->
-        <div class="flex justify-center md:hidden space-x-5 pt-2">
-          <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="Instagramでフォローする">
-            <svg class="w-5 h-5 icon-sen-brown icon-hover-scale" aria-hidden="true">
-              <use xlink:href="/assets/icons/icon-set.svg#icon-instagram"></use>
-            </svg>
-          </a>
-          <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="LINEで友達になる">
-            <svg class="w-6 h-6 icon-sen-brown icon-hover-scale" aria-hidden="true">
-              <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
-            </svg>
-          </a>
-        </div>
-      </div>
-      
-      <!-- 中央カラム：各ページリンク -->
-      <div class="text-center md:text-left">
-        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
-          <svg class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
-          </svg>
-          サイトマップ
-        </h3>
-        <ul class="space-y-3 text-sm">
+    <h2 class="footer-heading">{{ site.title }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
           <li>
-            <a href="/rental" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
-              <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in" aria-hidden="true">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-home"></use>
-              </svg>
-              暮らしを耕す
-            </a>
-          </li>
-          <li>
-            <a href="/design" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
-              <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-100" aria-hidden="true">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-ruler"></use>
-              </svg>
-              暮らしを築く
-            </a>
-          </li>
-          <li>
-            <a href="/journal" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
-              <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-200" aria-hidden="true">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
-              </svg>
-              耕しごと
-            </a>
-          </li>
-          <li>
-            <a href="/about" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
-              <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-300" aria-hidden="true">
-                <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
-              </svg>
-              運営会社
-            </a>
-          </li>
+            {%- if site.author -%}
+              {{ site.author }}
+            {%- else -%}
+              {{ site.title }}
+            {%- endif -%}
+            </li>
+          {%- if site.email -%}
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
         </ul>
       </div>
-      
-      <!-- 右カラム：SNSアイコン -->
-      <div class="text-center md:text-left">
-        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
-          <svg class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
-          </svg>
-          フォローする
-        </h3>
-        <!-- SNSアイコン - PCでのみ表示 -->
-        <div class="hidden md:flex md:flex-col space-y-3">
-          <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
-            <svg class="w-5 h-5 mr-2 icon-sen-brown" aria-hidden="true">
-              <use xlink:href="/assets/icons/icon-set.svg#icon-instagram"></use>
-            </svg>
-            <span class="text-sm">Instagram</span>
-          </a>
-          <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
-            <svg class="w-5 h-5 mr-2 icon-sen-brown" aria-hidden="true">
-              <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
-            </svg>
-            <span class="text-sm">LINE</span>
-          </a>
-        </div>
-        <p class="text-sm leading-relaxed text-sen-dark mt-4 hidden md:block">
-          最新情報やイベント情報を<br>
-          SNSでも発信しています。
-        </p>
+
+      <div class="footer-col footer-col-2">
+        {%- if site.social -%}
+          {%- include social.html -%}
+        {%- endif -%}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{- site.description | escape -}}</p>
       </div>
     </div>
-    
-    <!-- コピーライト＋プライバシーポリシー -->
-    <div class="border-t border-[#e0ded6] mt-8 md:mt-10 pt-6 md:pt-8 text-center">
-      <p class="text-xs text-sen-dark">&copy; {% assign date_format = site.minima.date_format | default: "%Y" %}{{ 'now' | date: date_format }} sen llc. All Rights Reserved.</p>
-      <a href="/privacy-policy" class="text-xs text-sen-dark hover:text-sen-brown transition-colors mt-2 inline-block">プライバシーポリシー</a>
-    </div>
+
   </div>
+
+  <div class="footer-icons">
+    <a href="https://twitter.com/your_twitter_handle" target="_blank" rel="noopener noreferrer">
+      <svg class="icon">
+        <use xlink:href="./assets/icons/icon-set.svg#icon-twitter"></use>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/your_instagram_handle" target="_blank" rel="noopener noreferrer">
+      <svg class="icon">
+        <use xlink:href="./assets/icons/icon-set.svg#icon-instagram"></use>
+      </svg>
+    </a>
+    <a href="https://github.com/your_github_handle" target="_blank" rel="noopener noreferrer">
+      <svg class="icon">
+        <use xlink:href="./assets/icons/icon-set.svg#icon-github"></use>
+      </svg>
+    </a>
+  </div>
+
 </footer>
