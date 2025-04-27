@@ -1,26 +1,35 @@
-<footer class="bg-sen-natural py-12 md:py-16 mt-12 md:mt-16">
+<!-- ページトップへ戻るボタン -->
+<div class="back-to-top-container">
+  <button id="back-to-top" class="back-to-top" aria-label="ページトップへ戻る">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+</div>
+
+<footer class="bg-sen-natural py-10 md:py-12">
   <div class="container mx-auto px-4">
+    <!-- メインフッターコンテンツ -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-      <!-- Company Info -->
-      <div class="space-y-4 md:space-y-5">
-        <div class="flex items-center space-x-2">
-          <img src="/assets/images/logo.svg" alt="sen llc" class="h-6 w-6 md:h-7 md:w-7">
+      <!-- 左カラム：ロゴ＋一言紹介 -->
+      <div class="space-y-4 md:space-y-5 text-center md:text-left">
+        <a href="/" class="inline-flex items-center space-x-2 group">
+          <img src="/assets/images/logo.svg" alt="sen llc" class="h-6 w-6 md:h-7 md:w-7 transition-transform duration-300 group-hover:rotate-12">
           <span class="text-lg font-serif tracking-wider text-sen-dark">sen llc</span>
-        </div>
-        <p class="text-sm leading-relaxed text-gray-600">
-          暮らしを耕す。<br class="hidden xs:block">
-          住まいに手をかけ、引き継いでいくことで、<br class="hidden xs:block">
-          場所の価値は育っていく。<br class="hidden xs:block"><br class="hidden xs:block">
-          そんな新しい暮らし方を、一緒に築いていきませんか？
+        </a>
+        <p class="text-sm leading-relaxed text-sen-dark">
+          暮らしを育て、<br>
+          手をかけ、耕していく。<br><br>
+          私たちは、そんな住まいづくりを支えます。
         </p>
-        <!-- SNSアイコン - タップフィードバック強化 -->
-        <div class="flex space-x-5 pt-2">
-          <a href="#" class="text-sen-brown hover:text-sen-green transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="Instagramでフォローする">
+        <!-- SNSアイコン - モバイルでは表示、PCでは非表示 -->
+        <div class="flex justify-center md:hidden space-x-5 pt-2">
+          <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="Instagramでフォローする">
             <svg class="w-5 h-5 icon-sen-brown icon-hover-scale" aria-hidden="true">
               <use xlink:href="/assets/icons/icon-set.svg#icon-instagram"></use>
             </svg>
           </a>
-          <a href="#" class="text-sen-brown hover:text-sen-green transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="LINEで友達になる">
+          <a href="#" class="text-sen-dark hover:text-sen-brown transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded-full touch-feedback icon-btn" aria-label="LINEで友達になる">
             <svg class="w-6 h-6 icon-sen-brown icon-hover-scale" aria-hidden="true">
               <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
             </svg>
@@ -28,15 +37,14 @@
         </div>
       </div>
       
-      <!-- Quick Links -->
-      <div>
-        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex items-center">
+      <!-- 中央カラム：各ページリンク -->
+      <div class="text-center md:text-left">
+        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
           <svg class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" aria-hidden="true">
             <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
           </svg>
-          サービス
+          サイトマップ
         </h3>
-        <!-- Quick Links セクションのリンクテキストを変更 -->
         <ul class="space-y-3 text-sm">
           <li>
             <a href="/rental" class="hover:text-sen-brown transition-colors inline-flex items-center border-b border-transparent hover:border-sen-brown pb-1 py-1 focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
@@ -59,7 +67,7 @@
               <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-200" aria-hidden="true">
                 <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
               </svg>
-              ジャーナル
+              耕しごと
             </a>
           </li>
           <li>
@@ -67,35 +75,46 @@
               <svg class="w-3.5 h-3.5 mr-1.5 text-sen-brown opacity-70 icon-sen-brown icon-animate-fade-in delay-300" aria-hidden="true">
                 <use xlink:href="/assets/icons/icon-set.svg#icon-sprout"></use>
               </svg>
-              わたしたちについて
+              運営会社
             </a>
           </li>
         </ul>
       </div>
       
-      <!-- Contact -->
-      <div>
-        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex items-center">
+      <!-- 右カラム：SNSアイコン -->
+      <div class="text-center md:text-left">
+        <h3 class="text-sm font-medium uppercase tracking-wider mb-4 md:mb-5 text-sen-green flex justify-center md:justify-start items-center">
           <svg class="w-4 h-4 mr-1.5 icon-sen-green icon-animate-fade-in" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-mail"></use>
+            <use xlink:href="/assets/icons/icon-set.svg#icon-message"></use>
           </svg>
-          お問い合わせ
+          フォローする
         </h3>
-        <p class="text-sm leading-relaxed text-gray-600 mb-4">
-          住まいや空間づくりについて、<br class="hidden xs:block">
-          どんな小さなことでもお気軽にご相談ください。
+        <!-- SNSアイコン - PCでのみ表示 -->
+        <div class="hidden md:flex md:flex-col space-y-3">
+          <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
+            <svg class="w-5 h-5 mr-2 icon-sen-brown" aria-hidden="true">
+              <use xlink:href="/assets/icons/icon-set.svg#icon-instagram"></use>
+            </svg>
+            <span class="text-sm">Instagram</span>
+          </a>
+          <a href="#" class="hover:text-sen-brown transition-colors inline-flex items-center focus:outline-none focus:ring-2 focus:ring-sen-brown rounded py-1">
+            <svg class="w-5 h-5 mr-2 icon-sen-brown" aria-hidden="true">
+              <use xlink:href="/assets/icons/icon-set.svg#icon-line"></use>
+            </svg>
+            <span class="text-sm">LINE</span>
+          </a>
+        </div>
+        <p class="text-sm leading-relaxed text-sen-dark mt-4 hidden md:block">
+          最新情報やイベント情報を<br>
+          SNSでも発信しています。
         </p>
-        <a href="/contact" class="inline-flex items-center text-sen-brown hover:text-sen-green transition-colors py-1 group focus:outline-none focus:ring-2 focus:ring-sen-brown rounded">
-          <span class="border-b border-sen-brown group-hover:border-sen-green">お問い合わせはこちら</span>
-          <svg class="w-4 h-4 ml-1 icon-sen-brown group-hover:translate-x-1 transition-transform" aria-hidden="true">
-            <use xlink:href="/assets/icons/icon-set.svg#icon-arrow-right"></use>
-          </svg>
-        </a>
       </div>
     </div>
     
-    <div class="border-t border-sen-accent/30 mt-10 md:mt-12 pt-6 md:pt-8 text-center text-xs text-gray-500">
-      <p>&copy; {% assign date_format = site.minima.date_format | default: "%Y" %}{{ 'now' | date: date_format }} sen llc. All rights reserved.</p>
+    <!-- コピーライト＋プライバシーポリシー -->
+    <div class="border-t border-[#e0ded6] mt-8 md:mt-10 pt-6 md:pt-8 text-center">
+      <p class="text-xs text-sen-dark">&copy; {% assign date_format = site.minima.date_format | default: "%Y" %}{{ 'now' | date: date_format }} sen llc. All Rights Reserved.</p>
+      <a href="/privacy-policy" class="text-xs text-sen-dark hover:text-sen-brown transition-colors mt-2 inline-block">プライバシーポリシー</a>
     </div>
   </div>
 </footer>
