@@ -1,9 +1,253 @@
-/* Rental Theme Overrides */
-body {
-  background-color: var(--color-accent);
-  color: var(--color-base);
+/* Rentalページ専用スタイル */
+
+/* ファーストビュー */
+.rental-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-sen-natural);
 }
 
-a {
-  color: var(--color-highlight);
+.rental-hero-label {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: var(--color-sen-green);
+  margin-bottom: 1.5rem;
+}
+
+/* レベル紹介セクション */
+.level-section {
+  padding: 5rem 0;
+}
+
+.level-section:nth-child(odd) {
+  background-color: var(--color-sen-beige);
+}
+
+.level-badge {
+  display: inline-block;
+  background-color: var(--color-sen-brown);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.level-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.level-subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--color-sen-dark);
+}
+
+.level-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.level-quote {
+  font-style: italic;
+  color: var(--color-sen-brown);
+  margin-bottom: 1rem;
+}
+
+.level-checklist {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.level-checklist-title {
+  font-weight: 500;
+  color: var(--color-sen-brown);
+  margin-bottom: 0.75rem;
+}
+
+.level-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.level-checklist-item svg {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  margin-right: 0.5rem;
+}
+
+/* DIYワークショップセクション */
+.diy-workshop {
+  padding: 5rem 0;
+}
+
+.diy-gallery {
+  position: relative;
+  height: 400px;
+  margin-top: 3rem;
+}
+
+.diy-gallery-item {
+  position: absolute;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.diy-gallery-item:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* 物件紹介セクション */
+.property-section {
+  padding: 5rem 0;
+  background-color: var(--color-sen-natural);
+}
+
+.property-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: var(--color-sen-green);
+  margin-bottom: 1.5rem;
+}
+
+/* FAQ セクション */
+.faq-section {
+  padding: 5rem 0;
+}
+
+.faq-item {
+  border: 1px solid var(--color-sen-accent);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+}
+
+.faq-answer {
+  padding: 1rem 1.5rem;
+  background-color: rgba(245, 243, 240, 0.3);
+}
+
+.faq-arrow {
+  transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-arrow {
+  transform: rotate(90deg);
+}
+
+/* CTA セクション */
+.cta-section {
+  padding: 5rem 0;
+  background-color: var(--color-sen-natural);
+}
+
+.cta-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.cta-description {
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* レスポンシブ対応 */
+@media (min-width: 768px) {
+  .level-title {
+    font-size: 2rem;
+  }
+
+  .level-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .cta-description {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .diy-gallery {
+    height: 300px;
+  }
+
+  .diy-gallery-item {
+    width: 70% !important;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
 }
