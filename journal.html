@@ -1,71 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f0ebe2">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ジャーナル | sen llc</title>
-  <meta name="description" content="暮らしを耕す。住まいと空間に手をかけて、時間をかけて、豊かにしていく。">
+  <meta name="description" content="空き家から、住まいと暮らしを育てる">
   
-  <!-- サイトのベースURL（JavaScript用） -->
-  <meta name="baseurl" content="">
-  
-  <!-- アクセシビリティ対応 -->
-  <meta name="color-scheme" content="light">
-  <meta name="format-detection" content="telephone=no">
-  
-  <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Fonts with display=swap for better performance -->
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Fix for -ms-high-contrast deprecation -->
-  <style>
-    @media (forced-colors: active) {
-      /* Forced Colors Mode styles */
-      .icon-sen-brown,
-      .icon-sen-green,
-      .icon-sen-green-light,
-      .icon-sen-dark,
-      .icon-sen-accent {
-        forced-color-adjust: none;
-      }
-    }
-  </style>
-  
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS 読み込み（先に） -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config（その後に） -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'sen-beige': '#f5f3f0',
-            'sen-cream': '#f8f5f0',
-            'sen-brown': '#8c7e6d',
-            'sen-dark': '#3c3c3c',
-            'sen-accent': '#d4c9b9',
-            'sen-green': '#5c6e58',
-            'sen-green-light': '#a4b494',
-            'sen-natural': '#f0ebe2',
+            primary: "#2a382f",
+            secondary: "#d7d3c6",
+            accent: "#9b785c"
           },
           fontFamily: {
-            'sans': ['"Zen Maru Gothic"', 'sans-serif'],
-            'serif': ['Noto Serif JP', 'serif'],
-            'mincho': ['"Zen Old Mincho"', 'serif'],
+            sans: ['"Zen Maru Gothic"', 'sans-serif']
           },
           spacing: {
-            '100': '25rem',
-            '120': '30rem',
+            '128': '32rem',
           },
           animation: {
-            'float': 'float 6s ease-in-out infinite',
+            fade: 'fadeOut 5s ease-in-out',
           },
           keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-10px)' },
+            fadeOut: {
+              '0%': { opacity: 1 },
+              '100%': { opacity: 0 },
             }
           },
           screens: {
@@ -75,46 +41,16 @@
       }
     }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/assets/css/theme.css">
-  <link rel="stylesheet" href="/assets/css/header.css">
-  <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/assets/css/touch-feedback.css">
-  <link rel="stylesheet" href="/assets/css/diagnosis.css">
-  <link rel="stylesheet" href="/assets/css/icon-theme.css">
-  <link rel="stylesheet" href="/assets/css/animation-utilities.css">
-  <link rel="stylesheet" href="/assets/css/loading-animation.css">
-  <link rel="stylesheet" href="/assets/css/first-view.css">
-  <link rel="stylesheet" href="/assets/css/service-section.css">
-  <link rel="stylesheet" href="/assets/css/journal-section.css">
-  <link rel="stylesheet" href="/assets/css/contact-section.css">
-  <link rel="stylesheet" href="/assets/css/diagnosis-button.css">
-  <!-- ブラウザ互換性のためのCSS -->
-  <link rel="stylesheet" href="/assets/css/browser-compatibility.css">
-  
-  
-  <!-- GLightbox -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- CSS・カスタムスタイルシート（もしあればここに追加） -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
 </head>
-<body class="font-sans text-sen-dark bg-white pt-[70px]">
-  <div class="loading-screen">
-  <div class="loading-container">
-    <div class="sen-symbol">
-      <span class="chevron chevron-1">〉</span>
-      <span class="chevron chevron-2">〉</span>
-      <span class="chevron chevron-3">〉</span>
-      <span class="sen-final">巛</span>
-    </div>
-  </div>
-</div>
 
-  <div class="min-h-screen flex flex-col">
-    <header class="fixed w-full bg-sen-beige z-50 transition-all duration-300 border-b border-[#e0ded6]">
+<body class="font-sans text-gray-900">
+
+  <!-- ヘッダー -->
+  <header class="fixed w-full bg-sen-beige z-50 transition-all duration-300 border-b border-[#e0ded6]">
   <div class="container mx-auto px-4 h-[70px] flex justify-between items-center">
     <!-- Logo -->
     <a href="/" class="flex items-center space-x-3 group">
@@ -214,9 +150,10 @@
   });
 </script>
 
-    
-    <main class="flex-grow">
-      <section class="bg-gradient-to-b from-beige to-white py-20 px-6 font-zen text-primary">
+
+  <!-- メインコンテンツ -->
+  <main class="py-8">
+    <section class="bg-gradient-to-b from-beige to-white py-20 px-6 font-zen text-primary">
   <div class="max-w-3xl mx-auto text-center mb-16">
     <h1 class="text-3xl md:text-4xl font-bold mb-4">わたしたちの日々の記録</h1>
     <p class="text-base md:text-lg text-gray-700 leading-relaxed">
@@ -241,7 +178,7 @@
     <div class="p-5">
       <div class="flex items-center justify-between mb-3">
         <span class="text-xs font-medium px-3 py-1 bg-sen-beige rounded-full"></span>
-        <time datetime="2025-04-27T09:59:39+00:00" class="text-xs text-gray-500">2025.04.27</time>
+        <time datetime="2025-04-27T10:17:52+00:00" class="text-xs text-gray-500">2025.04.27</time>
       </div>
       <h3 class="text-lg font-medium text-sen-dark hover:text-sen-brown transition-colors duration-300">Coming Soon</h3>
     </div>
@@ -295,9 +232,10 @@
 </section>
 
 
-    </main>
-    
-    <!-- ページトップへ戻るボタン -->
+  </main>
+
+  <!-- フッター -->
+  <!-- ページトップへ戻るボタン -->
 <div class="back-to-top-container">
   <button id="back-to-top" class="back-to-top" aria-label="ページトップへ戻る">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -434,100 +372,15 @@
   </div>
 </footer>
 
-  </div>
-  
-  <!-- 診断誘導ボタン -->
-  <div class="diagnosis-cta">
-    <h3 class="diagnosis-cta-title">住まい診断</h3>
-    <button id="diagnosis-cta-button" class="diagnosis-cta-button touch-feedback">
-      <span class="diagnosis-cta-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6 icon-sen-green icon-animate-scale-in" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path>
-          <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path>
-        </svg>
-      </span>
-      <span class="diagnosis-cta-text">診断をはじめる</span>
-    </button>
-    <p class="diagnosis-cta-description">あなたにぴったりの住まいを見つけましょう</p>
-  </div>
-  
-  <!-- GLightbox -->
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-  <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
-  <!-- インラインSVGアイコン -->
-  <script src="/assets/js/inline-svg-icons.js"></script>
-  
-  <!-- ローディングアニメーション -->
-  <script src="/assets/js/loading-animation.js"></script>
-  <script src="/assets/js/loading-animation-session.js"></script>
-  
-  <!-- ファーストビューアニメーション -->
-  <script src="/assets/js/photo-stack.js"></script>
-  <script src="/assets/js/typing-animation.js"></script>
-  <script src="/assets/js/scroll-effects.js"></script>
-  <script src="/assets/js/scroll-guide.js"></script>
-  <script src="/assets/js/lead-text-animation.js"></script>
-  <script src="/assets/js/section-animations.js"></script>
-  
-  <!-- 診断機能 -->
-  <script src="/assets/js/diagnosis.js" defer></script>
-  <script src="/assets/js/diagnosis-button.js" defer></script>
-  
-  <!-- アイコンアニメーション -->
-  <script src="/assets/js/icon-animation.js" defer></script>
-  <script src="/assets/js/animation-sequence.js" defer></script>
+  <!-- 背景画像など -->
+  <style>
+    body {
+      background-image: url('/assets/images/concept-bg.png');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
 
-  <!-- アクセシビリティ対応 -->
-  <script src="/assets/js/accessibility.js" defer></script>
-  <script src="/assets/js/touch-feedback.js" defer></script>
-  
-  <!-- ページトップへ戻るボタン -->
-  <script src="/assets/js/back-to-top.js" defer></script>
-  
-  <!-- 画像エラーハンドラ -->
-  <script src="/assets/js/image-error-handler.js"></script>
-  
-  <script>
-    // エラーハンドリング
-    window.addEventListener('error', function(e) {
-      // Tailwind未定義エラーを抑制
-      if (e.message && e.message.includes('tailwind is not defined')) {
-        console.warn('Tailwind CDN may be blocked or failed to load. Using fallback styles.');
-        e.preventDefault();
-      }
-      
-      // runtime.lastError エラーを抑制
-      if (e.message && e.message.includes('runtime.lastError')) {
-        console.warn('Runtime error suppressed:', e.message);
-        e.preventDefault();
-      }
-    }, true);
-    
-    // Initialize libraries after they're loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize GLightbox
-      if (typeof GLightbox !== 'undefined') {
-        const lightbox = GLightbox({
-          selector: '.glightbox',
-          touchNavigation: true,
-          loop: true,
-        });
-      }
-      
-      // Initialize AOS with mobile-friendly settings
-      if (typeof AOS !== 'undefined') {
-        AOS.init({
-          duration: 800,
-          easing: 'ease-out',
-          once: true,
-          offset: window.innerWidth < 768 ? 50 : 100,
-          disable: window.innerWidth < 480 ? true : false
-        });
-      }
-    });
-  </script>
 </body>
 </html>
