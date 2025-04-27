@@ -450,7 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // URLから結果パラメータを取得して表示する（共有されたURLからの訪問時）
+  // URLから結果パラメ��タを取得して表示する（共有されたURLからの訪問時）
   function checkUrlForResult() {
     const urlParams = new URLSearchParams(window.location.search)
     const resultParam = urlParams.get("result")
