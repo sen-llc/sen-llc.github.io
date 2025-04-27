@@ -1,0 +1,94 @@
+/* お問い合わせセクション */
+.contact-section {
+  padding: 12vh 0; /* 上下のパディングを12vhに調整 */
+  background-color: #f5f5f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-content {
+  max-width: 36rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.contact-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-title {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #2a382f;
+  margin-bottom: 4vh; /* 小見出しとサブリードの間を4vhに調整 */
+  line-height: 1.6;
+}
+
+.contact-description {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1rem;
+  color: #3c3c3c;
+  line-height: 2;
+  margin-bottom: 6vh; /* サブリードとボタンの間を6vhに調整 */
+}
+
+.contact-description p {
+  margin-bottom: 1.5rem;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1rem;
+  color: #f5f5f0;
+  background-color: #2a382f;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  transition: background-color 0.3s ease;
+  width: 240px; /* PCでの横幅を240pxに設定 */
+}
+
+.contact-button:hover {
+  background-color: #3a4b3f;
+}
+
+.contact-button svg {
+  margin-left: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover svg {
+  transform: translateX(3px);
+}
+
+/* メディアクエリ - モバイル */
+@media (max-width: 767px) {
+  .contact-section {
+    padding: 8vh 0;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+    margin-bottom: 3vh;
+  }
+
+  .contact-description {
+    font-size: 0.95rem;
+    margin-bottom: 4vh;
+  }
+
+  .contact-button {
+    width: 90%; /* モバイルでの横幅を90%に設定 */
+  }
+}
