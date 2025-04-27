@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>設計・リノベーション | sen llc</title>
   <meta name="description" content="空き家から、住まいと暮らしを育てる">
-  
-  <!-- Tailwind CSS 読み込み（先に） -->
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind Config（その後に） -->
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       theme: {
@@ -42,14 +42,20 @@
     }
   </script>
 
-  <!-- CSS・カスタムスタイルシート（もしあればここに追加） -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-
+  <!-- 正しいCSSたち -->
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/header.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/first-view.css">
+  <link rel="stylesheet" href="/assets/css/service-section.css">
+  <link rel="stylesheet" href="/assets/css/contact-section.css">
+  <link rel="stylesheet" href="/assets/css/diagnosis.css">
+  <link rel="stylesheet" href="/assets/css/journal-section.css">
+  <link rel="stylesheet" href="/assets/css/icon-theme.css">
 </head>
 
 <body class="font-sans text-gray-900">
 
-  <!-- ヘッダー -->
   <header class="fixed w-full bg-sen-beige z-50 transition-all duration-300 border-b border-[#e0ded6]">
   <div class="container mx-auto px-4 h-[70px] flex justify-between items-center">
     <!-- Logo -->
@@ -151,7 +157,6 @@
 </script>
 
 
-  <!-- メインコンテンツ -->
   <main class="py-8">
     <section class="bg-gradient-to-b from-beige to-white py-20 px-6 font-zen text-primary">
   <div class="max-w-3xl mx-auto text-center mb-16">
@@ -232,7 +237,6 @@
 
   </main>
 
-  <!-- フッター -->
   <!-- ページトップへ戻るボタン -->
 <div class="back-to-top-container">
   <button id="back-to-top" class="back-to-top" aria-label="ページトップへ戻る">
@@ -371,7 +375,6 @@
 </footer>
 
 
-  <!-- 背景画像など -->
   <style>
     body {
       background-image: url('/assets/images/concept-bg.png');
